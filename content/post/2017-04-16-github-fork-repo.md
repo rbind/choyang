@@ -7,31 +7,26 @@ categories: []
 tags:
   - git
   - github
+summary: "更新github中fork别人repo"
 ---
 
 
 1. Clone your fork:
-
 ```
 git clone git@github.com:YOUR-USERNAME/YOUR-FORKED-REPO.git
 ```
-
-2. Add remote from original repository in your forked repository:
-
+1. Add remote from original repository in your forked repository:
 ```
 cd into/cloned/fork-repo
 git remote add upstream git://github.com/ORIGINAL-DEV-USERNAME/REPO-YOU-FORKED-FROM.git
 git fetch upstream
 ```
 
-3. Updating your fork from original repo to keep up with their changes:
-
+1. Updating your fork from original repo to keep up with their changes:
 ```
 git pull upstream master
 ```
-
-4. updated your local repo and need to push your changes:
-
+1. updated your local repo and need to push your changes:
 ```
 git push
 ```
