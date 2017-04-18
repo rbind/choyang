@@ -4,7 +4,7 @@
     
     
     <url>
-      <loc>/post/github-fork-repo/</loc>
+      <loc>http://www.choyang.me/post/github-fork-repo/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +12,7 @@
     
     
     <url>
-      <loc>/post/hugo/</loc>
+      <loc>http://www.choyang.me/post/hugo/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
     </url>
     
@@ -20,7 +20,7 @@
     
     
     <url>
-      <loc>/project/shiny-RevEcoR/</loc>
+      <loc>http://www.choyang.me/project/shiny-RevEcoR/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,7 +28,7 @@
     
     
     <url>
-      <loc>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</loc>
+      <loc>http://www.choyang.me/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +36,7 @@
     
     
     <url>
-      <loc>/publication/NFP/</loc>
+      <loc>http://www.choyang.me/publication/NFP/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -44,7 +44,7 @@
     
     
     <url>
-      <loc>/project/NFP/</loc>
+      <loc>http://www.choyang.me/project/NFP/</loc>
       <lastmod>2017-01-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -52,7 +52,7 @@
     
     
     <url>
-      <loc>/tags/academic/</loc>
+      <loc>http://www.choyang.me/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -60,7 +60,7 @@
     
     
     <url>
-      <loc>/talk/example-talk/</loc>
+      <loc>http://www.choyang.me/talk/example-talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +68,7 @@
     
     
     <url>
-      <loc>/post/</loc>
+      <loc>http://www.choyang.me/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -76,7 +76,7 @@
     
     
     <url>
-      <loc>/publication/</loc>
+      <loc>http://www.choyang.me/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -84,7 +84,7 @@
     
     
     <url>
-      <loc>/talk/</loc>
+      <loc>http://www.choyang.me/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -92,7 +92,7 @@
     
     
     <url>
-      <loc>/post/2016-11-15-paper-download/</loc>
+      <loc>http://www.choyang.me/post/2016-11-15-paper-download/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -100,7 +100,7 @@
     
     
     <url>
-      <loc>/publication/RevEcoR/</loc>
+      <loc>http://www.choyang.me/publication/RevEcoR/</loc>
       <lastmod>2016-05-21T00:00:00+00:00</lastmod>
     </url>
     
@@ -108,7 +108,7 @@
     
     
     <url>
-      <loc>/project/RevEcoR/</loc>
+      <loc>http://www.choyang.me/project/RevEcoR/</loc>
       <lastmod>2015-09-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -116,7 +116,7 @@
     
     
     <url>
-      <loc>/publication/mmnet/</loc>
+      <loc>http://www.choyang.me/publication/mmnet/</loc>
       <lastmod>2015-04-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -124,7 +124,7 @@
     
     
     <url>
-      <loc>/post/2014-11-15-magrittr/</loc>
+      <loc>http://www.choyang.me/post/2014-11-15-magrittr/</loc>
       <lastmod>2014-11-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -132,7 +132,7 @@
     
     
     <url>
-      <loc>/post/2014-11-12-r-data-structures/</loc>
+      <loc>http://www.choyang.me/post/2014-11-12-r-data-structures/</loc>
       <lastmod>2014-11-12T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,7 +140,7 @@
     
     
     <url>
-      <loc>/post/2014-11-4-r-code-style/</loc>
+      <loc>http://www.choyang.me/post/2014-11-4-r-code-style/</loc>
       <lastmod>2014-11-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -148,7 +148,7 @@
     
     
     <url>
-      <loc>/publication/GeneExpressionSignature/</loc>
+      <loc>http://www.choyang.me/publication/GeneExpressionSignature/</loc>
       <lastmod>2013-02-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -156,7 +156,7 @@
     
     
     <url>
-      <loc>/publication_types/2/</loc>
+      <loc>http://www.choyang.me/publication_types/2/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -165,7 +165,7 @@
     
     
     <url>
-      <loc>/tags/blogdown/</loc>
+      <loc>http://www.choyang.me/tags/blogdown/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -174,7 +174,7 @@
     
     
     <url>
-      <loc>/categories/</loc>
+      <loc>http://www.choyang.me/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -182,7 +182,7 @@
     
     
     <url>
-      <loc>/tags/git/</loc>
+      <loc>http://www.choyang.me/tags/git/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -191,7 +191,7 @@
     
     
     <url>
-      <loc>/tags/github/</loc>
+      <loc>http://www.choyang.me/tags/github/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -200,7 +200,7 @@
     
     
     <url>
-      <loc>/tags/hugo/</loc>
+      <loc>http://www.choyang.me/tags/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -209,7 +209,7 @@
     
     
     <url>
-      <loc>/categories/hugo/</loc>
+      <loc>http://www.choyang.me/categories/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -218,7 +218,7 @@
     
     
     <url>
-      <loc>/project/</loc>
+      <loc>http://www.choyang.me/project/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -227,7 +227,7 @@
     
     
     <url>
-      <loc>/publication_types/</loc>
+      <loc>http://www.choyang.me/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -235,7 +235,7 @@
     
     
     <url>
-      <loc>/tags/r/</loc>
+      <loc>http://www.choyang.me/tags/r/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -244,7 +244,7 @@
     
     
     <url>
-      <loc>/tags/scholar/</loc>
+      <loc>http://www.choyang.me/tags/scholar/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -253,7 +253,7 @@
     
     
     <url>
-      <loc>/tags/</loc>
+      <loc>http://www.choyang.me/tags/</loc>
       <priority>0</priority>
     </url>
     
@@ -261,7 +261,7 @@
     
     
     <url>
-      <loc>/tags/tourial/</loc>
+      <loc>http://www.choyang.me/tags/tourial/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -270,7 +270,7 @@
     
     
     <url>
-      <loc>/tags/website/</loc>
+      <loc>http://www.choyang.me/tags/website/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -279,7 +279,7 @@
     
     
     <url>
-      <loc>/</loc>
+      <loc>http://www.choyang.me/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

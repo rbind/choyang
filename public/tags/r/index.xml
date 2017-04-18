@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Yang</title>
-    <link>/tags/r/index.xml</link>
+    <link>http://www.choyang.me/tags/r/index.xml</link>
     <description>Recent content in R on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>shiny-RevEcoR</title>
-      <link>/project/shiny-RevEcoR/</link>
+      <link>http://www.choyang.me/project/shiny-RevEcoR/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/shiny-RevEcoR/</guid>
+      <guid>http://www.choyang.me/project/shiny-RevEcoR/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;shiny-RevEcoR&lt;/a&gt;
@@ -95,28 +95,28 @@ in any work that benefits from this code or application.&lt;/p&gt;
     
     <item>
       <title>Network fingerprint analysis in R</title>
-      <link>/project/NFP/</link>
+      <link>http://www.choyang.me/project/NFP/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/NFP/</guid>
+      <guid>http://www.choyang.me/project/NFP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reverse Ecology analysis in R</title>
-      <link>/project/RevEcoR/</link>
+      <link>http://www.choyang.me/project/RevEcoR/</link>
       <pubDate>Sun, 27 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/project/RevEcoR/</guid>
+      <guid>http://www.choyang.me/project/RevEcoR/</guid>
       <description></description>
     </item>
     
     <item>
       <title>magrittr管道操作</title>
-      <link>/post/2014-11-15-magrittr/</link>
+      <link>http://www.choyang.me/post/2014-11-15-magrittr/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-15-magrittr/</guid>
+      <guid>http://www.choyang.me/post/2014-11-15-magrittr/</guid>
       <description>&lt;p&gt;很多情况下，管道操作符可以很大程度的简化代码，并且使其更加直观、易读、易懂，下面就简单说明了useR2014上颇受R用户喜爱的magrittr包。&lt;/p&gt;
 
 &lt;p&gt;the pipe operator is one (if not THE) most important innovation introduced, this year, to the R ecosystem&lt;/p&gt;
@@ -360,10 +360,10 @@ add(5)         %&amp;gt;%
     
     <item>
       <title>R基础数据结构</title>
-      <link>/post/2014-11-12-r-data-structures/</link>
+      <link>http://www.choyang.me/post/2014-11-12-r-data-structures/</link>
       <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-12-r-data-structures/</guid>
+      <guid>http://www.choyang.me/post/2014-11-12-r-data-structures/</guid>
       <description>&lt;p&gt;R中最基础，也是最重要的数据结构，可以根据其维度和元素的性质来划分：向量（原子向量和列表），矩阵、数组和数据框。&lt;/p&gt;
 
 &lt;p&gt;基本的数据结构根据维度和元素的性质(所有元素的类型是否相同)的可分为&lt;/p&gt;
@@ -703,10 +703,10 @@ data.frame(x = 1:3, y = list(1:2, 1:3, 1:4))
     
     <item>
       <title>R code style</title>
-      <link>/post/2014-11-4-r-code-style/</link>
+      <link>http://www.choyang.me/post/2014-11-4-r-code-style/</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-4-r-code-style/</guid>
+      <guid>http://www.choyang.me/post/2014-11-4-r-code-style/</guid>
       <description>&lt;p&gt;R作为用于统计计算和图形可视化的高级语言，随着近来来大数据的发展，R语言逐渐成长为数据分析的利器，良好的代码风格使代码更容易阅读，
 分享和扩展，下面基于Rstudio首席科学家&lt;a href=&#34;http://had.co.nz/&#34;&gt;hadley&lt;/a&gt;和google的R团队的代码风格做了一些小的调整。&lt;/p&gt;
 

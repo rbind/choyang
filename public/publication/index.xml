@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Yang</title>
-    <link>/publication/index.xml</link>
+    <link>http://www.choyang.me/publication/index.xml</link>
     <description>Recent content in Publications on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,37 +12,37 @@
     
     <item>
       <title>NFP: An R Package for Characterizing and Comparing of Annotated Biological Networks</title>
-      <link>/publication/NFP/</link>
+      <link>http://www.choyang.me/publication/NFP/</link>
       <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/NFP/</guid>
+      <guid>http://www.choyang.me/publication/NFP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RevEcoR: an R package for the reverse ecology analysis of microbiomes</title>
-      <link>/publication/RevEcoR/</link>
+      <link>http://www.choyang.me/publication/RevEcoR/</link>
       <pubDate>Sat, 21 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/publication/RevEcoR/</guid>
+      <guid>http://www.choyang.me/publication/RevEcoR/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mmnet: An R Package for Metagenomics Systems Biology Analysis</title>
-      <link>/publication/mmnet/</link>
+      <link>http://www.choyang.me/publication/mmnet/</link>
       <pubDate>Fri, 17 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/publication/mmnet/</guid>
+      <guid>http://www.choyang.me/publication/mmnet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GeneExpressionSignature: an R package for discovering functional connections using gene expression signatures</title>
-      <link>/publication/GeneExpressionSignature/</link>
+      <link>http://www.choyang.me/publication/GeneExpressionSignature/</link>
       <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/publication/GeneExpressionSignature/</guid>
+      <guid>http://www.choyang.me/publication/GeneExpressionSignature/</guid>
       <description></description>
     </item>
     

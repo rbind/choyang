@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Yang</title>
-    <link>/post/index.xml</link>
+    <link>http://www.choyang.me/post/index.xml</link>
     <description>Recent content in Posts on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>保持github中fork别人repo的更新</title>
-      <link>/post/github-fork-repo/</link>
+      <link>http://www.choyang.me/post/github-fork-repo/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/github-fork-repo/</guid>
+      <guid>http://www.choyang.me/post/github-fork-repo/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Clone your fork:
 &lt;code&gt;
@@ -46,10 +46,10 @@ git fetch upstream
     
     <item>
       <title>hugo建立的网站托管至github pages</title>
-      <link>/post/hugo/</link>
+      <link>http://www.choyang.me/post/hugo/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/hugo/</guid>
+      <guid>http://www.choyang.me/post/hugo/</guid>
       <description>&lt;h2 id=&#34;github-pages&#34;&gt;github pages&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;github pages&lt;/a&gt;,&lt;a href=&#34;https://bitbucket.org/product&#34; target=&#34;_blank&#34;&gt;bitbucket&lt;/a&gt;,&lt;a href=&#34;https://gitlab.com&#34; target=&#34;_blank&#34;&gt;gitlab&lt;/a&gt;是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。&lt;/p&gt;
@@ -58,9 +58,9 @@ git fetch upstream
 
 &lt;ul&gt;
 &lt;li&gt;个人或者机构账户主页，必须为&lt;code&gt;username.github.io&lt;/code&gt;,只能在&lt;code&gt;master&lt;/code&gt;分支中建立主页。
-&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_personal_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;http://www.choyang.me/post/2017-03-21-hugo-hosting-github/github_personal_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;li&gt;项目主页，可以在&lt;code&gt;master&lt;/code&gt;分支，&lt;code&gt;master/docs&lt;/code&gt;文件夹，&lt;code&gt;gh-pages&lt;/code&gt;分支建立项目主页
-&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_project_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;http://www.choyang.me/post/2017-03-21-hugo-hosting-github/github_project_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;因此有以下几种方法将hugo网站托管至github pages&lt;/p&gt;
@@ -88,15 +88,15 @@ git fetch upstream
 
 &lt;p&gt;稍等一小会，域名&lt;code&gt;choyang.me&lt;/code&gt;就可以访问，重定向到&lt;code&gt;yiluheihei.github.io&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/domain_setting.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://www.choyang.me/post/2017-03-21-hugo-hosting-github/domain_setting.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>利用hugo和blogdown创建网站</title>
-      <link>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</link>
+      <link>http://www.choyang.me/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</guid>
+      <guid>http://www.choyang.me/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</guid>
       <description>&lt;p&gt;hugo是一个可以快速建立静态网站的生成器，比如个人主页、博客、公司主页、项目介绍等。相对于其他静态网站生成器，hugo具有安装方便，网页编译生成速度快、实时刷新页面等特点。blogdown则整合了Rmarkdown和hugo的功能来帮助人们在R环境中建立网站（当然也可以是markdown）。&lt;/p&gt;
 
 &lt;h2 id=&#34;安装工具&#34;&gt;安装工具&lt;/h2&gt;
@@ -155,10 +155,10 @@ git fetch upstream
     
     <item>
       <title>文献下载</title>
-      <link>/post/2016-11-15-paper-download/</link>
+      <link>http://www.choyang.me/post/2016-11-15-paper-download/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-11-15-paper-download/</guid>
+      <guid>http://www.choyang.me/post/2016-11-15-paper-download/</guid>
       <description>&lt;p&gt;快速的找到自己研究方向或者感兴趣的文献，常常事半功倍，能很大的提高我们的工作效率，对于毕业论文和科研论文的写作也非常有用。由于XXX原因&lt;code&gt;Google&lt;/code&gt;被和谐，&lt;code&gt;pubmed&lt;/code&gt;能搜索生物医学领域文献，并且不太稳定经常XXX。至于后起之“秀”度娘学术和微软必应学术搜索，不论在搜索数量、质量和功能与&lt;code&gt;Google&lt;/code&gt;学术都没有可比性，也许它们与&lt;code&gt;Google&lt;/code&gt;学术之间的差距要比中美学术之间的差异还要大。下面道一道我经常用的&lt;code&gt;Google&lt;/code&gt;学术搜索镜像和文献全文下载方法&lt;strong&gt;(许多非开源杂志主页不提供全文下载)&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;h1 id=&#34;目前俺常用的goolge学术镜像&#34;&gt;目前俺常用的Goolge学术镜像&lt;/h1&gt;
@@ -270,10 +270,10 @@ git fetch upstream
     
     <item>
       <title>magrittr管道操作</title>
-      <link>/post/2014-11-15-magrittr/</link>
+      <link>http://www.choyang.me/post/2014-11-15-magrittr/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-15-magrittr/</guid>
+      <guid>http://www.choyang.me/post/2014-11-15-magrittr/</guid>
       <description>&lt;p&gt;很多情况下，管道操作符可以很大程度的简化代码，并且使其更加直观、易读、易懂，下面就简单说明了useR2014上颇受R用户喜爱的magrittr包。&lt;/p&gt;
 
 &lt;p&gt;the pipe operator is one (if not THE) most important innovation introduced, this year, to the R ecosystem&lt;/p&gt;
@@ -517,10 +517,10 @@ add(5)         %&amp;gt;%
     
     <item>
       <title>R基础数据结构</title>
-      <link>/post/2014-11-12-r-data-structures/</link>
+      <link>http://www.choyang.me/post/2014-11-12-r-data-structures/</link>
       <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-12-r-data-structures/</guid>
+      <guid>http://www.choyang.me/post/2014-11-12-r-data-structures/</guid>
       <description>&lt;p&gt;R中最基础，也是最重要的数据结构，可以根据其维度和元素的性质来划分：向量（原子向量和列表），矩阵、数组和数据框。&lt;/p&gt;
 
 &lt;p&gt;基本的数据结构根据维度和元素的性质(所有元素的类型是否相同)的可分为&lt;/p&gt;
@@ -860,10 +860,10 @@ data.frame(x = 1:3, y = list(1:2, 1:3, 1:4))
     
     <item>
       <title>R code style</title>
-      <link>/post/2014-11-4-r-code-style/</link>
+      <link>http://www.choyang.me/post/2014-11-4-r-code-style/</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-11-4-r-code-style/</guid>
+      <guid>http://www.choyang.me/post/2014-11-4-r-code-style/</guid>
       <description>&lt;p&gt;R作为用于统计计算和图形可视化的高级语言，随着近来来大数据的发展，R语言逐渐成长为数据分析的利器，良好的代码风格使代码更容易阅读，
 分享和扩展，下面基于Rstudio首席科学家&lt;a href=&#34;http://had.co.nz/&#34;&gt;hadley&lt;/a&gt;和google的R团队的代码风格做了一些小的调整。&lt;/p&gt;
 
