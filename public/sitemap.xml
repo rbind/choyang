@@ -4,7 +4,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/atom-intro/</loc>
+      <loc>/post/github-fork-repo/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,15 +12,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/github-fork-repo/</loc>
-      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>https://yiluheihei.github.io/post/hugo/</loc>
+      <loc>/post/hugo/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,7 +20,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/project/shiny-RevEcoR/</loc>
+      <loc>/project/shiny-RevEcoR/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +28,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</loc>
+      <loc>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -44,7 +36,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication/NFP/</loc>
+      <loc>/publication/NFP/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -52,7 +44,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/project/NFP/</loc>
+      <loc>/project/NFP/</loc>
       <lastmod>2017-01-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -60,7 +52,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/academic/</loc>
+      <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +60,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/talk/example-talk/</loc>
+      <loc>/talk/example-talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -76,7 +68,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/</loc>
+      <loc>/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -84,7 +76,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication/</loc>
+      <loc>/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -92,7 +84,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/talk/</loc>
+      <loc>/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -100,7 +92,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/2016-11-15-paper-download/</loc>
+      <loc>/post/2016-11-15-paper-download/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -108,7 +100,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication/RevEcoR/</loc>
+      <loc>/publication/RevEcoR/</loc>
       <lastmod>2016-05-21T00:00:00+00:00</lastmod>
     </url>
     
@@ -116,7 +108,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/project/RevEcoR/</loc>
+      <loc>/project/RevEcoR/</loc>
       <lastmod>2015-09-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -124,7 +116,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication/mmnet/</loc>
+      <loc>/publication/mmnet/</loc>
       <lastmod>2015-04-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -132,7 +124,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/2014-11-15-magrittr/</loc>
+      <loc>/post/2014-11-15-magrittr/</loc>
       <lastmod>2014-11-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,7 +132,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/2014-11-12-r-data-structures/</loc>
+      <loc>/post/2014-11-12-r-data-structures/</loc>
       <lastmod>2014-11-12T00:00:00+00:00</lastmod>
     </url>
     
@@ -148,7 +140,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/post/2014-11-4-r-code-style/</loc>
+      <loc>/post/2014-11-4-r-code-style/</loc>
       <lastmod>2014-11-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -156,7 +148,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication/GeneExpressionSignature/</loc>
+      <loc>/publication/GeneExpressionSignature/</loc>
       <lastmod>2013-02-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -164,7 +156,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication_types/2/</loc>
+      <loc>/publication_types/2/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -173,25 +165,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/atom/</loc>
-      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>https://yiluheihei.github.io/categories/atom/</loc>
-      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>https://yiluheihei.github.io/tags/blogdown/</loc>
+      <loc>/tags/blogdown/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -200,7 +174,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/categories/</loc>
+      <loc>/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -208,7 +182,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/git/</loc>
+      <loc>/tags/git/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -217,7 +191,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/github/</loc>
+      <loc>/tags/github/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -226,7 +200,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/hugo/</loc>
+      <loc>/tags/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -235,7 +209,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/categories/hugo/</loc>
+      <loc>/categories/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -244,7 +218,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/project/</loc>
+      <loc>/project/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -253,7 +227,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/publication_types/</loc>
+      <loc>/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -261,7 +235,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/r/</loc>
+      <loc>/tags/r/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -270,7 +244,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/scholar/</loc>
+      <loc>/tags/scholar/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -279,7 +253,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/</loc>
+      <loc>/tags/</loc>
       <priority>0</priority>
     </url>
     
@@ -287,7 +261,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/tourial/</loc>
+      <loc>/tags/tourial/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -296,7 +270,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/tags/website/</loc>
+      <loc>/tags/website/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -305,7 +279,7 @@
     
     
     <url>
-      <loc>https://yiluheihei.github.io/</loc>
+      <loc>/</loc>
       <lastmod>2017-03-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

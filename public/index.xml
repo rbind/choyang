@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yang on Yang</title>
-    <link>https://yiluheihei.github.io/index.xml</link>
+    <link>/index.xml</link>
     <description>Recent content in Yang on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,92 +11,11 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>atom简介</title>
-      <link>https://yiluheihei.github.io/post/atom-intro/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://yiluheihei.github.io/post/atom-intro/</guid>
-      <description>&lt;p&gt;atom是github团队开发的一款编辑器，号称21世纪的编辑器。它吸收了很多目前最流行的编辑器sublime text的功能，如优美的界面、第三包包管理与安装，并且是基于web技术（chromium的框架）开发的一个开源编辑器，可扩展性强，配置简单。&lt;/p&gt;
-
-&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/atom/atom/releases/tag/v1.16.0&#34; target=&#34;_blank&#34;&gt;atom的release页面&lt;/a&gt;下载系统相应的安装文件，如mac下为&lt;code&gt;atom-mac.zip&lt;/code&gt;，解压拖动&lt;code&gt;atom.app&lt;/code&gt;至应用程序文件夹，默认安装了&lt;code&gt;atom&lt;/code&gt;终端命令和&lt;code&gt;apm&lt;/code&gt;安装扩展包。&lt;/p&gt;
-
-&lt;h3 id=&#34;命令面板-command-platte&#34;&gt;命令面板 - command platte&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;cmd + shift + p&lt;/code&gt;调出命令面板，可以搜索各种命令并执行（而不用手动查找）；此外，还可以查看命令是否有对应的快捷键。&lt;/p&gt;
-
-&lt;h3 id=&#34;偏好设置-preferences&#34;&gt;偏好设置 - preferences&lt;/h3&gt;
-
-&lt;p&gt;偏好设置面板，包括主题，字体，扩展包的安装等。三种打开方式：
-  - &lt;code&gt;atom &amp;gt; Preferences&lt;/code&gt;
-  - &lt;code&gt;cmd+,&lt;/code&gt;
-  - 命令面板中，&lt;code&gt;settings-view:open&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;主题-theme&#34;&gt;主题 - theme&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;UI theme: UI元素样式，如标签和树状图；&lt;/li&gt;
-&lt;li&gt;syntax theme: 语法主题：代码高亮&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;空格和换行-whitespace&#34;&gt;空格和换行 - whitespace&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;soft tabs&lt;/code&gt;，选中表示用空格代替&lt;code&gt;tab&lt;/code&gt;，&lt;code&gt;tab length&lt;/code&gt;则指定空格的个数；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;soft wrap&lt;/code&gt;, 行内字符过多时自动换行， &lt;code&gt;Soft Wrap At Preferred Line Length&lt;/code&gt;，则表示每行最多80字符。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;文件操作&#34;&gt;文件操作&lt;/h3&gt;
-
-&lt;h4 id=&#34;打开文件&#34;&gt;打开文件&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;file &amp;gt; open&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cmd + o&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;命令行下：&lt;code&gt;atom [files]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;编辑和保存&#34;&gt;编辑和保存&lt;/h4&gt;
-
-&lt;p&gt;鼠标点击和修改是最简单的编辑操作，如果要高端地使用快捷键那么需要下载相应的扩展包，用于模仿其他文本编辑模式。&lt;/p&gt;
-
-&lt;p&gt;保存文件:&lt;code&gt;file &amp;gt; save&lt;/code&gt;, &lt;code&gt;cmd + s&lt;/code&gt;；另存为&lt;code&gt;file &amp;gt; save as&lt;/code&gt;, &lt;code&gt;cmd + shift + s&lt;/code&gt;; 保存所有文件&lt;code&gt;alt + cmd +s&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;打开文件夹&#34;&gt;打开文件夹&lt;/h4&gt;
-
-&lt;p&gt;ATOM不限于编辑单个文件，而是旨在对项目中多个文件操作。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;cmd + shift + o&lt;/code&gt;添加文件夹到项目。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;atom dir1 dir2&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;打开文件夹后，左侧会出现文件目录树，方便对文件操作，包括打开，删除，重命名，新建文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;cmd + \&lt;/code&gt;, 命令面板中&lt;code&gt;tree-view:toggle&lt;/code&gt;打开或者关闭目录树。&lt;code&gt;ctrl + 0&lt;/code&gt;会调整光标至目录树，&lt;code&gt;a&lt;/code&gt;,&lt;code&gt;M&lt;/code&gt;，&lt;code&gt;delete&lt;/code&gt;用于添加、修改和删除文件或者文件夹。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ATOM packages：目录树是不是直接植入ATOM，而是通过package实现，这种与ATOM捆绑的包称为核心包（core packages），区别于另外一种第三方的包（community packages）。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;打开项目中文件&#34;&gt;打开项目中文件&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;cmd + t&lt;/code&gt;或&lt;code&gt;cmd + p&lt;/code&gt;在项目中模糊查找文件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cmd + b&lt;/code&gt;在打开的文件中查找&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cmd + shift + b&lt;/code&gt;, 搜索上次git提交以来修改的文件或新文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;模糊匹配采用&lt;code&gt;core.ignoreNames,fuzzy-finder.ignoreNames&lt;/code&gt;,&lt;code&gt;core.excludeVCSIgnorePaths&lt;/code&gt;,配置设置来过滤掉不满足搜索条件的文件或者文件夹。所以如果项目中文件夹过多，我们可以自定义设置搜索路径或者&lt;code&gt;.gitignore&lt;/code&gt;。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>保持github中fork别人repo的更新</title>
-      <link>https://yiluheihei.github.io/post/github-fork-repo/</link>
+      <link>/post/github-fork-repo/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/github-fork-repo/</guid>
+      <guid>/post/github-fork-repo/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Clone your fork:
 &lt;code&gt;
@@ -127,10 +46,10 @@ git fetch upstream
     
     <item>
       <title>hugo建立的网站托管至github pages</title>
-      <link>https://yiluheihei.github.io/post/hugo/</link>
+      <link>/post/hugo/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/hugo/</guid>
+      <guid>/post/hugo/</guid>
       <description>&lt;h2 id=&#34;github-pages&#34;&gt;github pages&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;github pages&lt;/a&gt;,&lt;a href=&#34;https://bitbucket.org/product&#34; target=&#34;_blank&#34;&gt;bitbucket&lt;/a&gt;,&lt;a href=&#34;https://gitlab.com&#34; target=&#34;_blank&#34;&gt;gitlab&lt;/a&gt;是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。&lt;/p&gt;
@@ -139,9 +58,9 @@ git fetch upstream
 
 &lt;ul&gt;
 &lt;li&gt;个人或者机构账户主页，必须为&lt;code&gt;username.github.io&lt;/code&gt;,只能在&lt;code&gt;master&lt;/code&gt;分支中建立主页。
-&lt;img src=&#34;https://yiluheihei.github.io/post/2017-03-21-hugo-hosting-github/github_personal_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_personal_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;li&gt;项目主页，可以在&lt;code&gt;master&lt;/code&gt;分支，&lt;code&gt;master/docs&lt;/code&gt;文件夹，&lt;code&gt;gh-pages&lt;/code&gt;分支建立项目主页
-&lt;img src=&#34;https://yiluheihei.github.io/post/2017-03-21-hugo-hosting-github/github_project_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_project_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;因此有以下几种方法将hugo网站托管至github pages&lt;/p&gt;
@@ -169,15 +88,15 @@ git fetch upstream
 
 &lt;p&gt;稍等一小会，域名&lt;code&gt;choyang.me&lt;/code&gt;就可以访问，重定向到&lt;code&gt;yiluheihei.github.io&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://yiluheihei.github.io/post/2017-03-21-hugo-hosting-github/domain_setting.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/domain_setting.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>shiny-RevEcoR</title>
-      <link>https://yiluheihei.github.io/project/shiny-RevEcoR/</link>
+      <link>/project/shiny-RevEcoR/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/project/shiny-RevEcoR/</guid>
+      <guid>/project/shiny-RevEcoR/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;shiny-RevEcoR&lt;/a&gt;
@@ -258,10 +177,10 @@ in any work that benefits from this code or application.&lt;/p&gt;
     
     <item>
       <title>利用hugo和blogdown创建网站</title>
-      <link>https://yiluheihei.github.io/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</link>
+      <link>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</guid>
+      <guid>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme/</guid>
       <description>&lt;p&gt;hugo是一个可以快速建立静态网站的生成器，比如个人主页、博客、公司主页、项目介绍等。相对于其他静态网站生成器，hugo具有安装方便，网页编译生成速度快、实时刷新页面等特点。blogdown则整合了Rmarkdown和hugo的功能来帮助人们在R环境中建立网站（当然也可以是markdown）。&lt;/p&gt;
 
 &lt;h2 id=&#34;安装工具&#34;&gt;安装工具&lt;/h2&gt;
@@ -320,38 +239,38 @@ in any work that benefits from this code or application.&lt;/p&gt;
     
     <item>
       <title>NFP: An R Package for Characterizing and Comparing of Annotated Biological Networks</title>
-      <link>https://yiluheihei.github.io/publication/NFP/</link>
+      <link>/publication/NFP/</link>
       <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/publication/NFP/</guid>
+      <guid>/publication/NFP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Network fingerprint analysis in R</title>
-      <link>https://yiluheihei.github.io/project/NFP/</link>
+      <link>/project/NFP/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/project/NFP/</guid>
+      <guid>/project/NFP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example Talk</title>
-      <link>https://yiluheihei.github.io/talk/example-talk/</link>
+      <link>/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/talk/example-talk/</guid>
+      <guid>/talk/example-talk/</guid>
       <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>文献下载</title>
-      <link>https://yiluheihei.github.io/post/2016-11-15-paper-download/</link>
+      <link>/post/2016-11-15-paper-download/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/2016-11-15-paper-download/</guid>
+      <guid>/post/2016-11-15-paper-download/</guid>
       <description>&lt;p&gt;快速的找到自己研究方向或者感兴趣的文献，常常事半功倍，能很大的提高我们的工作效率，对于毕业论文和科研论文的写作也非常有用。由于XXX原因&lt;code&gt;Google&lt;/code&gt;被和谐，&lt;code&gt;pubmed&lt;/code&gt;能搜索生物医学领域文献，并且不太稳定经常XXX。至于后起之“秀”度娘学术和微软必应学术搜索，不论在搜索数量、质量和功能与&lt;code&gt;Google&lt;/code&gt;学术都没有可比性，也许它们与&lt;code&gt;Google&lt;/code&gt;学术之间的差距要比中美学术之间的差异还要大。下面道一道我经常用的&lt;code&gt;Google&lt;/code&gt;学术搜索镜像和文献全文下载方法&lt;strong&gt;(许多非开源杂志主页不提供全文下载)&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;h1 id=&#34;目前俺常用的goolge学术镜像&#34;&gt;目前俺常用的Goolge学术镜像&lt;/h1&gt;
@@ -463,10 +382,19 @@ in any work that benefits from this code or application.&lt;/p&gt;
     
     <item>
       <title>RevEcoR: an R package for the reverse ecology analysis of microbiomes</title>
-      <link>https://yiluheihei.github.io/publication/RevEcoR/</link>
+      <link>/publication/RevEcoR/</link>
       <pubDate>Sat, 21 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/publication/RevEcoR/</guid>
+      <guid>/publication/RevEcoR/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse Ecology analysis in R</title>
+      <link>/project/RevEcoR/</link>
+      <pubDate>Sun, 27 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/project/RevEcoR/</guid>
       <description></description>
     </item>
     

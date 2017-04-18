@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Yang</title>
-    <link>https://yiluheihei.github.io/tags/git/index.xml</link>
+    <link>/tags/git/index.xml</link>
     <description>Recent content in Git on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>保持github中fork别人repo的更新</title>
-      <link>https://yiluheihei.github.io/post/github-fork-repo/</link>
+      <link>/post/github-fork-repo/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/github-fork-repo/</guid>
+      <guid>/post/github-fork-repo/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Clone your fork:
 &lt;code&gt;

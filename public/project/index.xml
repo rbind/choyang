@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Yang</title>
-    <link>https://yiluheihei.github.io/project/index.xml</link>
+    <link>/project/index.xml</link>
     <description>Recent content in Projects on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>shiny-RevEcoR</title>
-      <link>https://yiluheihei.github.io/project/shiny-RevEcoR/</link>
+      <link>/project/shiny-RevEcoR/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/project/shiny-RevEcoR/</guid>
+      <guid>/project/shiny-RevEcoR/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;shiny-RevEcoR&lt;/a&gt;
@@ -96,19 +96,19 @@ in any work that benefits from this code or application.&lt;/p&gt;
     
     <item>
       <title>Network fingerprint analysis in R</title>
-      <link>https://yiluheihei.github.io/project/NFP/</link>
+      <link>/project/NFP/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/project/NFP/</guid>
+      <guid>/project/NFP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reverse Ecology analysis in R</title>
-      <link>https://yiluheihei.github.io/project/RevEcoR/</link>
+      <link>/project/RevEcoR/</link>
       <pubDate>Sun, 27 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/project/RevEcoR/</guid>
+      <guid>/project/RevEcoR/</guid>
       <description></description>
     </item>
     

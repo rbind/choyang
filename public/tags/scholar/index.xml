@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scholar on Yang</title>
-    <link>https://yiluheihei.github.io/tags/scholar/index.xml</link>
+    <link>/tags/scholar/index.xml</link>
     <description>Recent content in Scholar on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>文献下载</title>
-      <link>https://yiluheihei.github.io/post/2016-11-15-paper-download/</link>
+      <link>/post/2016-11-15-paper-download/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://yiluheihei.github.io/post/2016-11-15-paper-download/</guid>
+      <guid>/post/2016-11-15-paper-download/</guid>
       <description>&lt;p&gt;快速的找到自己研究方向或者感兴趣的文献，常常事半功倍，能很大的提高我们的工作效率，对于毕业论文和科研论文的写作也非常有用。由于XXX原因&lt;code&gt;Google&lt;/code&gt;被和谐，&lt;code&gt;pubmed&lt;/code&gt;能搜索生物医学领域文献，并且不太稳定经常XXX。至于后起之“秀”度娘学术和微软必应学术搜索，不论在搜索数量、质量和功能与&lt;code&gt;Google&lt;/code&gt;学术都没有可比性，也许它们与&lt;code&gt;Google&lt;/code&gt;学术之间的差距要比中美学术之间的差异还要大。下面道一道我经常用的&lt;code&gt;Google&lt;/code&gt;学术搜索镜像和文献全文下载方法&lt;strong&gt;(许多非开源杂志主页不提供全文下载)&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;h1 id=&#34;目前俺常用的goolge学术镜像&#34;&gt;目前俺常用的Goolge学术镜像&lt;/h1&gt;
