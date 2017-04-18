@@ -1,4 +1,4 @@
-baseurl = "choyang.me"
+baseurl = "www.choyang.me"
 title = "Yang"
 copyright = "&copy; 2017 Yang Cao"
 theme = "hugo-academic"
