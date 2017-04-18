@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.19" />
+  <meta name="author" content="Yang Cao">
+  <meta name="description" content="Assistant Professor">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="https://yiluheihei.github.io/index.xml" type="application/rss+xml" title="Yang">
+  <link rel="feed" href="https://yiluheihei.github.io/index.xml" type="application/rss+xml" title="Yang">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://yiluheihei.github.io/post/2014-11-15-magrittr/">
+
+  
+
+  <title>magrittr管道操作 | Yang</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Yang</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">magrittr管道操作</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2014-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sat, Nov 15, 2014
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fyiluheihei.github.io%2fpost%2f2014-11-15-magrittr%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=magrittr%e7%ae%a1%e9%81%93%e6%93%8d%e4%bd%9c&amp;url=https%3a%2f%2fyiluheihei.github.io%2fpost%2f2014-11-15-magrittr%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fyiluheihei.github.io%2fpost%2f2014-11-15-magrittr%2f&amp;title=magrittr%e7%ae%a1%e9%81%93%e6%93%8d%e4%bd%9c"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fyiluheihei.github.io%2fpost%2f2014-11-15-magrittr%2f&amp;title=magrittr%e7%ae%a1%e9%81%93%e6%93%8d%e4%bd%9c"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=magrittr%e7%ae%a1%e9%81%93%e6%93%8d%e4%bd%9c&amp;body=https%3a%2f%2fyiluheihei.github.io%2fpost%2f2014-11-15-magrittr%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>很多情况下，管道操作符可以很大程度的简化代码，并且使其更加直观、易读、易懂，下面就简单说明了useR2014上颇受R用户喜爱的magrittr包。</p>
+
+<p>the pipe operator is one (if not THE) most important innovation introduced, this year, to the R ecosystem</p>
+
+<h3 id="intro">Intro</h3>
+
+<p>类似于linux中的
+<code>|</code>，可以把前一个表达式（函数）的输出（而不用定义中间变量来表示）
+直接传递给后面的函数或者表达式，省去不必要中间变量或者括号,代码更加清晰易读。
+<a href="http://cran.r-project.org/web/packages/magrittr" target="_blank"><strong>magrittr</strong></a>包应运而生，它提供
+了一系列的管道操作符，如<code>%&gt;%</code>,<code>x %&gt;% f</code>等价于<code>f(x)</code>。
+2014年useR会议介绍magrittr之后，有人评价：<a href="http://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/" target="_blank">the pipe operator is one (if
+not THE) most important innovation introduced, this year, to the R
+ecosystem</a>.</p>
+
+<h3 id="basics">Basics</h3>
+
+<h4 id="produce-values">Produce values</h4>
+
+<p>通过使用管道操作符，可以从语义上改变我们写代码的方式，使代码更加简洁易读,管道操作
+符的功能为</p>
+
+<ul>
+<li><p>默认情况下，左边的结果默认作为右边函数的第一个参数，可省略，如下面的<code>transform</code>
+<code>as.Data</code>和<code>format</code>.</p></li>
+
+<li><p><code>%&gt;%</code>可以以嵌套的方式使用，例如它可以作用于表达式来计算函数的参数，如
+<code>Date = paste(1973, Month, Day, sep = &quot;-&quot;) %&gt;% as.Date</code></p></li>
+
+<li><p>如果不是传递作为第一个参数用<code>.</code>表示，如<code>aggregate(. ~ Date %&gt;% format(&quot;%W&quot;), ., mean)</code></p></li>
+
+<li><p>公式中的<code>.</code>并不影响管道操作符，如<code>aggregate(. ~ Date %&gt;% format(&quot;%W&quot;), ., mean)</code></p></li>
+
+<li><p>如果传递的右边函数只需要一个参数，那么可以省略参数和括号，<code>head</code>,当然<code>head(.)</code>和<code>head()</code>也可以</p></li>
+
+<li><p>管道操作符左边的函数（包含从上一步传递过来的<code>.</code>)为一元函数如<code>aggregate(. ~ Date %&gt;% format(&quot;%W&quot;), ., mean)</code></p>
+
+<p>library(magrittr)
+weekly &lt;-
+  airquality %&gt;%
+  transform(Date = paste(1973, Month, Day, sep = &ldquo;-&rdquo;) %&gt;% as.Date) %&gt;%
+  aggregate(. ~ Date %&gt;% format(&ldquo;%W&rdquo;), ., mean) %&gt;%
+  head</p></li>
+</ul>
+
+<p>上面代码包括三个部分，输入(airquality)，一系列的数据转换(<code>transform</code>,
+<code>aggregate</code>)和输出(weekly)，类似函数的定义,所以它可以看成是一个函数的
+定义和调用的过程，容易读写和理解。</p>
+
+<p>当然你也可以不用<code>%&gt;%</code></p>
+
+<pre><code>weekly &lt;- aggregate(. ~ format(Date,&quot;%W&quot;),
+  transform(airquality, Date = as.Date(paste(1973, Month, Day, sep = &quot;-&quot;))),
+  mean)  
+</code></pre>
+
+<p>显然这种写法可读性较差，难于理解，含有多对圆括号，更不利于别人的阅读；或者使用
+中间变量来避免圆括号的使用，也不如利用管道操作符容易理解。此外，如果想在代码中间
+添加新的计算，使用管道操作显然特别方便。</p>
+
+<h4 id="produce-fucntions">Produce fucntions</h4>
+
+<p>此外，利用<code>%&gt;%</code>也可以构造简单的函数，与其基本用法其实是一样的（仅仅是基本用法定义函数的时候
+即时调用返回结果），在构造函数的时候没有输入变量，用<code>.</code>替代输入变量即成功构造了一个函数</p>
+
+<pre><code>mae &lt;- . %&gt;% abs %&gt;% mean(na.rm = TRUE)
+mae(rnorm(10))
+
+## [1] 0.949347
+
+##等价于
+mae &lt;- function(x) {
+  mean(abs(x), na.rm = TRUE)
+}
+</code></pre>
+
+<h4 id="匿名函数和lambda表达式">匿名函数和lambda表达式</h4>
+
+<pre><code># 标准的函数定义
+mtcars %&gt;%
+(function(x) {
+  if (nrow(x) &gt; 2) 
+    rbind(head(x, 1), tail(x, 1))
+  else x
+})
+
+##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Mazda RX4  21.0   6  160 110 3.90 2.62 16.46  0  1    4    4
+## Volvo 142E 21.4   4  121 109 4.11 2.78 18.60  1  1    4    2
+
+# lambda表达式，一元函数的参数用`.`表示
+
+mtcars %&gt;%
+{ 
+  if (nrow(.) &gt; 0)
+    rbind(head(., 1), tail(., 1))
+  else .
+}
+
+##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Mazda RX4  21.0   6  160 110 3.90 2.62 16.46  0  1    4    4
+## Volvo 142E 21.4   4  121 109 4.11 2.78 18.60  1  1    4    2
+</code></pre>
+
+<p>右边的匿名函数用括号包装起来，括号在管道操作符产生作用前优先计算右边括起来的表达式或者函数,
+这时候默认情况下第一个参数应该为省略的<code>.</code>就不起作用了。</p>
+
+<pre><code>1:5 %&gt;% 
+  {paste(letters[.])}
+
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;
+</code></pre>
+
+<p>此外匿名函数最有用的就是可以用于<code>*pply</code>系列函数</p>
+
+<pre><code>list(1,2,3) %&gt;%
+  sapply(. %&gt;% length)
+
+## [1] 1 1 1
+</code></pre>
+
+<h4 id="嵌套的函数调用">嵌套的函数调用</h4>
+
+<p><code>.</code>在管道操作符的右边可以嵌套调用</p>
+
+<pre><code>1:5 %&gt;% 
+  paste(letters[.])
+
+## [1] &quot;1 a&quot; &quot;2 b&quot; &quot;3 c&quot; &quot;4 d&quot; &quot;5 e&quot;
+
+# 等价于
+1:5 %&gt;% 
+  paste(.,letters[.])
+
+## [1] &quot;1 a&quot; &quot;2 b&quot; &quot;3 c&quot; &quot;4 d&quot; &quot;5 e&quot;
+</code></pre>
+
+<h3 id="advances">Advances</h3>
+
+<p><strong>magrittr</strong>提供了三个其他的，辅助的管道操作符，在某些特定情况下，它们使我们更加
+方便的实现各种操作</p>
+
+<ul>
+<li><code>%T&gt;%</code>和<code>%&gt;%</code>类似，只是它返回管道操作符左侧的值，通常用于流程中产生其他
+副作用的步骤(临时的，不改变左侧的结果继续传递给下一个步骤），如(print,
+plot, logging, etc)</li>
+</ul>
+
+<!-- -->
+
+<pre><code>rnorm(200) %&gt;%
+matrix(ncol = 2) %T&gt;%
+plot %&gt;% # plot usually does not return anything. 
+colSums
+
+
+## [1] -9.25270 -7.98688
+
+## 其实是下面代码的简写形式
+
+rnorm(200) %&gt;%
+matrix(ncol = 2) %&gt;%
+{plot(.);.} %&gt;% # plot usually does not return anything. 
+colSums
+
+
+## [1] 11.197969  7.683612
+</code></pre>
+
+<ul>
+<li><p><code>%$%</code>使左侧数据中变量的名称加载到流程的环境中方便我们直接提取，显然他等价于
+函数<code>with</code></p>
+
+<p>mtcars %$%
+  plot(mpg, wt)</p></li>
+
+<li><p><code>%&lt;&gt;% 必须是流程中的第一个管道操作符，最后的计算结果赋值给其左边变量，它主要作用是 把形如</code>foo
+&lt;- foo %&gt;% bar %&gt;% baz<code>的计算流程简化为</code>foo %&lt;&gt;% bar %&gt;% baz`</p></li>
+</ul>
+
+<p>此外为了使R中的基本操作符与管道操作更友好的结合起来，为这些操作符提供了别名：</p>
+
+<pre><code>extract  `[`
+extract2    `[[`
+use_series  `$`
+add `+`
+subtract    `-`
+multiply_by `*`
+raise_to_power  `^`
+multiply_by_matrix  `%*%`
+divide_by   `/`
+divide_by_int   `%/%`
+mod `%%`
+and `&amp;`
+or  `|`
+equals  `==`
+is_greater_than `&gt;`
+is_weakly_greater_than  `&gt;=`
+is_less_than    `&lt;`
+is_weakly_less_than `&lt;=`
+not `!`
+set_colnames    `colnames&lt;-`
+set_rownames    `rownames&lt;-`
+set_names   `names&lt;-`
+
+rnorm(100) %&gt;% `*`(5) %&gt;% `+`(5) %&gt;% 
+{
+  cat(&quot;Mean:&quot;, mean(.), &quot;Variance:&quot;, var(.),  &quot;\n&quot;)
+  head(.)
+}
+
+## Mean: 4.785676 Variance: 23.8642
+
+## [1]  7.806526 -4.416972 -1.273823  2.976003  7.568857 12.097451
+
+# 可以写为
+rnorm(1000)    %&gt;%
+multiply_by(5) %&gt;%
+add(5)         %&gt;%
+{ 
+   cat(&quot;Mean:&quot;, mean(.), 
+       &quot;Variance:&quot;, var(.), &quot;\n&quot;)
+   head(.)
+}
+
+## Mean: 4.982161 Variance: 26.18578
+
+## [1]  0.06189078  8.67467189  6.37717763  6.09563550 -0.65720166  4.04583594
+</code></pre>
+
+<h3 id="ref">Ref</h3>
+
+<ul>
+<li><p><a href="http://blog.revolutionanalytics.com/2014/07/magrittr-simplifying-r-code-with-pipes.html" target="_blank">magrittr: Simplifying R code with pipes</a></p></li>
+
+<li><p><a href="http://blog.rstudio.org/2014/12/01/magrittr-1-5/" target="_blank">magrittr 1.5</a></p></li>
+
+<li><p><a href="http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html" target="_blank">magrittr vignette</a></p></li>
+</ul>
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://yiluheihei.github.io/post/2014-11-12-r-data-structures/"><span
+      aria-hidden="true">&larr;</span> R基础数据结构</a></li>
+    
+
+    
+    <li class="next"><a href="https://yiluheihei.github.io/post/2016-11-15-paper-download/">文献下载 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Yang Cao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

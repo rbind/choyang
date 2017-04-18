@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on Yang</title>
+    <link>https://yiluheihei.github.io/tags/atom/index.xml</link>
+    <description>Recent content in Atom on Yang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Yang Cao</copyright>
+    <atom:link href="/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>atom简介</title>
+      <link>https://yiluheihei.github.io/post/atom-intro/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/post/atom-intro/</guid>
+      <description>&lt;p&gt;atom是github团队开发的一款编辑器，号称21世纪的编辑器。它吸收了很多目前最流行的编辑器sublime text的功能，如优美的界面、第三包包管理与安装，并且是基于web技术（chromium的框架）开发的一个开源编辑器，可扩展性强，配置简单。&lt;/p&gt;
+
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/atom/atom/releases/tag/v1.16.0&#34; target=&#34;_blank&#34;&gt;atom的release页面&lt;/a&gt;下载系统相应的安装文件，如mac下为&lt;code&gt;atom-mac.zip&lt;/code&gt;，解压拖动&lt;code&gt;atom.app&lt;/code&gt;至应用程序文件夹，默认安装了&lt;code&gt;atom&lt;/code&gt;终端命令和&lt;code&gt;apm&lt;/code&gt;安装扩展包。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令面板-command-platte&#34;&gt;命令面板 - command platte&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;cmd + shift + p&lt;/code&gt;调出命令面板，可以搜索各种命令并执行（而不用手动查找）；此外，还可以查看命令是否有对应的快捷键。&lt;/p&gt;
+
+&lt;h3 id=&#34;偏好设置-preferences&#34;&gt;偏好设置 - preferences&lt;/h3&gt;
+
+&lt;p&gt;偏好设置面板，包括主题，字体，扩展包的安装等。三种打开方式：
+  - &lt;code&gt;atom &amp;gt; Preferences&lt;/code&gt;
+  - &lt;code&gt;cmd+,&lt;/code&gt;
+  - 命令面板中，&lt;code&gt;settings-view:open&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;主题-theme&#34;&gt;主题 - theme&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;UI theme: UI元素样式，如标签和树状图；&lt;/li&gt;
+&lt;li&gt;syntax theme: 语法主题：代码高亮&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;空格和换行-whitespace&#34;&gt;空格和换行 - whitespace&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;soft tabs&lt;/code&gt;，选中表示用空格代替&lt;code&gt;tab&lt;/code&gt;，&lt;code&gt;tab length&lt;/code&gt;则指定空格的个数；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;soft wrap&lt;/code&gt;, 行内字符过多时自动换行， &lt;code&gt;Soft Wrap At Preferred Line Length&lt;/code&gt;，则表示每行最多80字符。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;文件操作&#34;&gt;文件操作&lt;/h3&gt;
+
+&lt;h4 id=&#34;打开文件&#34;&gt;打开文件&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;file &amp;gt; open&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cmd + o&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;命令行下：&lt;code&gt;atom [files]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;编辑和保存&#34;&gt;编辑和保存&lt;/h4&gt;
+
+&lt;p&gt;鼠标点击和修改是最简单的编辑操作，如果要高端地使用快捷键那么需要下载相应的扩展包，用于模仿其他文本编辑模式。&lt;/p&gt;
+
+&lt;p&gt;保存文件:&lt;code&gt;file &amp;gt; save&lt;/code&gt;, &lt;code&gt;cmd + s&lt;/code&gt;；另存为&lt;code&gt;file &amp;gt; save as&lt;/code&gt;, &lt;code&gt;cmd + shift + s&lt;/code&gt;; 保存所有文件&lt;code&gt;alt + cmd +s&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;打开文件夹&#34;&gt;打开文件夹&lt;/h4&gt;
+
+&lt;p&gt;ATOM不限于编辑单个文件，而是旨在对项目中多个文件操作。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cmd + shift + o&lt;/code&gt;添加文件夹到项目。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;atom dir1 dir2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;打开文件夹后，左侧会出现文件目录树，方便对文件操作，包括打开，删除，重命名，新建文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cmd + \&lt;/code&gt;, 命令面板中&lt;code&gt;tree-view:toggle&lt;/code&gt;打开或者关闭目录树。&lt;code&gt;ctrl + 0&lt;/code&gt;会调整光标至目录树，&lt;code&gt;a&lt;/code&gt;,&lt;code&gt;M&lt;/code&gt;，&lt;code&gt;delete&lt;/code&gt;用于添加、修改和删除文件或者文件夹。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ATOM packages：目录树是不是直接植入ATOM，而是通过package实现，这种与ATOM捆绑的包称为核心包（core packages），区别于另外一种第三方的包（community packages）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;打开项目中文件&#34;&gt;打开项目中文件&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cmd + t&lt;/code&gt;或&lt;code&gt;cmd + p&lt;/code&gt;在项目中模糊查找文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cmd + b&lt;/code&gt;在打开的文件中查找&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cmd + shift + b&lt;/code&gt;, 搜索上次git提交以来修改的文件或新文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;模糊匹配采用&lt;code&gt;core.ignoreNames,fuzzy-finder.ignoreNames&lt;/code&gt;,&lt;code&gt;core.excludeVCSIgnorePaths&lt;/code&gt;,配置设置来过滤掉不满足搜索条件的文件或者文件夹。所以如果项目中文件夹过多，我们可以自定义设置搜索路径或者&lt;code&gt;.gitignore&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

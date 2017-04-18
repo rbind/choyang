@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Yang</title>
+    <link>https://yiluheihei.github.io/tags/r/index.xml</link>
+    <description>Recent content in R on Yang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Yang Cao</copyright>
+    <atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>shiny-RevEcoR</title>
+      <link>https://yiluheihei.github.io/project/shiny-RevEcoR/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/project/shiny-RevEcoR/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;shiny-RevEcoR&lt;/a&gt;
+is an interactive web application that provides
+a flexible graphical user interface (GUI) to the Reverse Ecology analysis package for R, called &lt;a href=&#34;https://github.com/yiluheihei/RevEcoR/&#34; target=&#34;_blank&#34;&gt;RevEcoR&lt;/a&gt; hosted on &lt;a href=&#34;https://cran.r-project.org/web/packages/RevEcoR/index.html&#34; target=&#34;_blank&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For details about using the &lt;strong&gt;RevEcoR&lt;/strong&gt; package directly,
+see the &lt;a href=&#34;https://github.com/yiluheihei/RevEcoR/vignettes/RevEcoR.Rmd&#34; target=&#34;_blank&#34;&gt;package vignette&lt;/a&gt; hosted on &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt; or on the &lt;a href=&#34;https://cran.r-project.org/web/packages/RevEcoR/index.html&#34; target=&#34;_blank&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;RevEcoR is intended for the following purposes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Rapid, reproducible, interactive exploration of Reverse Ecology analysis&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Genome scale metabolic network reconstruction start from the KEGG database annotated genome (microbial genomes or metagenomes are supported.)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Seed set detection as well as the exogenous compounds acquired from the environment.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prediction of microbial ecology interactions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Introduction to some of the functionality in the &lt;a href=&#34;https://github.com/yiluheihei/RevEcoR/&#34; target=&#34;_blank&#34;&gt;RevEcoR&lt;/a&gt; package&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Analysis more easy and convenient, even if you still be in dark about R.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An accessible tool for learning the microbial community and their ecology environment.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This RevEcoR shiny app help us to learn the microbial community begin with  KEGG Orthology (KO) annotated genomes&amp;rsquo; functional data uploaded, then we can reconstruct the metabolic network and identify the exogenous required compounds named seed set of a given species. Finally, species interactions is calculated according by comparing the seeds among various species.&lt;/p&gt;
+
+&lt;h1 id=&#34;availability&#34;&gt;Availability&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;shiny-RevEcoR&lt;/strong&gt; is open source and runs through R and a web browser. It is available at
+&lt;a href=&#34;https://yiluheihei.shinyapps.io/shiny-RevEcoR/&#34; target=&#34;_blank&#34;&gt;https://yiluheihei.shinyapps.io/shiny-RevEcoR/&lt;/a&gt; or can be installed locally and the source code accessed from
+&lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;https://github.com/yiluheihei/shiny-RevEcoR&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;launch-install-shiny-revecor&#34;&gt;Launch/Install shiny-RevEcoR&lt;/h1&gt;
+
+&lt;p&gt;For running the &lt;strong&gt;shiny-RevEcoR&lt;/strong&gt; back end with R, you must have the &lt;a href=&#34;http://cran.r-project.org/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt; installed on your system. It requires R 3.1.1 or later.&lt;/p&gt;
+
+&lt;p&gt;Once required version of R is installed on your system, simply launching &lt;strong&gt;shiny-RevEcoR&lt;/strong&gt; will also install dependencies that are missing on your system. Apparently, this requires an internet connection and installation permission on your system.&lt;/p&gt;
+
+&lt;p&gt;The following R code will launch RevEcoR on most systems.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (!require(shiny))
+  install.packages(&amp;quot;shiny&amp;quot;) 
+shiny::runGitHub(&amp;quot;yiluheihei/shiny-RevEcoR&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See the help page for more details.&lt;/p&gt;
+
+&lt;h2 id=&#34;citing&#34;&gt;Citing&lt;/h2&gt;
+
+&lt;p&gt;RevEcoR shiny app is a free and open source software, licensed under GPL.
+All we require is that you cite/attribute the following
+in any work that benefits from this code or application.&lt;/p&gt;
+
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;Source code of this app is hosted on &lt;a href=&#34;https://github.com/yiluheihei/shiny-RevEcoR&#34; target=&#34;_blank&#34;&gt;my github&lt;/a&gt;. If you&amp;rsquo;d like to get involved, please fork this repository and submit a pull request with your proposed changes. We&amp;rsquo;re happy to chat if you have any questions about the source code.&lt;/p&gt;
+
+&lt;h2 id=&#34;news&#34;&gt;News&lt;/h2&gt;
+
+&lt;p&gt;version 0.1.1 2016.3.25&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rewrite the most source code,  making code more simple and readable.  Take some new functions of latest &lt;strong&gt;shiny package&lt;/strong&gt;, such as  validate error message while app goes wrong, &lt;code&gt;navbarpage&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;All the intermediate results can be download and saved on your system by clicking the corresponding download buttons.&lt;/li&gt;
+&lt;li&gt;Embed Bootstrap themes with &lt;strong&gt;shinythemes&lt;/strong&gt; package.&lt;/li&gt;
+&lt;li&gt;Add p value calculation of interactons according to the &lt;strong&gt;RevEcoR&lt;/strong&gt; package to determine its significance, specifically speed the interactions calcualtion time.&lt;/li&gt;
+&lt;li&gt;More detailed tutorials.&lt;/li&gt;
+&lt;li&gt;Remove BSI score.&lt;/li&gt;
+&lt;li&gt;Attach a video for how to use &lt;strong&gt;shiny-RevEcoR&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Network fingerprint analysis in R</title>
+      <link>https://yiluheihei.github.io/project/NFP/</link>
+      <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/project/NFP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse Ecology analysis in R</title>
+      <link>https://yiluheihei.github.io/project/RevEcoR/</link>
+      <pubDate>Sun, 27 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/project/RevEcoR/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magrittr管道操作</title>
+      <link>https://yiluheihei.github.io/post/2014-11-15-magrittr/</link>
+      <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/post/2014-11-15-magrittr/</guid>
+      <description>&lt;p&gt;很多情况下，管道操作符可以很大程度的简化代码，并且使其更加直观、易读、易懂，下面就简单说明了useR2014上颇受R用户喜爱的magrittr包。&lt;/p&gt;
+
+&lt;p&gt;the pipe operator is one (if not THE) most important innovation introduced, this year, to the R ecosystem&lt;/p&gt;
+
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;类似于linux中的
+&lt;code&gt;|&lt;/code&gt;，可以把前一个表达式（函数）的输出（而不用定义中间变量来表示）
+直接传递给后面的函数或者表达式，省去不必要中间变量或者括号,代码更加清晰易读。
+&lt;a href=&#34;http://cran.r-project.org/web/packages/magrittr&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;magrittr&lt;/strong&gt;&lt;/a&gt;包应运而生，它提供
+了一系列的管道操作符，如&lt;code&gt;%&amp;gt;%&lt;/code&gt;,&lt;code&gt;x %&amp;gt;% f&lt;/code&gt;等价于&lt;code&gt;f(x)&lt;/code&gt;。
+2014年useR会议介绍magrittr之后，有人评价：&lt;a href=&#34;http://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/&#34; target=&#34;_blank&#34;&gt;the pipe operator is one (if
+not THE) most important innovation introduced, this year, to the R
+ecosystem&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;basics&#34;&gt;Basics&lt;/h3&gt;
+
+&lt;h4 id=&#34;produce-values&#34;&gt;Produce values&lt;/h4&gt;
+
+&lt;p&gt;通过使用管道操作符，可以从语义上改变我们写代码的方式，使代码更加简洁易读,管道操作
+符的功能为&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;默认情况下，左边的结果默认作为右边函数的第一个参数，可省略，如下面的&lt;code&gt;transform&lt;/code&gt;
+&lt;code&gt;as.Data&lt;/code&gt;和&lt;code&gt;format&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;%&amp;gt;%&lt;/code&gt;可以以嵌套的方式使用，例如它可以作用于表达式来计算函数的参数，如
+&lt;code&gt;Date = paste(1973, Month, Day, sep = &amp;quot;-&amp;quot;) %&amp;gt;% as.Date&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果不是传递作为第一个参数用&lt;code&gt;.&lt;/code&gt;表示，如&lt;code&gt;aggregate(. ~ Date %&amp;gt;% format(&amp;quot;%W&amp;quot;), ., mean)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;公式中的&lt;code&gt;.&lt;/code&gt;并不影响管道操作符，如&lt;code&gt;aggregate(. ~ Date %&amp;gt;% format(&amp;quot;%W&amp;quot;), ., mean)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果传递的右边函数只需要一个参数，那么可以省略参数和括号，&lt;code&gt;head&lt;/code&gt;,当然&lt;code&gt;head(.)&lt;/code&gt;和&lt;code&gt;head()&lt;/code&gt;也可以&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;管道操作符左边的函数（包含从上一步传递过来的&lt;code&gt;.&lt;/code&gt;)为一元函数如&lt;code&gt;aggregate(. ~ Date %&amp;gt;% format(&amp;quot;%W&amp;quot;), ., mean)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;library(magrittr)
+weekly &amp;lt;-
+  airquality %&amp;gt;%
+  transform(Date = paste(1973, Month, Day, sep = &amp;ldquo;-&amp;rdquo;) %&amp;gt;% as.Date) %&amp;gt;%
+  aggregate(. ~ Date %&amp;gt;% format(&amp;ldquo;%W&amp;rdquo;), ., mean) %&amp;gt;%
+  head&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上面代码包括三个部分，输入(airquality)，一系列的数据转换(&lt;code&gt;transform&lt;/code&gt;,
+&lt;code&gt;aggregate&lt;/code&gt;)和输出(weekly)，类似函数的定义,所以它可以看成是一个函数的
+定义和调用的过程，容易读写和理解。&lt;/p&gt;
+
+&lt;p&gt;当然你也可以不用&lt;code&gt;%&amp;gt;%&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;weekly &amp;lt;- aggregate(. ~ format(Date,&amp;quot;%W&amp;quot;),
+  transform(airquality, Date = as.Date(paste(1973, Month, Day, sep = &amp;quot;-&amp;quot;))),
+  mean)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显然这种写法可读性较差，难于理解，含有多对圆括号，更不利于别人的阅读；或者使用
+中间变量来避免圆括号的使用，也不如利用管道操作符容易理解。此外，如果想在代码中间
+添加新的计算，使用管道操作显然特别方便。&lt;/p&gt;
+
+&lt;h4 id=&#34;produce-fucntions&#34;&gt;Produce fucntions&lt;/h4&gt;
+
+&lt;p&gt;此外，利用&lt;code&gt;%&amp;gt;%&lt;/code&gt;也可以构造简单的函数，与其基本用法其实是一样的（仅仅是基本用法定义函数的时候
+即时调用返回结果），在构造函数的时候没有输入变量，用&lt;code&gt;.&lt;/code&gt;替代输入变量即成功构造了一个函数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mae &amp;lt;- . %&amp;gt;% abs %&amp;gt;% mean(na.rm = TRUE)
+mae(rnorm(10))
+
+## [1] 0.949347
+
+##等价于
+mae &amp;lt;- function(x) {
+  mean(abs(x), na.rm = TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;匿名函数和lambda表达式&#34;&gt;匿名函数和lambda表达式&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;# 标准的函数定义
+mtcars %&amp;gt;%
+(function(x) {
+  if (nrow(x) &amp;gt; 2) 
+    rbind(head(x, 1), tail(x, 1))
+  else x
+})
+
+##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Mazda RX4  21.0   6  160 110 3.90 2.62 16.46  0  1    4    4
+## Volvo 142E 21.4   4  121 109 4.11 2.78 18.60  1  1    4    2
+
+# lambda表达式，一元函数的参数用`.`表示
+
+mtcars %&amp;gt;%
+{ 
+  if (nrow(.) &amp;gt; 0)
+    rbind(head(., 1), tail(., 1))
+  else .
+}
+
+##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Mazda RX4  21.0   6  160 110 3.90 2.62 16.46  0  1    4    4
+## Volvo 142E 21.4   4  121 109 4.11 2.78 18.60  1  1    4    2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;右边的匿名函数用括号包装起来，括号在管道操作符产生作用前优先计算右边括起来的表达式或者函数,
+这时候默认情况下第一个参数应该为省略的&lt;code&gt;.&lt;/code&gt;就不起作用了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1:5 %&amp;gt;% 
+  {paste(letters[.])}
+
+## [1] &amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot; &amp;quot;e&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此外匿名函数最有用的就是可以用于&lt;code&gt;*pply&lt;/code&gt;系列函数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;list(1,2,3) %&amp;gt;%
+  sapply(. %&amp;gt;% length)
+
+## [1] 1 1 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;嵌套的函数调用&#34;&gt;嵌套的函数调用&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;.&lt;/code&gt;在管道操作符的右边可以嵌套调用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1:5 %&amp;gt;% 
+  paste(letters[.])
+
+## [1] &amp;quot;1 a&amp;quot; &amp;quot;2 b&amp;quot; &amp;quot;3 c&amp;quot; &amp;quot;4 d&amp;quot; &amp;quot;5 e&amp;quot;
+
+# 等价于
+1:5 %&amp;gt;% 
+  paste(.,letters[.])
+
+## [1] &amp;quot;1 a&amp;quot; &amp;quot;2 b&amp;quot; &amp;quot;3 c&amp;quot; &amp;quot;4 d&amp;quot; &amp;quot;5 e&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;advances&#34;&gt;Advances&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;magrittr&lt;/strong&gt;提供了三个其他的，辅助的管道操作符，在某些特定情况下，它们使我们更加
+方便的实现各种操作&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;%T&amp;gt;%&lt;/code&gt;和&lt;code&gt;%&amp;gt;%&lt;/code&gt;类似，只是它返回管道操作符左侧的值，通常用于流程中产生其他
+副作用的步骤(临时的，不改变左侧的结果继续传递给下一个步骤），如(print,
+plot, logging, etc)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- --&gt;
+
+&lt;pre&gt;&lt;code&gt;rnorm(200) %&amp;gt;%
+matrix(ncol = 2) %T&amp;gt;%
+plot %&amp;gt;% # plot usually does not return anything. 
+colSums
+
+
+## [1] -9.25270 -7.98688
+
+## 其实是下面代码的简写形式
+
+rnorm(200) %&amp;gt;%
+matrix(ncol = 2) %&amp;gt;%
+{plot(.);.} %&amp;gt;% # plot usually does not return anything. 
+colSums
+
+
+## [1] 11.197969  7.683612
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;%$%&lt;/code&gt;使左侧数据中变量的名称加载到流程的环境中方便我们直接提取，显然他等价于
+函数&lt;code&gt;with&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;mtcars %$%
+  plot(mpg, wt)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;%&amp;lt;&amp;gt;% 必须是流程中的第一个管道操作符，最后的计算结果赋值给其左边变量，它主要作用是 把形如&lt;/code&gt;foo
+&amp;lt;- foo %&amp;gt;% bar %&amp;gt;% baz&lt;code&gt;的计算流程简化为&lt;/code&gt;foo %&amp;lt;&amp;gt;% bar %&amp;gt;% baz`&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;此外为了使R中的基本操作符与管道操作更友好的结合起来，为这些操作符提供了别名：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;extract  `[`
+extract2    `[[`
+use_series  `$`
+add `+`
+subtract    `-`
+multiply_by `*`
+raise_to_power  `^`
+multiply_by_matrix  `%*%`
+divide_by   `/`
+divide_by_int   `%/%`
+mod `%%`
+and `&amp;amp;`
+or  `|`
+equals  `==`
+is_greater_than `&amp;gt;`
+is_weakly_greater_than  `&amp;gt;=`
+is_less_than    `&amp;lt;`
+is_weakly_less_than `&amp;lt;=`
+not `!`
+set_colnames    `colnames&amp;lt;-`
+set_rownames    `rownames&amp;lt;-`
+set_names   `names&amp;lt;-`
+
+rnorm(100) %&amp;gt;% `*`(5) %&amp;gt;% `+`(5) %&amp;gt;% 
+{
+  cat(&amp;quot;Mean:&amp;quot;, mean(.), &amp;quot;Variance:&amp;quot;, var(.),  &amp;quot;\n&amp;quot;)
+  head(.)
+}
+
+## Mean: 4.785676 Variance: 23.8642
+
+## [1]  7.806526 -4.416972 -1.273823  2.976003  7.568857 12.097451
+
+# 可以写为
+rnorm(1000)    %&amp;gt;%
+multiply_by(5) %&amp;gt;%
+add(5)         %&amp;gt;%
+{ 
+   cat(&amp;quot;Mean:&amp;quot;, mean(.), 
+       &amp;quot;Variance:&amp;quot;, var(.), &amp;quot;\n&amp;quot;)
+   head(.)
+}
+
+## Mean: 4.982161 Variance: 26.18578
+
+## [1]  0.06189078  8.67467189  6.37717763  6.09563550 -0.65720166  4.04583594
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ref&#34;&gt;Ref&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://blog.revolutionanalytics.com/2014/07/magrittr-simplifying-r-code-with-pipes.html&#34; target=&#34;_blank&#34;&gt;magrittr: Simplifying R code with pipes&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://blog.rstudio.org/2014/12/01/magrittr-1-5/&#34; target=&#34;_blank&#34;&gt;magrittr 1.5&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html&#34; target=&#34;_blank&#34;&gt;magrittr vignette&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>R基础数据结构</title>
+      <link>https://yiluheihei.github.io/post/2014-11-12-r-data-structures/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/post/2014-11-12-r-data-structures/</guid>
+      <description>&lt;p&gt;R中最基础，也是最重要的数据结构，可以根据其维度和元素的性质来划分：向量（原子向量和列表），矩阵、数组和数据框。&lt;/p&gt;
+
+&lt;p&gt;基本的数据结构根据维度和元素的性质(所有元素的类型是否相同)的可分为&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;同质&lt;/th&gt;
+&lt;th&gt;异质&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1d&lt;/td&gt;
+&lt;td&gt;Atomic vector&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2d&lt;/td&gt;
+&lt;td&gt;Matrix&lt;/td&gt;
+&lt;td&gt;Data frame&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;nd&lt;/td&gt;
+&lt;td&gt;Array&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;其他复杂的类型的数据都是基于以上类型构建的(OOP)，R中标量表示为长度为1的向量&lt;/p&gt;
+
+&lt;p&gt;了解一个对象的数据结构的构成最好的方法是利用函数&lt;code&gt;str&lt;/code&gt;(structue的简写),显示对象的
+内部结构&lt;/p&gt;
+
+&lt;h4 id=&#34;vector&#34;&gt;Vector&lt;/h4&gt;
+
+&lt;p&gt;最基本的数据类型,表现为两种形式：原子向量(atomic
+vector)和列表(list),区别就在于
+元素的类型是否都一样，向量的三个基本特征为:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;类型: &lt;code&gt;typeof&lt;/code&gt;,其元素的类型&lt;/li&gt;
+&lt;li&gt;长度: &lt;code&gt;length&lt;/code&gt;,元素个数&lt;/li&gt;
+&lt;li&gt;属性： &lt;code&gt;attributes&lt;/code&gt;,额外的任意的元数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;is.vector&lt;/code&gt;不是用来检测对象是否为向量,仅当向量除names属性外不含其他属性的时候
+才会返回&lt;code&gt;TRUE&lt;/code&gt;,&lt;code&gt;is.atomic(x) || is.list(x)&lt;/code&gt;用于判断对象是否为向量&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;此外,NULL作为保留字，代表了null对象，常用与表达式或者函数（未定义返回值)的返回值，
+它同样是一个原子向量&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;is.atomic(NULL)
+
+## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;atomic-vector&#34;&gt;atomic vector&lt;/h5&gt;
+
+&lt;p&gt;常见的原子向量有四种:logical,integer,double(常称为numeric),character,此外，使用较少的
+有complex和raw两种&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NA是一个长度为1的逻辑向量,不同类型的向量中NA的类型也不同 NA_real_ (a
+double vector), NA_integer_ and NA_character_,
+在R都属于保留字(reserved words)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;类型&#34;&gt;类型&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;typeof&lt;/code&gt;用来显示对象的类型，&lt;code&gt;is.*&lt;/code&gt;可用来判定对象是否是某一特定类型（&lt;code&gt;is.character&lt;/code&gt;,
+&lt;code&gt;is.double&lt;/code&gt;, &lt;code&gt;is.integer&lt;/code&gt;, &lt;code&gt;is.logical&lt;/code&gt;,&lt;code&gt;is.atomic&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;需要注意的是&lt;code&gt;is.numeric&lt;/code&gt;当数据位integer或double时都返回TRUE&lt;/p&gt;
+
+&lt;h5 id=&#34;原子向量元素的强制转化&#34;&gt;原子向量元素的强制转化&lt;/h5&gt;
+
+&lt;p&gt;每一个原子向量中元素的类型必须相同，当把不同类型的数据构成一个向量时，它们会被转化为最
+灵活的类型，由低到高的顺序为logical, integer, double, and character&lt;/p&gt;
+
+&lt;h4 id=&#34;list&#34;&gt;List&lt;/h4&gt;
+
+&lt;p&gt;相比于&lt;code&gt;c&lt;/code&gt;构建向量,list用&lt;code&gt;list&lt;/code&gt;创建&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- list(1:3, &amp;quot;a&amp;quot;, c(TRUE, FALSE, TRUE), c(2.3, 5.9))
+str(x)
+
+## List of 4
+##  $ : int [1:3] 1 2 3
+##  $ : chr &amp;quot;a&amp;quot;
+##  $ : logi [1:3] TRUE FALSE TRUE
+##  $ : num [1:2] 2.3 5.9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;list某些情况也可以称作&lt;strong&gt;recursive&lt;/strong&gt;（递归）向量，因为list的元素也可以是list&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- list(list(list(list())))
+str(x)
+
+## List of 1
+##  $ :List of 1
+##   ..$ :List of 1
+##   .. ..$ : list()
+
+is.recursive(x)
+
+## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lsquo;c`可以把多个list合并为一个&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- list(list(1, 2), c(3, 4))
+y &amp;lt;- c(list(1, 2), c(3, 4))
+x
+
+## [[1]]
+## [[1]][[1]]
+## [1] 1
+## 
+## [[1]][[2]]
+## [1] 2
+## 
+## 
+## [[2]]
+## [1] 3 4
+
+y
+
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3
+## 
+## [[4]]
+## [1] 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;typeof&lt;/code&gt;返回R内部对象的类型或者存储模式，对于列表它返回list，常用函数&lt;code&gt;is.list&lt;/code&gt;,
+&lt;code&gt;as.list&lt;/code&gt;,&lt;code&gt;unlist&lt;/code&gt;(转化为向量，数据会强制转化)，列表用于存储复杂的数据，比如df和
+线性模型都是基于列表创建&lt;/p&gt;
+
+&lt;h4 id=&#34;attributes&#34;&gt;attributes&lt;/h4&gt;
+
+&lt;p&gt;任意对象都可包含额外属性来存储对象的元数据，属性可以看成命名的列表，当然不同属性
+要求名字不同,&lt;code&gt;attr&lt;/code&gt;提取特定名字的属性，&lt;code&gt;attributes&lt;/code&gt;列出对象的所有属性。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;y &amp;lt;- 1:10
+attr(y, &amp;quot;my_attribute&amp;quot;) &amp;lt;- &amp;quot;This is a vector&amp;quot;
+attr(y, &amp;quot;my_attribute&amp;quot;)
+
+## [1] &amp;quot;This is a vector&amp;quot;
+
+str(attributes(y))
+
+## List of 1
+##  $ my_attribute: chr &amp;quot;This is a vector&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;structure&lt;/code&gt;也可以修改对象的属性&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;structure(1:10, my_attribute = &amp;quot;This is a vector&amp;quot;)
+
+##  [1]  1  2  3  4  5  6  7  8  9 10
+## attr(,&amp;quot;my_attribute&amp;quot;)
+## [1] &amp;quot;This is a vector&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当操作运算向量时，默认丢掉大部分附加属性。names，dim（一维的向量转为多维数组
+或矩阵等和class(s3类)除外,当然这三 种属性一般不用&lt;code&gt;attr&lt;/code&gt;改变。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;attributes(y[1])
+
+## NULL
+
+attributes(sum(y))
+
+## NULL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;names&#34;&gt;names&lt;/h5&gt;
+
+&lt;p&gt;三种方法设定向量的names&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;x &amp;lt;- c(a = 1, b = 2, c = 3)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x &amp;lt;- 1:3; names(x) &amp;lt;- c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x &amp;lt;- setNames(1:3, c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;names不要求所有元素都是不同的，为了方便根据name提取向量子元素，name保持各不相同&lt;/p&gt;
+
+&lt;h4 id=&#34;factor&#34;&gt;factor&lt;/h4&gt;
+
+&lt;p&gt;属性的一个最大用处是定义因子，levels就是作为因子默认存在的一个附加属性。因子可以看成是仅仅
+包含预定义值（levels）的向量，用来存储分类数据。它是基于整型向量构建，附加了两个属性
+class（factor）和levels，因子不可以合并(没有意义)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;c(factor(&amp;quot;a&amp;quot;), factor(&amp;quot;b&amp;quot;))
+
+## [1] 1 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当变量的可能取值已知时，即使并不知道一个数据集的所有取值。使用因子对于表示存在某些元素
+并不含有观测值时更直观&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sex_char &amp;lt;- c(&amp;quot;m&amp;quot;, &amp;quot;m&amp;quot;, &amp;quot;m&amp;quot;)
+sex_factor &amp;lt;- factor(sex_char, levels = c(&amp;quot;m&amp;quot;, &amp;quot;f&amp;quot;))
+
+table(sex_char)
+
+## sex_char
+## m 
+## 3
+
+table(sex_factor)
+
+## sex_factor
+## m f 
+## 3 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;需要注意的是，当我们从文件读取数据定义一个数值型df时，如果数据中含有特殊字符（非数字)
+如&amp;rdquo;.&amp;ldquo;，“-”等，那么默认情况下这一列会转化为factor而不是数值型向量，可以通过先把它转化为
+character类型向量然后再转化为数值型。更好的做法是在读入数据的时候设置&lt;code&gt;na.strings&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;此外，可以设置&lt;code&gt;stringsAsFactors = FALSE&lt;/code&gt;,然后需要传话为factor时再转化，不要使用全局的选项
+&lt;code&gt;options(stringsAsFactors = FALSE)&lt;/code&gt;,改变全局设置，当与其他的包或者函数结合使用时，可能引起
+不必要的麻烦。&lt;/p&gt;
+
+&lt;p&gt;虽然因子经常看起来像字符向量，实际上他们是以整型存储的，所以在对因子做字符处理的时候，可以先把
+它转化为character，虽然某些函数可以自动转化因子为characte（&lt;code&gt;gsub()&lt;/code&gt;
+,&lt;code&gt;grepl&lt;/code&gt;)，但是像 &lt;code&gt;nchar&lt;/code&gt;,&lt;code&gt;c&lt;/code&gt;等函数则会出现错误。&lt;/p&gt;
+
+&lt;h4 id=&#34;矩阵-数组&#34;&gt;矩阵-数组&lt;/h4&gt;
+
+&lt;p&gt;通过设置原子向量的dim属性，可以构建多维数组、矩阵(2维数组)。&lt;code&gt;matrix&lt;/code&gt;和&lt;code&gt;array&lt;/code&gt;也用于构建矩阵和数组&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Two scalar arguments to specify rows and columns
+a &amp;lt;- matrix(1:6, ncol = 3, nrow = 2)
+# One vector argument to describe all dimensions
+b &amp;lt;- array(1:12, c(2, 3, 2))
+
+# You can also modify an object in place by setting dim()
+c &amp;lt;- 1:6
+dim(c) &amp;lt;- c(3, 2,1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;常用函数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nrow&lt;/code&gt;,&lt;code&gt;ncol&lt;/code&gt;，&lt;code&gt;dim&lt;/code&gt;:行列数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;colnames&lt;/code&gt;,&lt;code&gt;rolnames&lt;/code&gt;:元素名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dimnames&lt;/code&gt;:列表，对数组元素命名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cbind&lt;/code&gt;,&lt;code&gt;rbind&lt;/code&gt;,&lt;code&gt;abind&lt;/code&gt;:合并&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;,&lt;code&gt;aperm&lt;/code&gt;：转置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is.*&lt;/code&gt;,&lt;code&gt;as.*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一维数组，矩阵和向量的区别,print可能相同，但是内部结构不同&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;str(1:3)                   # 1d vector
+
+##  int [1:3] 1 2 3
+
+str(matrix(1:3, ncol = 1)) # column vector
+
+##  int [1:3, 1] 1 2 3
+
+str(matrix(1:3, nrow = 1)) # row vector
+
+##  int [1, 1:3] 1 2 3
+
+str(array(1:3, 3))         # &amp;quot;array&amp;quot; vector
+
+##  int [1:3(1d)] 1 2 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此外，通过设置列表的dim属性，也可以把构建列表矩阵或者数组&lt;/p&gt;
+
+&lt;h4 id=&#34;df&#34;&gt;df&lt;/h4&gt;
+
+&lt;p&gt;df是R中最常用的存储数据的类型，使数据分析更容易。实际上，df一个列表（由多个相同
+长度向量构成），同时具有列表和矩阵的属性。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df &amp;lt;- data.frame(x = 1:3, y = c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;))
+str(df)
+
+## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: Factor w/ 3 levels &amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;: 1 2 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;构建df时,默认情况下strings会转化为factors,通过参数&lt;code&gt;stringsAsFactors&lt;/code&gt;控制。&lt;/p&gt;
+
+&lt;p&gt;df是一个s3类，它的类型(type)反应了构建df向量的类型：列表。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;as.data.frame&lt;/code&gt;转化为df * 向量：一列df *
+列表：每一个元素为一列，需要每一元素长度相等 * 矩阵&lt;/p&gt;
+
+&lt;h5 id=&#34;合并&#34;&gt;合并&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rbind&lt;/code&gt;:要求列的names和length必须相同，&lt;code&gt;plyr::rbind.fill&lt;/code&gt;可以用来合并含不同列的df&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cbind&lt;/code&gt;：要求行的length必须相同,忽略rownames。作用于向量时会返回矩阵，除非某个参数是df&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;此外df是可以看成是一个向量列表，所以df的列也可以是一个列表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df &amp;lt;- data.frame(x = 1:3)
+df$y &amp;lt;- list(1:2, 1:3, 1:4)
+df
+
+##   x          y
+## 1 1       1, 2
+## 2 2    1, 2, 3
+## 3 3 1, 2, 3, 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然而，当利用&lt;code&gt;data.frame&lt;/code&gt;构建df时，如果参数为list，它会把list的每一个元素作为df的一列&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;## error 要求list(y)中每个元素的长度与x相同
+data.frame(x = 1:3, y = list(1:2, 1:3, 1:4))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这是通过&lt;code&gt;I&lt;/code&gt;可以保持原有参数的属性，时list保持一个整体作为df的一列，同样适用于矩阵和数组。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dfl &amp;lt;- data.frame(x = 1:3, y = I(list(1:2, 1:3, 1:4)))
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>R code style</title>
+      <link>https://yiluheihei.github.io/post/2014-11-4-r-code-style/</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiluheihei.github.io/post/2014-11-4-r-code-style/</guid>
+      <description>&lt;p&gt;R作为用于统计计算和图形可视化的高级语言，随着近来来大数据的发展，R语言逐渐成长为数据分析的利器，良好的代码风格使代码更容易阅读，
+分享和扩展，下面基于Rstudio首席科学家&lt;a href=&#34;http://had.co.nz/&#34;&gt;hadley&lt;/a&gt;和google的R团队的代码风格做了一些小的调整。&lt;/p&gt;
+
+&lt;h3 id=&#34;符号和命名&#34;&gt;符号和命名&lt;/h3&gt;
+
+&lt;h4 id=&#34;文件名字&#34;&gt;文件名字&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;.R&lt;/em&gt; 作为文件扩展名&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文件的命名要与它的功能相关&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;GOOD: predict_ad_revenue.R&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;BAD: foo.R&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h4 id=&#34;对象名称&#34;&gt;对象名称&lt;/h4&gt;
+
+&lt;p&gt;标识符中不要含有&lt;em&gt;-&lt;/em&gt; 和&lt;em&gt;_&lt;/em&gt;, 变量名字使用小写, 词之间用&lt;em&gt;.&lt;/em&gt; 分割(variable.name), varibaleName也可以, 个人偏向使用前一种; 函数名每个词第一个字母要大写 (FunctionName), 第一个词是动词, hadely目前是利用&lt;em&gt;_&lt;/em&gt; ；因为R的方法调用都或者某些类的定义使用&lt;em&gt;.&lt;/em&gt;,所以函数的定义不要使用&lt;em&gt;.&lt;/em&gt;; 常量命名规则除了名字开头加个*k*其他与函数一致, (kConstantName)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;variable.name is preferred, variableName is accepted&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;GOOD: avg.clicks&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;OK: avgClicks&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;BAD: avg_Clicks&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FunctionName&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;GOOD: CalculateAvgClicks&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;BAD: calculate_avg_clicks , calculateAvgClicks&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Make function names verbs.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例外: When creating a classed object, the function name (constructor) and class should match (e.g.,lm).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;常量：k加上常量名称，kConstantName&lt;/p&gt;
+
+&lt;p&gt;当然不能使用R中自定义的已存在的函数和变量的名字&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Bad
+T &amp;lt;- FALSE
+c &amp;lt;- 10
+mean &amp;lt;- function(x) sum(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;句法&#34;&gt;句法&lt;/h3&gt;
+
+&lt;h4 id=&#34;每行代码的字符数&#34;&gt;每行代码的字符数&lt;/h4&gt;
+
+&lt;p&gt;不超过80个字符；如果发现自己的代码行超过80个字符，那么要考虑封装代码至一个简短函数，或者使用&lt;a href=&#34;http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html&#34; target=&#34;_blank&#34;&gt;magrittr&lt;/a&gt;包的管道操作符.&lt;/p&gt;
+
+&lt;h4 id=&#34;缩进&#34;&gt;缩进&lt;/h4&gt;
+
+&lt;p&gt;两个空格, 不要用tab tab与空格一起使用&lt;/p&gt;
+
+&lt;p&gt;例外: 换行在一个括号内, 那么下一行开头和括号内第一个字符对齐&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;long_function_name &amp;lt;- function(a = &amp;quot;a long argument&amp;quot;, 
+                               b = &amp;quot;another argument&amp;quot;,
+                               c = &amp;quot;another long argument&amp;quot;) {
+  # As usual code is indented by two spaces.
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;空格&#34;&gt;空格&lt;/h4&gt;
+
+&lt;p&gt;所有的二元操作符两边有一个空格(=, +, -, &amp;lt;-, etc.).&lt;/p&gt;
+
+&lt;p&gt;函数调用传递参数时候=号两边的空格可有可无, 个人觉得应该有空格&lt;/p&gt;
+
+&lt;p&gt;逗号之前不要有空格, 后面要加空格&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:&lt;/code&gt;, &lt;code&gt;::&lt;/code&gt; 和&lt;code&gt;:::&lt;/code&gt; 两边不需要空格&lt;/p&gt;
+
+&lt;p&gt;GOOD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab.prior &amp;lt;- table(df[df$days.from.opt &amp;lt; 0, &amp;quot;campaign.id&amp;quot;])
+total &amp;lt;- sum(x[, 1])
+total &amp;lt;- sum(x[1, ])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab.prior &amp;lt;- table(df[df$days.from.opt &amp;lt; 0, &amp;quot;campaign.id&amp;quot;])  # Needs spaces around &#39;&amp;lt;&#39;
+tab.prior &amp;lt;- table(df[df$days.from.opt &amp;lt; 0, &amp;quot;campaign.id&amp;quot;])  # Needs a space after the comma
+tab.prior &amp;lt;- table(df[df$days.from.opt &amp;lt; 0, &amp;quot;campaign.id&amp;quot;])  # Needs a space before &amp;lt;-
+tab.prior &amp;lt;- table(df[df$days.from.opt &amp;lt; 0, &amp;quot;campaign.id&amp;quot;])  # Needs spaces around &amp;lt;-
+total &amp;lt;- sum(x[, 1])  # Needs a space after the comma
+total &amp;lt;- sum(x[, 1])  # Needs a space after the comma, not before
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;括号之前加空格, 调用函数除外&lt;/p&gt;
+
+&lt;p&gt;GOOD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (debug)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if(debug)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;额外的空格 比如为了使代码的等号或者(&amp;lt;-)对齐&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;list(
+  total = a + b + c, 
+  mean  = (a + b + c) / n
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;括号和方括号的周围不要有空格
+GOOD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (debug) x[1, ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if ( debug )  # No spaces around debug
+x[1,]  # Needs a space after the comma 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;大括号&#34;&gt;大括号&lt;/h4&gt;
+
+&lt;p&gt;左大括号不要另起一行, 右大括号一定要另起一行, 代码块包含单独语句时括号可省略, 但是代码中大括号是否省略要保持一致&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (is.null(ylim)) {
+    ylim &amp;lt;- c(0, 0.06)
+}
+## xor (but not both)
+
+if (is.null(ylim)) ylim &amp;lt;- c(0, 0.06)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;代码块要另起一行&lt;/p&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (is.null(ylim)) ylim &amp;lt;- c(0, 0.06)
+if (is.null(ylim)) {
+    ylim &amp;lt;- c(0, 0.06)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;含else代码块要使用大括号&#34;&gt;含else代码块要使用大括号&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;esle&lt;/em&gt; 语句与大括号要在同一行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (condition) {
+  one or more lines
+} else {
+  one or more lines
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (condition) {
+  one or more lines
+}
+else {
+  one or more lines
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (condition)
+  one line
+else
+  one line
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果条件语句后面跟着简短的语句则可以写在同行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if (y &amp;lt; 0 &amp;amp;&amp;amp; debug) message(&amp;quot;Y is negative&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;分号&#34;&gt;分号&lt;/h4&gt;
+
+&lt;p&gt;行尾不要使用分号, 不要使用分号将多个语句放在同一行&lt;/p&gt;
+
+&lt;h3 id=&#34;组织&#34;&gt;组织&lt;/h3&gt;
+
+&lt;h4 id=&#34;总体布局和顺序&#34;&gt;总体布局和顺序&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;版权声明&lt;/li&gt;
+&lt;li&gt;作者&lt;/li&gt;
+&lt;li&gt;文件说明注释, 包括文件是用来做什么以及输入输出的说明&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source()&lt;/code&gt; 和&lt;code&gt;library()&lt;/code&gt;语句&lt;/li&gt;
+&lt;li&gt;函数定义&lt;/li&gt;
+&lt;li&gt;执行语句, 也就是example (e.g., print, plot)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;附加单元测试文件&lt;em&gt;originalfilename_test.R&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;注释&#34;&gt;注释&lt;/h4&gt;
+
+&lt;p&gt;注释行以一个#开头, 加一个空格, 注释要说明为什么写这行代码（不是代码做了什么）&lt;/p&gt;
+
+&lt;p&gt;有时候会使用注释把代码分割成若干易读和理解的代码块，使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# =================================================================
+# why this code
+# =================================================================
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Create histogram of frequency of campaigns by pct budget spent.
+hist(df$pct.spent,
+     breaks = &amp;quot;scott&amp;quot;,  # method for choosing number of buckets
+     main   = &amp;quot;Histogram: fraction budget spent by campaignid&amp;quot;,
+     xlab   = &amp;quot;Fraction of budget spent&amp;quot;,
+     ylab   = &amp;quot;Frequency (count of campaignids)&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;函数&#34;&gt;函数&lt;/h3&gt;
+
+&lt;p&gt;函数的名称一般为动词；函数中的代码块应该可以在一个屏幕上阅读（二三十行）&lt;/p&gt;
+
+&lt;p&gt;####调用&lt;/p&gt;
+
+&lt;p&gt;没有缺省值的参数应该放在前面, 后面跟着有缺省值的参数&lt;/p&gt;
+
+&lt;p&gt;函数定义及调用允许一行多个参数, 换行符要在参数之间&lt;/p&gt;
+
+&lt;p&gt;GOOD&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;PredictCTR &amp;lt;- function(query, property, num.days,
+  show.plot = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BAD&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;PredictCTR &amp;lt;- function(query, property, num.days, show.plot =
+  TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;单元测试作为函数的example&lt;/p&gt;
+
+&lt;h4 id=&#34;文档&#34;&gt;文档&lt;/h4&gt;
+
+&lt;p&gt;函数应该包含注释块紧接着函数定义的行(函数体), 包含了函数的说明, 参数的使用, 返回值, 建议使用(roxygen2)[&lt;a href=&#34;http://cran.r-project.org/web/packages/roxygen2/index.html]的模式&#34; target=&#34;_blank&#34;&gt;http://cran.r-project.org/web/packages/roxygen2/index.html]的模式&lt;/a&gt;, 便于开发package,&lt;strong&gt;rstudio&lt;/strong&gt;已经很好的整合了&lt;strong&gt;roxygen2&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;自定义函数&#34;&gt;自定义函数&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;CalculateSampleCovariance &amp;lt;- function(x, y, verbose = TRUE) {
+  #&#39; @description des description Computes the sample covariance between two vectors.
+  #&#39; @author  
+  #&#39; @param x: One of twovectors whose sample covariance is to be calculated.  
+  #&#39; @param y: The other vector.
+  #&#39; @param verbose ....
+  #&#39; @details x and y must have the same length, greater than one, with no missing
+  #&#39;  values.  verbose: If TRUE, prints sample covariance; if not, not. Default
+  #&#39;  is TRUE.  Returns: The sample covariance between x and y.
+  #&#39; @return ..
+  #&#39; @examples
+  #&#39; @importFrom
+  
+  n &amp;lt;- length(x)
+  # Error handling
+  if (n &amp;lt;= 1 || n != length(y)) {
+    stop(&amp;quot;Arguments x and y have different lengths: &amp;quot;, length(x), &amp;quot; and &amp;quot;, 
+      length(y), &amp;quot;.&amp;quot;)
+  }
+  if (TRUE %in% is.na(x) || TRUE %in% is.na(y)) {
+    stop(&amp;quot; Arguments x and y must not have missing values.&amp;quot;)
+  }
+  covariance &amp;lt;- var(x, y)
+  if (verbose) 
+    cat(&amp;quot;Covariance = &amp;quot;, round(covariance, 4), &amp;quot;.\n&amp;quot;, sep = &amp;quot;&amp;quot;)
+  return(covariance)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;此外&lt;/strong&gt;：绝对不要使用,attch的使用会使对象中的变量加载到相应的父环境中，可能会出现同名变量对象&lt;/p&gt;
+
+&lt;h3 id=&#34;ref&#34;&gt;Ref&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stat405.had.co.nz/r-style.html&#34; target=&#34;_blank&#34;&gt;Hadley Wickham&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards&#34; target=&#34;_blank&#34;&gt;CRAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/formatR/index.html&#34; target=&#34;_blank&#34;&gt;formatR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34; target=&#34;_blank&#34;&gt;Colin Gillespie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.fhcrc.org/bioc/Coding_Standards&#34; target=&#34;_blank&#34;&gt;Bioconductor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
