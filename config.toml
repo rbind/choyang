@@ -5,8 +5,8 @@ theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
-## publish directory
-publishDir = "../yiluheihei.github.io"
+# publish directory
+# publishDir = "../yiluheihei.github.io"
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
