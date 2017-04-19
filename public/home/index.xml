@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Yang</title>
-    <link>http://www.choyang.me/home/index.xml</link>
+    <link>/home/index.xml</link>
     <description>Recent content in Homes on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>

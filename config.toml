@@ -5,9 +5,6 @@ theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
-# publish directory
-# publishDir = "../yiluheihei.github.io"
-
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 
@@ -16,21 +13,18 @@ googleAnalytics = ""
 
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 
 [blackfriday]
   hrefTargetBlank = true
 
 [params]
-  name = "Yang Cao"
-  role = "Assistant Professor"
-  organization = "Institute of Heath and Environmental Medicine"
   organization_url = ""
   avatar = "choyang.jpg"
   email = "yiluheihei@gmail.com"
-  address = "1 Dali Road, TianJin, China"
+  address = "TianJin, China"
   # office_hours = "08:00 to 18:00 or email for appointment"
-  phone = "022-84655427"
+  phone = ""
   skype = ""
   telegram = ""
 
@@ -147,41 +141,55 @@ defaultContentLanguageInSubdir = false
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
+# Configure the English version of the website.
+
 [[menu.main]]
   name = "Home"
   url = "#about"
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 4
-
-[[menu.main]]
-  name = "Posts"
-  url = "#posts"
+  name = "Projects"
+  url = "#projects"
   weight = 2
 
 [[menu.main]]
-  name = "Projects"
-  url = "#projects"
+  name = "Publications"
+  url = "#publications"
   weight = 3
-
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 4
+  
+[languages.en.params]
+  name = "Yang Cao"
+  role = "Assistant Professor"
+  organization = "Tianjin Institute of Heath and Environmental Medicine"
+  organization_url = ""
 
+## 中文入口
+[[languages.zh.menu.main]]
+  name = "首页"
+  url = "../en"
+  weight = 1
+  
+[[languages.zh.menu.main]]
+  name = "文章"
+  url = "#posts"
+  weight = 2
+  
 # Taxonomies.
 [taxonomies]
   tag = "tags"
   category = "categories"
   publication_type = "publication_types"
 
-# Languages
-#   Create a [languages.X] block for each language you want, where X is the language ID.
-
-# Configure the English version of the website.
+# multiple language 
 [languages.en]
   languageCode = "en-us"
+  weight = 1 
+[languages.zh]
+  languageCode = "zh-cn"
+  weight = 2
