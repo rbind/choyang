@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogdown on Yang</title>
+    <link>/tags/blogdown/index.xml</link>
+    <description>Recent content in Blogdown on Yang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017 Yang Cao</copyright>
+    <atom:link href="/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hugo建立的网站托管至github pages</title>
+      <link>/post/hugo/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugo/</guid>
+      <description>&lt;h2 id=&#34;github-pages&#34;&gt;github pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;github pages&lt;/a&gt;,&lt;a href=&#34;https://bitbucket.org/product&#34; target=&#34;_blank&#34;&gt;bitbucket&lt;/a&gt;,&lt;a href=&#34;https://gitlab.com&#34; target=&#34;_blank&#34;&gt;gitlab&lt;/a&gt;是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。&lt;/p&gt;
+
+&lt;p&gt;github pages分为两类&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;个人或者机构账户主页，必须为&lt;code&gt;username.github.io&lt;/code&gt;,只能在&lt;code&gt;master&lt;/code&gt;分支中建立主页。
+&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_personal_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;项目主页，可以在&lt;code&gt;master&lt;/code&gt;分支，&lt;code&gt;master/docs&lt;/code&gt;文件夹，&lt;code&gt;gh-pages&lt;/code&gt;分支建立项目主页
+&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/github_project_page.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因此有以下几种方法将hugo网站托管至github pages&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;网站源文件与网站内容分别存在不同的仓库，内容保存在&lt;code&gt;uername.github.io&lt;/code&gt;，源文件保存在&lt;code&gt;website-source&lt;/code&gt;中，注意这里需要设置&lt;code&gt;publicDir=&amp;quot;../username.github.io&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;网站源文件与网站内容同一个repo下的两个分支，master（网站内容）， source（网站源文件），选择master分支建立github pages&lt;/li&gt;
+&lt;li&gt;网站源文件与网站内容同一个repo下的两个分支，master（网站源文件）， gh-pages（网站内容），选择gh-pages分支建立github pages&lt;/li&gt;
+&lt;li&gt;一个分支，网站保存在master下的docs文件夹，选择&lt;code&gt;master/docs&lt;/code&gt;建立githubpages，但这总情况只能选择项目主页，所以在构建个人站点的时候不适合。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;明显第一种方法最简单，保存在不同分支中的做法涉及两个分支的操作，相信一般人对git分支操作比较头大（当然也包括俺），所以我本人选择了第一种方法来托管个人站点。&lt;i&gt;&lt;strong&gt;详细建个人网站的人对于如何使用git和github应该有所了解&lt;/strong&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;绑定域名&#34;&gt;绑定域名&lt;/h3&gt;
+
+&lt;p&gt;有些人想把github pages绑定到个人的域名。这就需要在网站根目录建立&lt;code&gt;CNAME&lt;/code&gt;文件，写入自己的域名。然后按以下步骤配置域名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;设置主机记录&lt;code&gt;@&lt;/code&gt;,记录类型为&lt;code&gt;CNAME&lt;/code&gt;, 记录值为&lt;code&gt;yiluheihei.github.io.&lt;/code&gt;注意后边有个点。 ,将&lt;code&gt;choyang.me&lt;/code&gt;域名映射到&lt;code&gt;yiluheihei.github.io&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置主机记录&lt;code&gt;www&lt;/code&gt;，记录类型为&lt;code&gt;A&lt;/code&gt;，记录值是IP &lt;code&gt;192.30.252.154&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置主机记录&lt;code&gt;www&lt;/code&gt;，记录类型为&lt;code&gt;A&lt;/code&gt;，记录值是IP &lt;code&gt;192.30.252.153&lt;/code&gt;，这两个是github pages的IP地址，访问这两个IP表示方位github pages&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;稍等一小会，域名&lt;code&gt;choyang.me&lt;/code&gt;就可以访问，重定向到&lt;code&gt;yiluheihei.github.io&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2017-03-21-hugo-hosting-github/domain_setting.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

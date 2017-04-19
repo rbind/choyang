@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on Yang</title>
+    <link>/tags/website/index.xml</link>
+    <description>Recent content in Website on Yang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017 Yang Cao</copyright>
+    <atom:link href="/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>利用hugo和blogdown创建网站</title>
+      <link>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme.zh/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-03-20-making-websites-with-blogdown-and-hugo-with-hugo-academic-theme.zh/</guid>
+      <description>&lt;p&gt;hugo是一个可以快速建立静态网站的生成器，比如个人主页、博客、公司主页、项目介绍等。相对于其他静态网站生成器，hugo具有安装方便，网页编译生成速度快、实时刷新页面等特点。blogdown则整合了Rmarkdown和hugo的功能来帮助人们在R环境中建立网站（当然也可以是markdown）。&lt;/p&gt;
+
+&lt;h2 id=&#34;安装工具&#34;&gt;安装工具&lt;/h2&gt;
+
+&lt;p&gt;下载安装R和Rstudio（相信常用R的自己电脑上必然已经装好了），然后安装R包blogdown。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::install_github(&#39;rstudio/blogdown&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;随后&lt;code&gt;blogdown::install_hugo()&lt;/code&gt;可以用来安装hugo，当然也可以根据自己的操作系统从hugo官网安装，详细步骤参见&lt;a href=&#34;https://gohugo.io/overview/installing/。&#34; target=&#34;_blank&#34;&gt;https://gohugo.io/overview/installing/。&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;选择academic主题建站&#34;&gt;选择academic主题建站&lt;/h2&gt;
+
+&lt;p&gt;hugo提供了很多主题来建立网站， 参照&lt;a href=&#34;http://themes.gohugo.io&#34; target=&#34;_blank&#34;&gt;http://themes.gohugo.io&lt;/a&gt; 选择自己喜欢的主题，我们选择&lt;code&gt;hugo-academic&lt;/code&gt;主题。首先创建一个空文件夹构建网站，所以可以用Rstudio来创建一个Project。然后利用下面代码会在根目录下创建网站的源代码，主要包括：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)` 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;contig.toml&lt;/code&gt;：网站的配置文件，如baseurl，title等，不同主题可设置的参数也不同，具体可查看主题的说明文档；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./archetypes&lt;/code&gt;：包括内容类型，在创建新内容时自动生成内容的配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./themes&lt;/code&gt;: 选定的主题；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./layout&lt;/code&gt;: 网站的模板&lt;code&gt;template&lt;/code&gt;，设定了网站的展现形式；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./content&lt;/code&gt;:根据模板生成的网站的内容，采用markdown格式，关于&lt;a href=&#34;https://gohugo.io/templates/overview/&#34; target=&#34;_blank&#34;&gt;template&lt;/a&gt;以后会详细介绍。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./static&lt;/code&gt;文件夹：css、js、img、media等，决定网站的外观&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;然后运行&lt;code&gt;blogdown::server_site()&lt;/code&gt;就会生成站点，可以部署至服务器访问，默认根目录建立&lt;code&gt;public&lt;/code&gt;文件夹来存储站点，可以设置&lt;code&gt;confog.toml&lt;/code&gt;文件中的&lt;code&gt;publishDir&lt;/code&gt;参数来修改。&lt;/p&gt;
+
+&lt;h2 id=&#34;个性化设置&#34;&gt;个性化设置&lt;/h2&gt;
+
+&lt;p&gt;随后可根据实际情况修改站点，由hugo构建的网站内容都是由&lt;strong&gt;markdown&lt;/strong&gt;文本参考模板构成，其网站内容在&lt;code&gt;content&lt;/code&gt;文件夹中。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;config.toml&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;baseurl&lt;/code&gt;:加你站点的网址，如&lt;code&gt;yiluheihei.github.io&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: 网站名称；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;theme&lt;/code&gt;: 主题；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;params&lt;/code&gt;: 个人信息和&lt;code&gt;contact&lt;/code&gt;上显示的信息；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[[manu.main]]&lt;/code&gt;链接至各个widget，可通过修改&lt;code&gt;weight&lt;/code&gt;
+值改变manu的顺序；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publishDir&lt;/code&gt;：hugo生成网站的目录，默认为&lt;code&gt;./public&lt;/code&gt;文件夹；我个人是把hugo源文件和生成的网站分别保存在两个repo：&lt;code&gt;personal-website-source&lt;/code&gt;和&lt;code&gt;yiluheihei.github.io&lt;/code&gt;，因此&lt;code&gt;publishDir = &amp;quot;../yiluheihei.github.io&amp;quot;&lt;/code&gt;；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除不必要文件，主页内容在&lt;code&gt;home&lt;/code&gt;中，由多个widget构成，可以删除不必要的widget，&lt;code&gt;weight&lt;/code&gt;表征了各个widget的显示顺序；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每个post的summary，加&lt;code&gt;&amp;#60;&amp;#33;&amp;#45;&amp;#45;more&amp;#45;&amp;#45;&amp;#62;&lt;/code&gt;或者在yaml加上&lt;code&gt;summary&lt;/code&gt;参数。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;post、project等参数中（如&lt;code&gt;summary&lt;/code&gt;，&lt;code&gt;abstract&lt;/code&gt;）有&lt;code&gt;&amp;quot;&lt;/code&gt;和&lt;code&gt;\&lt;/code&gt;(LaTex中的&lt;code&gt;\times&lt;/code&gt;)，需要用&lt;code&gt;\&lt;/code&gt;转义，&lt;code&gt;\&amp;quot;&lt;/code&gt;, &lt;code&gt;\\times&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;i&gt;&lt;strong&gt;当然不同的theme的参数也不同，上述都是针对&lt;code&gt;hugo-academic&lt;/code&gt;主题板设置，要根据具体的主题来设置网站的参数。&lt;/strong&gt;&lt;/i&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
