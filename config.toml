@@ -19,11 +19,12 @@ defaultContentLanguageInSubdir = true
   hrefTargetBlank = true
 
 [params]
+  name = "Yang Cao"
   organization_url = ""
   avatar = "choyang.jpg"
   email = "yiluheihei@gmail.com"
   address = "TianJin, China"
-  # office_hours = "08:00 to 18:00 or email for appointment"
+  office_hours = "08:00 to 09:00 or email for appointment"
   phone = ""
   skype = ""
   telegram = ""
@@ -134,11 +135,17 @@ defaultContentLanguageInSubdir = true
     icon = "github"
     icon_pack = "fa"
     link = "//github.com/yiluheihei"
-
+    
+[Languages.en.params]
+  name = "Yang Cao"
+  role = "Assistant Professor"
+  
+[Languages.zh.params]
+  name = "曹洋"
 
 # Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
+#   To link a homepage widget, specify the URL as a hash `#` followed by 
+#   the filename of the desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
 # Configure the English version of the website.
@@ -167,12 +174,6 @@ defaultContentLanguageInSubdir = true
   name = "中文"
   url = "../zh"
   weight = 5
-  
-[languages.en.params]
-  name = "Yang Cao"
-  role = "Assistant Professor"
-  organization = "Tianjin Institute of Heath and Environmental Medicine"
-  organization_url = ""
 
 ## 中文入口
 [[languages.zh.menu.main]]
