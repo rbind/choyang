@@ -163,6 +163,11 @@ defaultContentLanguageInSubdir = true
   url = "#contact"
   weight = 4
   
+[[menu.main]]
+  name = "中文"
+  url = "../zh"
+  weight = 5
+  
 [languages.en.params]
   name = "Yang Cao"
   role = "Assistant Professor"
@@ -179,6 +184,11 @@ defaultContentLanguageInSubdir = true
   name = "文章"
   url = "#posts"
   weight = 2
+  
+[[languages.zh.menu.main]]
+  name = "English"
+  url = "../en"
+  weight = 3
   
 # Taxonomies.
 [taxonomies]
