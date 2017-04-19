@@ -1,2 +1,3 @@
-# personal-hugo-website
-Personal website created by blogdown and hugo, website repo is [yiluheihei.github.io](https://github.com/yiluheihei/yiluheihei.github.io)
+Personal website built with blogdown and hugo, now hosted on netlify.
+
+Thanks to [blogown](https://github.com/rstudio/blogdown) package from Yihui.
