@@ -5,6 +5,7 @@
     <link>/en/project/index.xml</link>
     <description>Recent content in Projects on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
     <copyright>&amp;copy; 2017 Yang Cao</copyright>
     <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/en/project/index.xml" rel="self" type="application/rss+xml" />

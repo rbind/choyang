@@ -32,8 +32,69 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/zh/publication/NFP/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/project/NFP/" hreflang="en"/>
+    
+      <loc>/zh/publication/NFP/</loc>
+      <lastmod>2017-02-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/zh/post/2016-11-15-paper-download/</loc>
       <lastmod>2016-11-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication/RevEcoR/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/project/RevEcoR/" hreflang="en"/>
+    
+      <loc>/zh/publication/RevEcoR/</loc>
+      <lastmod>2016-05-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication/mmnet/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication/mmnet/" hreflang="en"/>
+    
+      <loc>/zh/publication/mmnet/</loc>
+      <lastmod>2015-04-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication/GeneExpressionSignature/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication/GeneExpressionSignature/" hreflang="en"/>
+    
+      <loc>/zh/publication/GeneExpressionSignature/</loc>
+      <lastmod>2013-02-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication_types/2/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication_types/2/" hreflang="en"/>
+    
+      <loc>/zh/publication_types/2/</loc>
+      <lastmod>2017-02-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -105,6 +166,31 @@
     
       <loc>/zh/post/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication_types/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
+    
+      <loc>/zh/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/publication/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication/" hreflang="en"/>
+    
+      <loc>/zh/publication/</loc>
+      <lastmod>2017-02-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -5,6 +5,7 @@
     <link>/zh/index.xml</link>
     <description>Recent content in Yang on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <copyright>&amp;copy; 2017 Yang Cao</copyright>
     <lastBuildDate>Tue, 21 Mar 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
@@ -153,6 +154,15 @@ git fetch upstream
     </item>
     
     <item>
+      <title>NFP: An R Package for Characterizing and Comparing of Annotated Biological Networks</title>
+      <link>/zh/publication/NFP/</link>
+      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/NFP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>文献下载</title>
       <link>/zh/post/2016-11-15-paper-download/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
@@ -265,6 +275,33 @@ git fetch upstream
 
 &lt;li&gt;&lt;p&gt;蓝灯： 详情见&lt;a href=&#34;https://github.com/getlantern/forum&#34; target=&#34;_blank&#34;&gt;https://github.com/getlantern/forum&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>RevEcoR: an R package for the reverse ecology analysis of microbiomes</title>
+      <link>/zh/publication/RevEcoR/</link>
+      <pubDate>Sat, 21 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/RevEcoR/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mmnet: An R Package for Metagenomics Systems Biology Analysis</title>
+      <link>/zh/publication/mmnet/</link>
+      <pubDate>Fri, 17 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/mmnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GeneExpressionSignature: an R package for discovering functional connections using gene expression signatures</title>
+      <link>/zh/publication/GeneExpressionSignature/</link>
+      <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/GeneExpressionSignature/</guid>
+      <description></description>
     </item>
     
   </channel>

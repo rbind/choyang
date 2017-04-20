@@ -20,11 +20,12 @@ defaultContentLanguageInSubdir = true
 
 [params]
   name = "Yang Cao"
+  organization = "Tianjin"
   organization_url = ""
   avatar = "choyang.jpg"
   email = "yiluheihei@gmail.com"
-  address = "TianJin, China"
-  office_hours = "08:00 to 09:00 or email for appointment"
+  # address = "TianJin, China"
+  # office_hours = "08:00 to 09:00 or email for appointment"
   phone = ""
   skype = ""
   telegram = ""
@@ -150,45 +151,36 @@ defaultContentLanguageInSubdir = true
 
 # Configure the English version of the website.
 
-[[menu.main]]
+[[Languages.en.menu.main]]
   name = "Home"
   url = "#about"
   weight = 1
 
-[[menu.main]]
+[[Languages.en.menu.main]]
   name = "Projects"
   url = "#projects"
   weight = 2
 
-[[menu.main]]
+[[Languages.en.menu.main]]
   name = "Publications"
   url = "#publications"
   weight = 3
 
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 4
-  
-[[menu.main]]
-  name = "中文"
-  url = "../zh"
-  weight = 5
-
 ## 中文入口
-[[languages.zh.menu.main]]
+  
+[[Languages.zh.menu.main]]
   name = "首页"
-  url = "../en"
+  url = "#about"
   weight = 1
   
-[[languages.zh.menu.main]]
-  name = "文章"
+[[Languages.zh.menu.main]]
+  name = "博客"
   url = "#posts"
   weight = 2
   
-[[languages.zh.menu.main]]
-  name = "English"
-  url = "../en"
+[[Languages.zh.menu.main]]
+  name = "发表文章"
+  url = "#publications"
   weight = 3
   
 # Taxonomies.
@@ -198,9 +190,7 @@ defaultContentLanguageInSubdir = true
   publication_type = "publication_types"
 
 # multiple language 
-[languages.en]
+[Languages.en]
   languageCode = "en-us"
-  weight = 1 
-[languages.zh]
+[Languages.zh]
   languageCode = "zh-cn"
-  weight = 2

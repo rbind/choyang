@@ -14,6 +14,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/publication/NFP/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/NFP/" hreflang="zh"/>
+    
       <loc>/en/publication/NFP/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
     </url>
@@ -22,6 +25,9 @@
     
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/en/project/NFP/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/NFP/" hreflang="zh"/>
     
       <loc>/en/project/NFP/</loc>
       <lastmod>2017-01-27T00:00:00+00:00</lastmod>
@@ -62,6 +68,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/publication/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/" hreflang="zh"/>
+    
       <loc>/en/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -80,6 +89,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/publication/RevEcoR/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/RevEcoR/" hreflang="zh"/>
+    
       <loc>/en/publication/RevEcoR/</loc>
       <lastmod>2016-05-21T00:00:00+00:00</lastmod>
     </url>
@@ -88,6 +100,9 @@
     
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/en/project/RevEcoR/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/RevEcoR/" hreflang="zh"/>
     
       <loc>/en/project/RevEcoR/</loc>
       <lastmod>2015-09-27T00:00:00+00:00</lastmod>
@@ -98,6 +113,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/publication/mmnet/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/mmnet/" hreflang="zh"/>
+    
       <loc>/en/publication/mmnet/</loc>
       <lastmod>2015-04-17T00:00:00+00:00</lastmod>
     </url>
@@ -107,6 +125,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/publication/GeneExpressionSignature/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/GeneExpressionSignature/" hreflang="zh"/>
+    
       <loc>/en/publication/GeneExpressionSignature/</loc>
       <lastmod>2013-02-01T00:00:00+00:00</lastmod>
     </url>
@@ -115,6 +136,9 @@
     
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/en/publication_types/2/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication_types/2/" hreflang="zh"/>
     
       <loc>/en/publication_types/2/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
@@ -135,6 +159,9 @@
     
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication_types/" hreflang="zh"/>
     
       <loc>/en/publication_types/</loc>
       <priority>0</priority>
