@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 <head>
 
   <meta charset="utf-8">
@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="/en/tags/r/index.xml" type="application/rss+xml" title="Yang">
-  <link rel="feed" href="/en/tags/r/index.xml" type="application/rss+xml" title="Yang">
+  <link rel="alternate" href="/zh/tags/r/index.xml" type="application/rss+xml" title="Yang">
+  <link rel="feed" href="/zh/tags/r/index.xml" type="application/rss+xml" title="Yang">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="/en/tags/r/">
+  <link rel="canonical" href="/zh/tags/r/">
 
   
 
@@ -50,12 +50,12 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target=".navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">切换导航</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/en">Yang</a>
+      <a class="navbar-brand" href="/zh">Yang</a>
     </div>
 
     
@@ -68,9 +68,9 @@
         
 
         <li class="nav-item">
-          <a href="/en/#about">
+          <a href="/zh/#about">
             
-            <span>Home</span>
+            <span>首页</span>
           </a>
         </li>
 
@@ -80,9 +80,9 @@
         
 
         <li class="nav-item">
-          <a href="/en/#projects">
+          <a href="/zh/#posts">
             
-            <span>Projects</span>
+            <span>博客</span>
           </a>
         </li>
 
@@ -92,9 +92,9 @@
         
 
         <li class="nav-item">
-          <a href="/en/#publications">
+          <a href="/zh/#publications">
             
-            <span>Publications</span>
+            <span>发表文章</span>
           </a>
         </li>
 
@@ -105,13 +105,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
             <i class="fa fa-globe" aria-hidden="true"></i>
-            <span>English</span>
+            <span>中文 (简体)</span>
           </a>
           <ul class="dropdown-menu">
             
             <li class="nav-item">
-              <a href="/zh/tags/r/">
-                <span>中文 (简体)</span>
+              <a href="/en/tags/r/">
+                <span>English</span>
               </a>
             </li>
             
@@ -136,28 +136,10 @@
   
   
   <div>
-    <h2><a href="/en/project/shiny-revecor/">shiny-RevEcoR</a></h2>
+    <h2><a href="/zh/post/2017-04-25-upgrading-r/">Mac 升级 R 3.4.0 出现错误</a></h2>
     <div class="article-style">
       
-      An interactive web application that provides a flexible graphical user interface (GUI) to the Reverse Ecology analysis package for R.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/en/project/nfp/">Network fingerprint analysis in R</a></h2>
-    <div class="article-style">
-      
-      An R package making systematic comparisons to a set of well-studied &ldquo;basic networks&rdquo;, measuring both the functional and topological similarity.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/en/project/revecor/">Reverse Ecology analysis in R</a></h2>
-    <div class="article-style">
-      
-      An implementation of the reverse ecology framework, which allows researchers to reconstruct the metabolic networks and study the ecology of poorly characterized microbial species from their genomic information.
+      前几天CRAN 发布了R 3.4.0版本，今天抽空安装了下，然而重启 Rstudio 运行的时候，加载某些包（如 <code>dplyr</code>，<code>devtools</code>）出现错误<code>caught segfault  address 0x18, cause 'memory not mapped'</code>。
       
     </div>
   </div>

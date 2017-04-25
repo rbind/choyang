@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/zh/post/2017-04-25-upgrading-r/</loc>
+      <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/zh/post/github-fork-repo/</loc>
       <lastmod>2017-04-16T00:00:00+00:00</lastmod>
     </url>
@@ -144,7 +153,7 @@
     
     <url>
     
-      <loc>/zh/tags/hugo/</loc>
+      <loc>/zh/categories/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -154,7 +163,7 @@
     
     <url>
     
-      <loc>/zh/categories/hugo/</loc>
+      <loc>/zh/tags/hugo/</loc>
       <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -168,7 +177,7 @@
       <xhtml:link rel="alternate" href="/en/post/" hreflang="en"/>
     
       <loc>/zh/post/</loc>
-      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
+      <lastmod>2017-04-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -195,6 +204,19 @@
     
       <loc>/zh/publication/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/zh/tags/r/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/tags/r/" hreflang="en"/>
+    
+      <loc>/zh/tags/r/</loc>
+      <lastmod>2017-04-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
