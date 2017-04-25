@@ -32,10 +32,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/zh/publication/NFP/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="/en/project/NFP/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/nfp/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/project/nfp/" hreflang="en"/>
     
-      <loc>/zh/publication/NFP/</loc>
+      <loc>/zh/publication/nfp/</loc>
       <lastmod>2017-02-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -53,10 +53,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/zh/publication/RevEcoR/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="/en/project/RevEcoR/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/revecor/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/project/revecor/" hreflang="en"/>
     
-      <loc>/zh/publication/RevEcoR/</loc>
+      <loc>/zh/publication/revecor/</loc>
       <lastmod>2016-05-21T00:00:00+00:00</lastmod>
     </url>
     
@@ -77,10 +77,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/zh/publication/GeneExpressionSignature/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="/en/publication/GeneExpressionSignature/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication/geneexpressionsignature/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication/geneexpressionsignature/" hreflang="en"/>
     
-      <loc>/zh/publication/GeneExpressionSignature/</loc>
+      <loc>/zh/publication/geneexpressionsignature/</loc>
       <lastmod>2013-02-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -111,6 +111,9 @@
     
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/zh/categories/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
     
       <loc>/zh/categories/</loc>
       <priority>0</priority>
@@ -178,6 +181,7 @@
       <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
     
       <loc>/zh/publication_types/</loc>
+      <lastmod>2017-02-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -213,6 +217,7 @@
       <xhtml:link rel="alternate" href="/en/tags/" hreflang="en"/>
     
       <loc>/zh/tags/</loc>
+      <lastmod>2017-03-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Yang</title>
-    <link>/en/publication/index.xml</link>
+    <link>/en/publication/</link>
     <description>Recent content in Publications on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Yang Cao</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/en/publication/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/en/publication/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>NFP: An R Package for Characterizing and Comparing of Annotated Biological Networks</title>
-      <link>/en/publication/NFP/</link>
+      <link>/en/publication/nfp/</link>
       <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/publication/NFP/</guid>
+      <guid>/en/publication/nfp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RevEcoR: an R package for the reverse ecology analysis of microbiomes</title>
-      <link>/en/publication/RevEcoR/</link>
+      <link>/en/publication/revecor/</link>
       <pubDate>Sat, 21 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/publication/RevEcoR/</guid>
+      <guid>/en/publication/revecor/</guid>
       <description></description>
     </item>
     
@@ -39,10 +39,10 @@
     
     <item>
       <title>GeneExpressionSignature: an R package for discovering functional connections using gene expression signatures</title>
-      <link>/en/publication/GeneExpressionSignature/</link>
+      <link>/en/publication/geneexpressionsignature/</link>
       <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/en/publication/GeneExpressionSignature/</guid>
+      <guid>/en/publication/geneexpressionsignature/</guid>
       <description></description>
     </item>
     

@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogdown on Yang</title>
-    <link>/zh/tags/blogdown/index.xml</link>
+    <link>/zh/tags/blogdown/</link>
     <description>Recent content in Blogdown on Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2017 Yang Cao</copyright>
-    <atom:link href="/zh/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/zh/tags/blogdown/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hugo建立的网站托管至github pages</title>

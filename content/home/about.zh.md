@@ -14,8 +14,7 @@ weight = 1
   interests = [
     "生物信息",
     "宏基因组学",
-    "R",
-    "Web"
+    "R"
   ]
 
 # List your qualifications (such as academic degrees).

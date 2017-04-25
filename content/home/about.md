@@ -14,7 +14,7 @@ weight = 1
   interests = [
     "R",
     "Bioinformtics",
-    "Data Science"
+    "Metagenomics"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -31,6 +31,6 @@ weight = 1
 +++
 
 
-R programming enthusiast and skillful in R package development, documentation and implementation. Research mainly on bioinformatics, next generataion Sequencing data analysis, microbiology and megenomics.
+R programming enthusiast and skillful in R package development, documentation and implementation. Research mainly on bioinformatics, next generataion Sequencing data analysis, microbiology and metagenomics.
 
 Independent, Good team cooperation ability, With strong desire to experience new technologies. Willing to accept challenge and enable to withstand pressure.
