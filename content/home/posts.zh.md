@@ -4,7 +4,7 @@
 
 draft = false
 
-title = "Recent Posts"
+title = "最新"
 subtitle = ""
 widget = "posts"
 
@@ -15,7 +15,7 @@ weight = 20
 tags = []
 
 # Number of posts to list.
-count = 8
+count = 5
 
 +++
 

@@ -37,7 +37,7 @@
 # Publications widget
 
 - id: more_publications
-  translation: 更多出版物
+  translation: 更多
 
 # Posts widget
 
@@ -91,7 +91,7 @@
 # Default node titles
 
 - id: posts
-  translation: 文章
+  translation: 最新
 
 - id: publications
   translation: 出版物

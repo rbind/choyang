@@ -184,7 +184,7 @@ defaultContentLanguageInSubdir = true
   weight = 2
   
 [[Languages.zh.menu.main]]
-  name = "发表文章"
+  name = "论文"
   url = "#publications"
   weight = 3
   
