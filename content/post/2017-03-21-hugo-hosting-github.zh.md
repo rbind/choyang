@@ -1,5 +1,5 @@
 ---
-title: hugo建立的网站托管至github pages
+title: Hugo建立的网站托管至github pages
 author: Yang
 date: '2017-03-21'
 slug: hugo
