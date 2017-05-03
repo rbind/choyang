@@ -2,9 +2,9 @@
 title: Git 撤销修改
 author: Yang
 date: '2017-05-03'
-slug: git-recovery
-categories: []
-tags: []
+slug: git-undoing
+categories: [git]
+tags: [git]
 ---
 
 
