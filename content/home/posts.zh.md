@@ -4,7 +4,7 @@
 
 draft = false
 
-title = "最新"
+title = "日志"
 subtitle = ""
 widget = "posts"
 

@@ -179,7 +179,7 @@ defaultContentLanguageInSubdir = true
   weight = 1
   
 [[Languages.zh.menu.main]]
-  name = "博客"
+  name = "日志"
   url = "#posts"
   weight = 2
   

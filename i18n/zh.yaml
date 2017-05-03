@@ -91,7 +91,7 @@
 # Default node titles
 
 - id: posts
-  translation: 最新
+  translation: 日志
 
 - id: publications
   translation: 出版物
