@@ -1,4 +1,4 @@
-baseurl = "http://www.choyang.me"
+baseurl = "http://choyang.me"
 title = "Yang"
 copyright = "&copy; 2017 Yang Cao"
 theme = "hugo-academic"
@@ -6,7 +6,7 @@ enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "choyang"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
