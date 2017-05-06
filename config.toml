@@ -1,4 +1,5 @@
 baseurl = "www.choyang.me"
+relativeurl=true
 title = "Yang"
 copyright = "&copy; 2017 Yang Cao"
 theme = "hugo-academic"
