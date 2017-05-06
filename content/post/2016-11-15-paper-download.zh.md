@@ -1,7 +1,7 @@
 ---
 title: 文献下载
 date: "2016-11-15"
-tags: [scholar, tourial]
+tags: [scholar]
 summary: "简要介绍自己经常用的`Google`学术搜索镜像和文献全文下载方法"
 ---
 
