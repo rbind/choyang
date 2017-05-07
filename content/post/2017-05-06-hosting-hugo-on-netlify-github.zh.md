@@ -3,11 +3,9 @@ title: Hugo网站托管至Netlify
 author: Yang
 date: '2017-05-06'
 slug: hosting-hugo-on-netlify
-categories: 
-  - Blogdown
-  - Hugo
 tags: 
-  - website
+  - hugo
+  - netlify
 summary: "Github 和 Netlify 结合使用 - 更简单方便的托管部署静态网站"
 ---
 
