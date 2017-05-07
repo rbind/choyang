@@ -3,7 +3,6 @@ title: 利用hugo和blogdown创建网站
 author: 'Yang '
 date: '2017-03-20'
 slug: 
-categories: [hugo]
 tags:
   - hugo
   - blogdown
