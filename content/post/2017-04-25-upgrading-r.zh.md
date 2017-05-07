@@ -2,8 +2,7 @@
 title: Mac 升级 R 3.4.0 出现错误
 author: Yang
 date: '2017-04-25'
-slug: 
-categories: []
+slug: mac-r-3.4.0-error
 tags:
   - R
 ---

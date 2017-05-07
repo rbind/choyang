@@ -6,7 +6,7 @@ slug:
 categories: [hugo]
 tags:
   - hugo
-  - website
+  - blogdown
 ---
 
 

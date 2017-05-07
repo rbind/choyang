@@ -3,10 +3,11 @@ title: Hugo建立的网站托管至github pages
 author: Yang
 date: '2017-03-21'
 slug: hugo
-categories: []
 tags:
   - blogdown
-  - github
+  - hugo
+  - github pages
+  - git
 ---
 
 [github pages](https://pages.github.com),[bitbucket](https://bitbucket.org/product),[gitlab](https://gitlab.com)是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。<!--more-->
