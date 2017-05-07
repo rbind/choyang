@@ -3,7 +3,6 @@ title: Git 修改已提交commit 的 message
 author: Yang
 date: '2017-04-28'
 slug: change-commit-message
-categories: [git]
 tags:
   - git
 ---
