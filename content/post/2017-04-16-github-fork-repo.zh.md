@@ -1,5 +1,5 @@
 ---
-title: 保持github中fork别人repo的更新
+title: 更新Github中fork的 repo
 author: Yang
 date: '2017-04-16'
 slug: github-fork-repo
