@@ -1,9 +1,9 @@
-baseurl = "https://www.choyang.me"
+baseurl = "https://www.choyang.me/"
 title = "Yang"
 copyright = "&copy; 2017 Yang Cao"
 theme = "hugo-academic"
 enableEmoji = true
-footnotereturnlinkcontents = "<sup>^</sup>"
+footnotereturnlinkcontents = "↩"
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "choyang"
