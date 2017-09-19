@@ -1,0 +1,206 @@
+baseurl = "https://www.choyang.me/"
+title = "Yang"
+copyright = "&copy; 2017 Yang Cao"
+theme = "hugo-academic"
+enableEmoji = true
+footnotereturnlinkcontents = "↩"
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "choyang"
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = ""
+
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[params]
+  name = "Yang Cao"
+  organization = "Tianjin"
+  organization_url = ""
+  avatar = "choyang.jpg"
+  email = "yiluheihei@gmail.com"
+  # address = "TianJin, China"
+  # office_hours = "08:00 to 09:00 or email for appointment"
+  phone = ""
+  skype = ""
+  telegram = ""
+
+  # Enable Keybase in Contact section by entering your keybase.io username.
+  keybase = ""
+
+  # Date format (refer to Go's date format: http://flippinggodateformat.com )
+  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+  date_format = "Mon, Jan 2, 2006"
+
+  # Enable global LaTeX math rendering?
+  #   If false, you can enable it locally on a per page basis.
+  math = false
+
+  # Highlight.js options
+  #   highlight
+  #     Enable global source code highlighting?  If false, you can
+  #     override it for a particular page in that page's preamble.
+  #
+  #     Example: highlight = true
+  #
+  #   highlight_languages
+  #     Add support for highlighting additional languages. Support for
+  #     languages mentioned here will be included in all pages. You
+  #     can also set this variable for a particular page in that
+  #     page's preamble.
+  #
+  #     Example: highlight_languages = ["go", "lisp", "ocaml"]
+  #
+  #   highlight_style
+  #     Choose a different CSS style for highlighting source
+  #     code. Setting this option in a page's preamble has no
+  #     effect.
+  #
+  #     Example: highlight_style = "github-gist"
+  #
+  #   highlight_version
+  #     Choose the version of highlight.js you want. Setting this
+  #     option in a page's preamble has no effect.
+  #
+  #     Example: highlight_version = "9.9.0"
+  #
+  #   For the list of supported languages, styles, and versions, see:
+  #   https://cdnjs.com/libraries/highlight.js/
+  #
+  #   For more info on the highlighting options, see:
+  #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
+  highlight = true
+  highlight_languages = []
+  # highlight_style = "github"
+  # highlight_version = "9.9.0"
+
+  # Enable native social sharing buttons?
+  sharing = true
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  custom_css = ["custom.css"]
+  custom_js  = []
+
+  # Publication types.
+  #   Used to categorize publications.
+  #   The index of the publication type in the list is used as its unique numerical identifier.
+  #   The numeric ID is used in a publication's frontmatter to categorize it.
+  #   The language can be edited below.
+  #   For multi-lingual sites, copy this block to each language section at the end of this file.
+  publication_types = [
+    'Uncategorized',  # 0
+    'Conference proceedings',  # 1
+    'Journal',  # 2
+    'Work in progress',  # 3
+    'Technical report',  # 4
+    'Book',  # 5
+    'Book chapter'  # 6
+  ]
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  [[params.social]]
+    icon = "envelope"
+    icon_pack = "fa"
+    link = "mailto:yiluheihei@gmail.com"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/yiluheihei"
+
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/yiluheihei"
+    
+[Languages.en.params]
+  name = "Yang Cao"
+  role = "Assistant Professor"
+  
+[Languages.zh.params]
+  name = "曹洋"
+
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by 
+#   the filename of the desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+# Configure the English version of the website.
+
+[[Languages.en.menu.main]]
+  name = "Home"
+  url = "#about"
+  weight = 1
+  
+[[Languages.en.menu.main]]
+  name = "Post"
+  url = "#posts"
+  weight = 2
+
+[[Languages.en.menu.main]]
+  name = "Projects"
+  url = "#projects"
+  weight = 3
+
+[[Languages.en.menu.main]]
+  name = "Publications"
+  url = "#publications"
+  weight = 4
+
+## 中文入口
+  
+[[Languages.zh.menu.main]]
+  name = "首页"
+  url = "#about"
+  weight = 1
+  
+[[Languages.zh.menu.main]]
+  name = "日志"
+  url = "#posts"
+  weight = 2
+
+[[Languages.zh.menu.main]]
+  name = "读书笔记"
+  url = "#read"
+  weight = 3
+  
+[[Languages.zh.menu.main]]
+  name = "论文"
+  url = "#publications"
+  weight = 4
+  
+# Taxonomies.
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+
+# multiple language 
+[Languages.en]
+  languageCode = "en-us"
+[Languages.zh]
+  languageCode = "zh-cn"
