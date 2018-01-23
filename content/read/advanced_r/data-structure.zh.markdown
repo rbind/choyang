@@ -1,5 +1,5 @@
 --- 
-title: "数据结构"
+title: "Data structure"
 date: "2017-09-24"
 ---
 
