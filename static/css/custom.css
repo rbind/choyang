@@ -4,3 +4,9 @@
   height: 60vh; 
   flex-direction: column;
 }
+
+.article-style img {
+  display: inline;
+  margin-bottom: 0;
+  margin-top: 0;
+}
