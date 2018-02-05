@@ -1,0 +1,104 @@
+---
+title: ggplot入门
+author: yang
+date: '2018-02-04'
+slug: ggplot
+categories:
+  - R
+tags:
+  - ggplot
+summary: "**ggplot**入门，简要了解**ggplot**的基本构成"
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.show = 'hold', out.width = '50%', 
+  fig.asp = 1)
+library(ggplot2)
+```
+
+**ggplot**采用图层的语法，基于数据构建统计图形。统计图形就是从数据到几何对象中图形属性的映射，多个基本的图层简单相加就可以构建复杂的图形。
+
+#### ggplot图形基本结构
+
+每个**ggplot**都包含三个关键组件
+
+1. **数据**(**data**), 数据是基础
+2. **图形属性映射**(**aesthtic mapping**), 图形属性是指表征图形外观的属性 (如点的颜色，形状，坐标轴等)
+3. 几何对象(geometic objects)， 如何展示数据，几何对象可创建新的图层
+如散点图:
+
+```{r simple_example}
+## 发动机排量displ和在高速上每加仑里程数hwy
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point()
+```
+
+1. 数据，`mpg`
+2. 图形属性映射，由`aes`实现, `x = displ`和`y = hwy`表示 变量`displ`和`hwy`分别映射至`x`轴和`y`轴
+3. 几何对象，由`geom_point()`创建
+
+首先是`ggplot()`初始化图形，读入数据，变量到图形属性的映射；然后用`+`添加其他图层 (散点图)`geom_point()`.
+
+#### 图形属性aesthetic
+
+常用的图形属性有颜色(`colour`)，形状(`shape`)，大小(`size`)，每一个变量到图形属性的映射是利用**标度**(**scale**)实现。
+
+```{r aes}
+# `aes`默认的前两个参数是`x`和`y`
+# color 常用于离散的分类数据, 对于数值型分类数据，用`factor()`转化为因子，否则会被视为连续数据
+ggplot(mpg, aes(displ, hwy, color = factor(cyl))) + 
+  geom_point() +
+  ggtitle("Mapping color aes in ggplot()") # 设置图形的title
+# 也可以在后面的图层中设置相应的图形属性 (覆盖初始化时的图形属性设置)
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(color = factor(cyl))) +
+  ggtitle("Mapping color aes in geom_point()")
+```
+
+如果设置图形属性为固定值 (如点的颜色为`grey50`)，那么必须在相应图层的`aes()`之外设置
+
+```{r fix_color}
+# 正确方法
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(color = "blue") +
+  ggtitle("Fixed color in individual layer outside of aes()")
+# 在aes()中设置，则会映把"blue"映射到一种颜色(默认为浅粉色)，并且添加一个图例(legend)
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(color = "blue")) +
+  ggtitle("Fixed color in aes()")
+# 如果是在初始化的时候在`aes()`之外设置"blue"，在添加`geom_point()`图层时点的颜色为主题默认颜色(黑色)
+ggplot(mpg, aes(displ, hwy), color = "blue") +
+  geom_point() +
+  ggtitle("Fixed color in ggplot() outside of aes()")
+
+```
+
+需要注意的是不同的图形属性适应于不同类型的变量，如颜色和性状适用于分类数据，而大小适用于连续变量。
+
+#### 几何对象geom
+
+几何对象指定图形中展示数据的方式，通过上面的例子我们指导`geom_point()`用于画散点图，**ggplot**中几何对象命名方式为`geom_*()`，如常用的几何对象有
+
+- `geom_point()`，散点图
+- `geom_line()`, 线图
+- `geom_bar()`, 条形图
+- `geom_histogram()`, 直方图
+- ...
+
+```{r sample_geom, out.width='50%', fig.show='hold'}
+# 失业长度(uempmed)随着时间(date)的变化情况
+ggplot(economics, aes(date, uempmed)) +
+  geom_line() +
+  ggtitle("Line plot")
+ggplot(mpg, aes(drv)) +
+  geom_bar() +
+  ggtitle("Bar plot")
+ggplot(mpg, aes(hwy)) +
+  geom_histogram() +
+  ggtitle("Histogram plot")
+# 频率多边形
+ggplot(mpg, aes(hwy)) +
+  geom_freqpoly() +
+  ggtitle("Frequency polygon plot")
+```
