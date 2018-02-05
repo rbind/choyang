@@ -8,6 +8,8 @@ categories:
 tags:
   - ggplot
 summary: "**ggplot**入门，简要了解**ggplot**的基本构成"
+output:
+  blogdown::html_page
 ---
 
 ```{r setup, include=FALSE}
