@@ -2,8 +2,17 @@ a {
   color: black;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 a:not(.nav-link):not(.navbar-brand) {
   text-decoration: underline;
 }
+
+h2 a {
+  text-decoration: none !important;
+}
+
 
 
