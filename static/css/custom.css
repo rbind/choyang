@@ -1,0 +1,9 @@
+a {
+  color: black;
+}
+
+a:not(.nav-link):not(.navbar-brand) {
+  text-decoration: underline;
+}
+
+

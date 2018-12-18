@@ -43,6 +43,9 @@ defaultContentLanguageInSubdir = true
     [blogdown](https://github.com/yihui/blogdown), built with theme [hugo-hatw] \
     (https://github.com/yiluheihei/hugo-hatw)
   """
+  # custom css
+  custom_css = ["custom.css"]
+  
   # bootswatch = "lux"
   [params.navbar]
     # color = "navbar-light"
