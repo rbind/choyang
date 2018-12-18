@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-9 mx-auto">
+      {{ range .Data.Pages.GroupByDate "2006" }}
+        <h3>{{ .Key }}</h3>
+        <ul>
+          {{ range .Pages }}
+            <li class="py-1"> 
+              <time>{{ .Date.Format "2006/01/02" }}</time>
+              <a href="{{ .URL }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div> <!-- col-md-9 -->
+    {{ partial "aside.html" .}}
+  </div> <!-- row -->
+</div> <!-- container -->
+
+{{ partial "footer.html" . }}

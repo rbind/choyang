@@ -6,9 +6,9 @@ slug: github-fork-repo
 tags:
   - git
   - github
-summary: "更新github中fork别人repo"
 ---
 
+更新在github上fork的别人的仓库。<!--more-->
 
 1. clone 自己fork的 repo, 当然如果已有本地库关联至该 repo，直接跳至 repo 文件夹即可。
 

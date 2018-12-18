@@ -1,0 +1,171 @@
+---
+title: "主成分分析"
+author: yang
+date: '2018-12-18'
+slug: pricinple-component-analysis
+categories:
+  - statistics
+tags:
+  - liner algebra
+  - machine learning 
+summary: "**ggplot**入门，简要了解**ggplot**的基本构成"
+output:
+  blogdown::html_page
+---
+
+
+通常高通量数据中含有很多变量，主成分分析是一种数据降维方法，利用正交变换把原始的可能相关的变量转换为一组正交新变量，成为主成分。提取数据中重要的特征，去除不重要的特征（噪声）。**方差越大，表示的特征信息越多，的选择方差最大的方向，去除方差较小的方向，所以PCA选择求协方差矩阵**。<!--more-->
+
+
+比如微生物组的16S rRNA测序数据，通常每个样品会含有多个OTU（假设有500个）。为了根据OTU丰度对不同分组的样本进行分类，每个OTU的丰度差异都可以在一定程度上反应样品之间的差异，但是不同的OTU之间可能存在着一定的相关性，可能会造成信息的冗余。PCA就是在保持原有变量所包含信息的前提下，减少变量个数进行分析。
+
+#### PCA的计算原理
+
+假设有一组包含$m$个变量的数据，含有$n$个样本，构成了一个$m \times n$的矩阵$A_0$。用图形表示，$A_0$是指在$R^m$空间内的$n$个点，当$A$的每一行都减去该行的均值后（数据中心化），$n$个点通常聚集在一条线或者平面周围（或其他$R^m$的低维子空间)。
+
+**中心化的原因：是数据经过圆点，消除均值对分类的影响；求协方差转化为矩阵乘法。**[^1]
+
+
+
+以含两个变量的$n$个点为例说明PCA的步骤，$A$ 维度为$2 \times n$。$A$的每一行减去该行的均值，使$A$中心化，每一行的均值为0。如图所示，这$n$个点分布在一条直线周围
+
+```{r, echo=FALSE}
+library(ggplot2)
+df1 <- data.frame(x = c(1:100))
+df1$y <- 3 * df1$x + rnorm(100, sd = 40)
+df2 <- -df1
+df <- dplyr::bind_rows(df1, df2)
+ggplot(df, aes(x, y)) + geom_point() +
+  geom_smooth(method = "lm", se=FALSE) 
+```
+
+$AA^T$构成一个$2 \times 2$的矩阵，其中$(AA^T)_{11}$和$(AA^T)_{22}$是行向量的方差，而$(AA^T)_{12}$和$(AA^T)_{21}$即是两行的协方差。因此，协方差矩阵可表示为
+
+$$
+S = \frac {AA^T} {n-1}
+$$
+
+
+求协方差矩阵的特征值$\sigma_1$和$\sigma_1$。根据矩阵奇异值分解公司，中心化后的$A$可表示为
+
+$$
+A = \sqrt{\sigma_1}u_1v_1^T + \sqrt{\sigma_2}u_2v_2^T
+$$
+
+假设中心化后$A$为（各行和为0）
+
+$$
+A = \left[
+    \begin{matrix}
+        3 & -4 & 7 & 1 & -4 & -3 \\
+        7 & -6 & 8 & -1 & -1 & -7 
+    \end{matrix}
+\right] \qquad 
+S = \frac{AA^T}{5} = \left[
+    \begin{matrix}
+        20 & 25 \\
+        25 & 40 
+    \end{matrix}
+\right]
+$$
+
+$S$特征值为57和3，那么$A$可表示为
+
+$$
+A = \sqrt{57}u_1v_1^T + \sqrt{3}u_2v_2^T
+$$
+
+$u_1$对应于散点图变化最大的方向（直线），$u_2$垂直于$u_1$，表征垂直于直线方向上的小幅摆动。
+
+所以，对于多维变量，把原始数据转换到向量$u$构成的空间内，特征值越大表征在该向量的方向上数据变异越大。通常选择变异量较大的前几个变量用于表征数据。
+
+#### 相关系数矩阵
+
+协方差矩阵是没有消除量纲的表示变量之间关系。当变量的单位对结果有影响的时候。通常选择消除量纲的相关矩阵进行PCA分析。
+
+协方差：
+
+$$
+Cov(X, Y) = E((X - E(X))(Y - E(Y)))
+$$
+
+相关系数：
+
+$$
+Cor(X, Y) = \frac {Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}
+$$
+
+所以标准化后的协方差就是相关系数。$X$和$Y$标准化
+
+$$
+X^* = \frac{X - E(X)}{\sqrt{D(x)}}
+Y^* = \frac{Y - E(Y)}{\sqrt{D(Y)}}
+$$
+
+$$
+Cov(X^*, Y^*) = \frac {E((X - E(X))(Y - E(Y)))}{\sqrt{D(X)}\sqrt{D(Y)}} = \frac {Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}} = Cor(X, Y)
+$$
+
+#### 主成分分析R代码实现
+
+以`mtcars`数据为例，**PCA**是针对数值数据，所以我们删除`mtcars`中的分类变量`vs`和`am`。
+
+```{R,message=FALSE}
+library(dplyr)
+# 首先中心化，因为各变量量纲不同scale = TRUE,
+# 主成分是原始变量的线性组合，$rotation表征了线性组合系数，x
+# 表示新的坐标值
+mtcars_pca <- prcomp(select(mtcars, -c("vs", "am")),
+  center = TRUE, scale = TRUE)
+
+summary(mtcars_pca)
+```
+
+共9个主成分32个线性相关变量重新组合成9个正交变量，第一个主成分PC1解释了总体数据63%的特征，PC2解释了23%的总体特征，PC1和PC2解释了86%的数据特征，因此仅仅通过前两个主成分就能基本确定样本的位置。
+
+##### PCA结果可视化
+
+**biplot**显示样本在新的坐标下的位置，同时显示原始的变量值(根据`rotation`在相应的主成分标出原始值)，向量箭头起始于中心点。
+
+```{R,message=FALSE}
+library(ggbiplot)
+ggbiplot(mtcars_pca, labels=rownames(mtcars))
+```
+
+从图中可以看出，变量`cyl`、`disp`、`wt`、`hp`值较高的样本倾向于位于图中右侧。显示这些变量与哪些样品有关。
+
+##### 结果解读
+
+对车进行分类，观察车出产地情况
+
+```{R}
+mtcars_country <- c(rep("Japan", 3), rep("US",4), rep("Europe", 7),rep("US",3), "Europe", rep("Japan", 3), rep("US",4), rep("Europe", 3), "US", rep("Europe", 3))
+
+ggbiplot(mtcars_pca,ellipse=TRUE,  labels=rownames(mtcars), groups=mtcars_country)
+```
+
+美国产汽车聚集到右侧，且`cyl`,`disp`,`wt`较大；日本产汽车`mpg`较大，欧洲产汽车位于中间且相对分散一些。
+
+第三和四主成分情况
+
+```{R}
+ggbiplot(mtcars_pca,ellipse=TRUE,choices=c(3,4),   labels=rownames(mtcars), groups=mtcars_country)
+```
+
+显然数据没有什么特点，这并不奇怪，因为PC3和PC4仅能表征数据很少的一部分特征。
+
+综上，`cyl`，`disp`,`wt`,`mpg`可以用于区分美国和日本产汽车，如果需要构建一个汽车产地的模型，这些变量可能非常有用。
+
+
+[^1]: Miranda, A. A., Le Borgne, Y. A., & Bontempi, G. (2008). New routes from minimal approximation error to principal components. Neural Processing Letters, 27(3), 197-207.
+
+
+#### 参考
+
+- [主成分分析（PCA）及Demo最大方差解释和最小平方误差解释](https://blog.csdn.net/hit1524468/article/details/60323173)
+- [如何通俗易懂地讲解什么是 PCA 主成分分析](https://www.zhihu.com/question/41120789/answer/481966094)
+- [主成分分析（PCA）模型](https://www.jianshu.com/p/1518369c2c61)
+- [数据什么时候需要做中心化和标准化处理](https://www.zhihu.com/question/37069477)
+- [Principal Component Analysis in R](https://www.datacamp.com/community/tutorials/pca-analysis-r)
+- [PCA on correlation or covariance?](https://stats.stackexchange.com/questions/53/pca-on-correlation-or-covariance)
+- [Why do we need to normalize data before principal component analysis (PCA)?](https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca)

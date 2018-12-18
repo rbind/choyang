@@ -1,0 +1,20 @@
+<div class="navbar-collapse collapse dual-nav w-50">
+  <ul class="nav navbar-nav ml-auto">
+    {{ range .Site.Params.social }}
+    {{ $pack := or .icon_pack "fa" }}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ .link | safeURL }}">
+        <i class="{{ $pack }}  {{ $pack }}-lg {{ $pack }}-{{ .icon }}"></i>
+      </a>
+    </li>
+    {{ end}}
+    <!-- RSS -->
+    {{ if .RSSLink }}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ .RSSLink }}">
+        <i class="fa fa-rss fa-lg fa-fw"></i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>

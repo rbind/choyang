@@ -1,0 +1,286 @@
+---
+title: Tidy evaluation
+author: ''
+date: '2017-09-26'
+slug: tidy-evaluation
+categories: []
+tags:
+  - R
+  - tidyverse
+draft: true
+---
+
+"[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作**data.frame**最常用的工具，提供了一系列函数来实现常见的数据框的处理，如`mutate()`,`select()`，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)."<!--more-->
+
+```{r echo=FALSE}
+library(rlang)
+```
+## background, 
+
+### NSE
+
+NSE, 仅当参数是一个表达式（不能直接eval 的参数，比如 quote 的参数，或者在函数内部使用 substitute 使参数为 quoted）. 当函数调用的时候，参数会被存储为 promise：参数的表达式及其在环境中的值,直到在函数内部实际使用到参数就会eval.`substitute()`捕捉表达式，变量值被替换,而没有用到参数的值，所以不会 eval.
+
+data environment is evaluated before the enclosed environment, we say the data environment does overscope.
+
+### formula
+
+### expression的定义和 expression 类的区别
+
+### rlang
+
+- `expr()`, 等价于 `bquote()`
+- `enexpr()`, 等价于`substitute()`
+- quosure: quote and closure, formula 的子类，单边公式
+
+
+## dplyr package
+
+[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作 **data.frame** 最常用的工具，提供了一系列函数来实现常见的数据框 df 的处理，如`filter()`,`select()`，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)[^1].
+
+```{r message=FALSE}
+library(dplyr)
+df <- data.frame(x = 1:3, y = 3:1)
+
+# 等价于 df[df$x == 1 & df$y == 3, ]
+filter(df, x == 1, y == 3) 
+```
+
+但是 NSE 方法构建的函数，在交互式环境下可以正常使用，在函数内部调用用变量传递参数可能得到奇怪的结果或者错误.
+
+```{r error=TRUE}
+# 用 var 传递其参数，结果异常
+var <- "x"
+filter(df, var == 1)
+
+my_filter <- function(df, var) {
+  filter(df, var == 1)
+}
+my_filter(df = df, var = x)
+```
+
+因此，[dplyr](https://github.com/tidyverse/dplyr)中对于这些函数提供了相应的标准求值版本，形如`*_()`，以便在自定义函数或者开发包的时候使用这类函数.
+
+```{r}
+filter_(df, "x == 1")
+```
+
+自[0.7](https://github.com/tidyverse/dplyr/releases/tag/v0.7.0)版本后，[dplyr](https://github.com/tidyverse/dplyr) 采用了一种新的 NSE方法 [tidyeval](https://cran.r-project.org/web/packages/rlang/vignettes/tidy-evaluation.html) 的策略,上述函数的参数不仅可以是
+
+### tidy eval
+
+#### quote
+
+- quote(), substitute()：`quote()`，literal quote，not quote the value ；而`substitute(arg, env)`quote the value of the arg, substituting any variables bound in env.
+
+- quo(), enquo()
+- quo_name(), :=
+
+#### unquote
+
+- !!,UQ, unquote
+
+```{R UQ, eval=FALSE}
+# quo,  捕捉环境极其参数表达式, R general quasure, quosureish
+# enquo, 作用于函数的参数，返回一个 quosure，成为 tidy eval quosure
+q <- quo(quote)
+
+# 输入 general quasure，返回 quasure
+UQ(q)
+
+# unquote, evaluate
+"!!"(q)
+
+
+```
+
+- !!!, UQS, unquoting splicing
+- UQE
+
+
+### 创建函数
+
+第一个参数是数据 *.data*  (**tbl** 或 **data.frame**)，后续参数是表达式 *...*
+
+#### 数据作为参数
+
+dplyr 中基本的数据操作函数对第一个参数*.data*者采用SE，所以直接构建函数即可：
+
+```{r eval=FALSE}
+mutate(df1, y = a + x)
+mutate(df2, y = a + x)
+mutate(df2, y = a + x)
+```
+
+```{r my_mutate}
+my_mutate <- function(df) {
+  mutate(df, y = a + x)
+}
+```
+
+但是，针对 *.data* 不存在而全局环境中存在的变量，函数可能返回错误的结果,并且错误很难发现.
+
+```{r mutate_global}
+df1 <- tibble(x = 1:3)
+a <- 10
+my_mutate(df1)
+```
+
+为此， dplyr定义了`.data`变量,用于表示输入的数据，也就是第一个参数，当对数据内不存在的变量操作时不会再向父环境中寻值，直接抛出错误[^2].
+
+```{r my_mutate2, error=TRUE}
+my_mutate <- function(df) {
+  mutate(df, y = .data$a + .data$x)
+}
+my_mutate(df1)
+```
+
+建议在构建自己的函数的时候，使用`.data$`访问数据的变量，以免返回错误的结果.
+
+#### 表达式作为参数
+
+后续的参数是非引用（unquoted）的表达式，dplyr 会自动的引用（quote）然后计算这些表达式的值，所以这些参数中不能含有其他变量， 因为它不会在计算的时候用我们定义的变量的值来替换该变量.
+
+```{r expression}
+df <- tibble(
+  g1 = c(1, 1, 2, 2, 2),
+  g2 = c(1, 2, 1, 2, 1),
+  a = sample(5), 
+  b = sample(5)
+)
+
+df %>%
+  group_by(g1) %>%
+  summarise(a = mean(a))
+
+df %>%
+  group_by(g2) %>%
+  summarise(a = mean(a))
+```
+
+构建由表达式作为参数的函数时会抛出错误.
+
+```{r my_summarise, error=TRUE}
+my_summarise <- function(df, group_var) {
+  df %>%
+    group_by(group_var) %>%
+    summarise(a = mean(a))
+}
+
+# 不会用g1来替换 group_var，只是 quote(group_var)
+my_summarise(df, g1) 
+```
+
+解决办法是首先 quote参数（函数 `quo()`,确保参数 `group_var`可以是变量），然后调用`group_by()`时unquote (`!!`)该参数求值.
+
+```{r my_summarise2}
+my_summarise2 <- function(df, group_var) {
+  df %>% 
+    group_by(!!group_var) %>% 
+    summarise(a = mean(a))
+}
+
+my_summarise2(df, quo(g1))
+```
+
+利用 `enquo()`[^3], 构建 dplyr 类似的函数，`my_summarise(df, group_var)
+
+```{r my_summarise3}
+my_summarise3 <- function(df, group_var) {
+  group_var <- enquo(group_var)
+  df %>% 
+    group_by(!!group_var) %>% 
+    summarise(a = mean(a))
+}
+
+my_summarise3(df, g1)
+```
+
+#### 多个输入变量
+
+```{r diff_input}
+diff_input_summarise <- function(df, expr) {
+  expr <- enquo(expr)
+  
+  summarise(df,
+    mean = mean(!!expr),
+    sum = sum(!!expr),
+    n = n()
+  )
+}
+
+diff_input_summarise(df, g1)
+diff_input_summarise(df, a * b)
+```
+
+#### 多个输入和输出变量
+
+形如`mutate(df, mean_a = mean(a), sum_a = sum(a))`,根据输入变量创建输出变量，解决方法是利用`quo_name()`创建输出变量的名称.[^4]
+
+```{r quo_name}
+my_mutate <- function(df, expr) {
+  expr <- enquo(expr)
+  mean_name <- paste0("mean_", quo_name(expr))
+  sum_name <- paste0("sum_", quo_name(expr))
+  
+  mutate(df, 
+    !!mean_name := mean(!!expr), 
+    !!sum_name := sum(!!expr)
+  )
+}
+
+my_mutate(df, a)
+```
+
+#### 任意多参数
+
+- 多个参数用`...`表示
+- 使用`quos()`来quote `...`，构成一个 quosure 列表
+- `!!!`代替`!!`分割 `quos`的参数，把列表分割为多参数
+
+```{r quos}
+args <- list(na.rm = TRUE, trim = 0.25)
+quo(mean(x, !!! args))
+```
+
+```{r multiple_arg}
+multiple_arg_summarise <- function(df, ...) {
+  group_by <- quos(...)
+
+  df %>%
+    group_by(!!!group_by) %>%
+    summarise(a = mean(a))
+}
+
+multiple_arg_summarise(df, g1, g2)
+```
+
+### 引用 Quoting
+
+引用就是不计算其值而直接捕捉表达式，函数中表达式组成的参数调用时首先都是引用这些参数. 最常见的是公式`~`
+
+```{r formula}
+y ~ a + b
+```
+
+另外，`quote(expr)`直接返回其参数表达式
+
+```{r}
+# 计算表达式
+toupper(letters[1:5])
+# 捕捉表达式
+quote(toupper(letters[1:5]))
+```
+
+## 其他
+- sym: character to name,可以构建函数输入参数为字符，而非表达式， name can also be quoted
+
+
+[^1]: NSE 和 SE 的区别：NSE,函数的参数传递代码，SE，函数的参数直接传递其值，具体可参考 [https://adv-r.hadley.nz/nse](https://adv-r.hadley.nz/nse)，后面准备专门写一篇详细介绍 NSE 的文章.
+
+[^2]: 在开发包时，使用 dplyr 中函数，时使用`.data`访问变量值可以避在`R CMD check`产生 undefined global variables 的`NOTE` (`@importFrom rlang .data`).
+
+[^3]: `quo(expression)`返回一个quosure,相当于单边公式，表达式及其环境([https://adv-r.hadley.nz/nse](https://adv-r.hadley.nz/nse))，可以在任何表达式中使用.`enquo(arg)`，捕捉函数的调用环境，并对 arg 中的变量进行求值，返回最终的表达式, 只适用于函数内部. `quo()`和 `enquo()`类似于 R 中的`quote()`和`substitute()`.
+
+[^4]: `!!mean_name = mean(!!expr)`是非法的 R 表达式，需要使用 rlang 中`:=`的来创建.
+

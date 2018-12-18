@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div class="container py-5">
+  <h1>{{ .Title }}</h1>
+  <ul class="list-inline">
+    {{ range $key, $value := .Data.Terms }}
+      <li class="list-inline-item">
+        <a href="{{ (print "/" $.Data.Plural "/" $key | urlize) | relURL }}">
+          {{ $key }}
+        </a>
+        ({{ len $value }})
+      </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ partial "footer.html" . }}

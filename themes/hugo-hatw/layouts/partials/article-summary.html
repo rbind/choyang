@@ -1,0 +1,6 @@
+<p>{{ .Summary }}</p>
+{{ if .Truncated }}
+  <footer>
+    <a  href="{{ .RelPermalink }}">Continue Reading</a>
+  </footer>
+{{ end }}

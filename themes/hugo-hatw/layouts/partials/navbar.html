@@ -1,0 +1,25 @@
+<!-- 
+-- reference
+-- https://medium.com/wdstack/bootstrap-4-custom-navbar-1f6a2da5ed3c 
+-->
+
+<nav class="navbar p-0 {{ with .Site.Params.navbar }}{{ .color }} {{ .bg_color }}{{end}} navbar-expand-md ">
+  <div class="container">
+  <a href="{{ "/" | relURL }}" class="navbar-brand d-block text-left w-25">{{ .Site.Title }}</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="navbar-collapse collapse dual-nav w-50">
+    <ul class="navbar-nav">
+      {{ range .Site.Menus.main }}
+      <li class="nav-item">
+        <a class="nav-link font-weight-bold" href="{{ .URL | relURL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ partial "navbar-right.html" . }}
+  </div>
+</nav>

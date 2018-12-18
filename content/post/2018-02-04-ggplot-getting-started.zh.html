@@ -15,26 +15,27 @@ output:
 
 
 <p><strong>ggplot</strong>采用图层的语法，基于数据构建统计图形。统计图形就是从数据到几何对象中图形属性的映射，多个基本的图层简单相加就可以构建复杂的图形。</p>
-<section id="ggplot" class="level4">
+<div id="ggplot" class="section level4">
 <h4>ggplot图形基本结构</h4>
 <p>每个<strong>ggplot</strong>都包含三个关键组件</p>
-<ol type="1">
+<ol style="list-style-type: decimal">
 <li><strong>数据</strong>(<strong>data</strong>), 数据是基础</li>
 <li><strong>图形属性映射</strong>(<strong>aesthtic mapping</strong>), 图形属性是指表征图形外观的属性 (如点的颜色，形状，坐标轴等)</li>
-<li>几何对象(geometic objects)， 如何展示数据，几何对象可创建新的图层 如散点图:</li>
+<li>几何对象(geometic objects)， 如何展示数据，几何对象可创建新的图层
+如散点图:</li>
 </ol>
 <pre class="r"><code>## 发动机排量displ和在高速上每加仑里程数hwy
 ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_point()</code></pre>
 <p><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/simple_example-1.png" width="50%" /></p>
-<ol type="1">
+<ol style="list-style-type: decimal">
 <li>数据，<code>mpg</code></li>
 <li>图形属性映射，由<code>aes</code>实现, <code>x = displ</code>和<code>y = hwy</code>表示 变量<code>displ</code>和<code>hwy</code>分别映射至<code>x</code>轴和<code>y</code>轴</li>
 <li>几何对象，由<code>geom_point()</code>创建</li>
 </ol>
 <p>首先是<code>ggplot()</code>初始化图形，读入数据，变量到图形属性的映射；然后用<code>+</code>添加其他图层 (散点图)<code>geom_point()</code>.</p>
-</section>
-<section id="aesthetic" class="level4">
+</div>
+<div id="aesthetic" class="section level4">
 <h4>图形属性aesthetic</h4>
 <p>常用的图形属性有颜色(<code>colour</code>)，形状(<code>shape</code>)，大小(<code>size</code>)，每一个变量到图形属性的映射是利用<strong>标度</strong>(<strong>scale</strong>)实现。</p>
 <pre class="r"><code># `aes`默认的前两个参数是`x`和`y`
@@ -62,8 +63,8 @@ ggplot(mpg, aes(displ, hwy), color = &quot;blue&quot;) +
   ggtitle(&quot;Fixed color in ggplot() outside of aes()&quot;)</code></pre>
 <p><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/fix_color-1.png" width="50%" /><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/fix_color-2.png" width="50%" /><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/fix_color-3.png" width="50%" /></p>
 <p>需要注意的是不同的图形属性适应于不同类型的变量，如颜色和性状适用于分类数据，而大小适用于连续变量。</p>
-</section>
-<section id="geom" class="level4">
+</div>
+<div id="geom" class="section level4">
 <h4>几何对象geom</h4>
 <p>几何对象指定图形中展示数据的方式，通过上面的例子我们指导<code>geom_point()</code>用于画散点图，<strong>ggplot</strong>中几何对象命名方式为<code>geom_*()</code>，如常用的几何对象有</p>
 <ul>
@@ -90,4 +91,4 @@ ggplot(mpg, aes(hwy)) +
   ggtitle(&quot;Frequency polygon plot&quot;)</code></pre>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/sample_geom-1.png" width="50%" /><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/sample_geom-2.png" width="50%" /><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/sample_geom-3.png" width="50%" /><img src="/post/2018-02-04-ggplot-getting-started.zh_files/figure-html/sample_geom-4.png" width="50%" /></p>
-</section>
+</div>

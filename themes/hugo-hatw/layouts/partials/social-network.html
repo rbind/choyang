@@ -1,0 +1,21 @@
+<div class="d-flex">
+  <ul class="list-inline mx-auto">
+    {{ range .Site.Params.social }}
+    {{ $pack := or .icon_pack "fa" }}
+    <li class="list-inline-item">
+      <a class="text-secondary" href="{{ .link | safeURL }}">
+        <i class="{{ $pack }}  {{ $pack }}-lg {{ $pack }}-{{ .icon }}"></i>
+      </a>
+    </li>
+    {{ end}}
+    
+    <!-- RSS -->
+    {{ if .RSSLink }}
+    <li class="list-inline-item">
+      <a class="text-secondary" href="{{ .RSSLink }}">
+        <i class="fa fa-rss fa-lg fa-fw"></i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>

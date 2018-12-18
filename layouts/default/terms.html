@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+
+<div class="container pt-4">
+  <div class="term p-4">
+    <h1>{{ .Title }}</h1>
+    <ul class="list-inline">
+      {{ range $key, $value := .Data.Terms }}
+      <li class="list-inline-item">
+        <a href="{{ (print "/" $.Data.Plural "/" $key | urlize) | relLangURL }}">
+          {{ $key }}
+        </a>
+        ({{ len $value }})
+      </li>
+      {{ end }}
+    </ul>
+  </div> <!-- term -->
+
+</div>
+
+{{ partial "footer.html" . }}

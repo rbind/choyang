@@ -1,0 +1,34 @@
+  <div class="col-md-3 d-none d-lg-block">
+    <div class="aside px-4">
+      <div class="base-info">
+        <h3>{{ .Site.Title }}</h3>
+        {{ with .Site.Params.bio }}
+          <em class="text-center text-muted font-weight-bold">{{ . }}</em>
+        {{ end }}
+      </div>
+      
+      {{ if or (len $.Site.Taxonomies.categories) (len $.Site.Taxonomies.tags) }}
+      <h3>Categories</h3>
+      <ul class="list-unstyled">
+        {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
+          <li>
+            <a class="py-1" href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}"> 
+              {{ $name }}
+            </a>
+            ({{ len $taxonomy }})
+          </li>
+        {{end}}
+      </ul>
+  
+      <h3>Tags</h3>
+        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+          <a class="py-1" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}"> 
+            {{ $name }}
+          </a>
+        {{end}}
+      
+        {{ else }}
+          {{ partial "famous-remark.html" . }}
+        {{ end }}
+    </div>  <!-- aside -->
+  </div> <!-- col-md-3 -->

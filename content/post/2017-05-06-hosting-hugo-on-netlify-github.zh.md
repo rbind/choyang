@@ -6,10 +6,9 @@ slug: hosting-hugo-on-netlify
 tags: 
   - hugo
   - netlify
-summary: "Github 和 Netlify 结合使用 - 更简单方便的托管部署静态网站"
 ---
 
-在用 blogdown 建站之初是托管在Github Pages，具体过程[这篇日志]({{< ref "post/2017-03-21-hugo-hosting-github.zh.md" >}})做了详细介绍。看到[Yihui的这篇博客](https://yihui.name/cn/2017/04/url-to-content/)才发现[Netlify](https://www.netlify.com/)部署托管静态网站更加方便，提供了 Jekyll、Hugo 等引擎自动编译静态网站，不需要像 Github Pages 那样用 Git 管理副产品^[Github Pages 中需要管理编译生成的网页文件，而结合 Netlify只需要上传生成网站的源代码至 Github，把 `public`文件夹添加至`.gitignore`，Hugo 默认把网站编译到 `public` 文件夹下， 文件夹，如果自定义修改了`config.toml`中的参数`publishDir`，用相应文件夹代替`public`即可]。更为方便的是，Netlify 支持编译 Github 仓库的代码，这样我们可以把 Hugo 网站源代码上传至 Github 用 Git 管理，然后在 Netlify上发布网站：
+在用 blogdown 建站之初是托管在Github Pages，具体过程[这篇日志]({{< ref "post/2017-03-21-hugo-hosting-github.zh.md" >}})做了详细介绍。<!--more-->看到[Yihui的这篇博客](https://yihui.name/cn/2017/04/url-to-content/)才发现[Netlify](https://www.netlify.com/)部署托管静态网站更加方便，提供了 Jekyll、Hugo 等引擎自动编译静态网站，不需要像 Github Pages 那样用 Git 管理副产品^[Github Pages 中需要管理编译生成的网页文件，而结合 Netlify只需要上传生成网站的源代码至 Github，把 `public`文件夹添加至`.gitignore`，Hugo 默认把网站编译到 `public` 文件夹下， 文件夹，如果自定义修改了`config.toml`中的参数`publishDir`，用相应文件夹代替`public`即可]。更为方便的是，Netlify 支持编译 Github 仓库的代码，这样我们可以把 Hugo 网站源代码上传至 Github 用 Git 管理，然后在 Netlify上发布网站：
 
 1. 用 Github 账户登录 Netlify
 1. 右上角选择`New site from Git`

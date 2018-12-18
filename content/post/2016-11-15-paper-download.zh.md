@@ -8,7 +8,7 @@ summary: "简要介绍自己经常用的`Google`学术搜索镜像和文献全�
 快速的找到自己研究方向或者感兴趣的文献，常常事半功倍，能很大的提高我们的工作效率，对于毕业论文和科研论文的写作也非常有用。由于XXX原因`Google`被和谐，`pubmed`能搜索生物医学领域文献，并且不太稳定经常XXX。至于后起之“秀”度娘学术和微软必应学术搜索，不论在搜索数量、质量和功能与`Google`学术都没有可比性，也许它们与`Google`学术之间的差距要比中美学术之间的差异还要大。下面道一道我经常用的`Google`学术搜索镜像和文献全文下载方法**(许多非开源杂志主页不提供全文下载)**。<!--more-->
 
 
-# 目前俺常用的Goolge学术镜像
+## 目前俺常用的Goolge学术镜像
 
 目前有许多`Google`学术镜像可以使用,俺常用的镜像有有下面几个，当然有其他更好的镜像就更好了。俺一般先使用比较稳定方便的`Glgoo`学术搜索，如果`Glgoo`被和谐，再尝试其他两个`Google`学术搜索导航。
 
@@ -19,7 +19,7 @@ summary: "简要介绍自己经常用的`Google`学术搜索镜像和文献全�
 3. [思谋学术](http://dir.scmor.com/google/)：http://dir.scmor.com/google/
 `Google`学术搜索导航包含很多`Google`学术镜像，可以选择使用。
 
-# Google学术搜索
+## Google学术搜索
 
 `Google`作为搜索引擎中的老大有很多搜索技巧，掌握一些常见的搜索技巧可以很大的提高工作效率，下边举几个常用例子（更多的说明可以看`Google`帮助）
 
@@ -29,10 +29,6 @@ summary: "简要介绍自己经常用的`Google`学术搜索镜像和文献全�
 
 一些条件限制搜索位置，如`intitle`、`inurl`等限定搜索标题和url地址；`filetype`限制搜索结果的类型；`AND` 或者 `OR`组合多种搜索条件；等等等
     
-# 文献全文下载
-
-## sci-hub免费下载全文的方法
-
 很多杂志的文章在主页上不提供全文下载的，俄罗斯某网站`sci-hub`提供文献全文下载，个人使用中感觉除了一些新上线的文献外，`sci-hub`都可以搞定。常用镜像有：
 
 - 国内`sci-hub`：
@@ -48,7 +44,7 @@ summary: "简要介绍自己经常用的`Google`学术搜索镜像和文献全�
 
 如果在`PubMed`查询到的文献，每篇文献都有一个`PubMed`号，我们可以复制这个号码在`sci-hub`进行查询。注意是`PubMed`号，而不是`PMCID`号。这样就可以打开`PDF`了。此时可能是自动下载`PDF`，或者打开新的PDF预览网页进行手动下载（图1）。
 
-![](../img/paper_11_15/PMID.png)
+![](/post/2016-11-15-paper-download/PMID.png)
 
 
 如果是在其他数据库或者杂志主页查询到的文献，可以利用文章`DOI`号在`sci-hub`下载到全文。方法同`PMID`,比如`DOI`号为`10.1016/j.jcv.2015.05.022`，输入`DOI`号搜索即可打开文章`pdf`页面
@@ -71,13 +67,11 @@ http://www.nature.com/nature/journal/v522/n7556/full/522290a.html，
 [Library Genesis](http://gen.lib.rus.ec/):(http://gen.lib.rus.ec/)提供下载
 电子书、科技论文专利等，它集成了`sci-hub`的功能。搜索条件与`sci-hub`类似，科技论文搜索只要选中`scitific articles`选项即可，可以输入`PMID`，`DOI`或者关键词搜索（图2）。
 
-![](../img/paper_11_15/genesis.png)
+![](/post/2016-11-15-paper-download/genesis.png)
 
-点击`libgen`进入下载界面，下载即可（图3和4）。
+点击`libgen`进入下载界面，下载即可（图3）。
 
-![](../img/paper_11_15/genesis2.png)
-
-![](../img/paper_11_15/genesis3.png)
+![](/post/2016-11-15-paper-download/genesis2.png)
 
 ## 推荐步骤
 
@@ -85,7 +79,7 @@ http://www.nature.com/nature/journal/v522/n7556/full/522290a.html，
 2. 杂志主页不提供全文下载的文献，使用`sci-hub`镜像下载（先国内再国外）
 3. `sci-hub`不稳定登录不上去的时候，考虑使用`library genesis`下载。
 
-# 穿墙术
+## 穿墙术
 
 利用穿墙术可以跳上墙头直接看到`google`，而不用使用`google`镜像，两种使用较多的免费翻墙工具（有钱人可以直接买`vpn`）：
 
