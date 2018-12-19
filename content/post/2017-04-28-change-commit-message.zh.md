@@ -5,10 +5,10 @@ date: '2017-04-28'
 slug: change-commit-message
 tags:
   - git
+description: 偶然发现之前某次 `git commit `中message单词拼错了，作为完美强迫症患者，当然要找方法改之。
 ---
 
 偶然发现之前某次 `git commit `中message单词拼错了，作为完美强迫症患者，当然要找方法改之。
-<!--more-->
 
 `git rebase -i`允许对一些commit的整理和修改。如果对最近的三条 commit （或者其中的任意一条）进行修改：
 

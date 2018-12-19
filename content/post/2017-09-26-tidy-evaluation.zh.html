@@ -7,12 +7,12 @@ categories: []
 tags:
   - R
   - tidyverse
-draft: true
+description: "[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作data.frame最常用的工具，提供了一系列函数来实现常见的数据框的处理，如mutate(),select()，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)."
 ---
 
 
 
-<p>“<a href="https://github.com/tidyverse/dplyr">dplyr</a>是数据处理，特别是操作<strong>data.frame</strong>最常用的工具，提供了一系列函数来实现常见的数据框的处理，如<code>mutate()</code>,<code>select()</code>，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation).”<!--more--></p>
+<p>“<a href="https://github.com/tidyverse/dplyr">dplyr</a>是数据处理，特别是操作<strong>data.frame</strong>最常用的工具，提供了一系列函数来实现常见的数据框的处理，如<code>mutate()</code>,<code>select()</code>，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation).”</p>
 <div id="background" class="section level2">
 <h2>background,</h2>
 <div id="nse" class="section level3">
@@ -140,8 +140,8 @@ df %&gt;%
 <pre><code>## # A tibble: 2 x 2
 ##      g1     a
 ##   &lt;dbl&gt; &lt;dbl&gt;
-## 1     1  2   
-## 2     2  3.67</code></pre>
+## 1     1     3
+## 2     2     3</code></pre>
 <pre class="r"><code>df %&gt;%
   group_by(g2) %&gt;%
   summarise(a = mean(a))</code></pre>
@@ -171,8 +171,8 @@ my_summarise2(df, quo(g1))</code></pre>
 <pre><code>## # A tibble: 2 x 2
 ##      g1     a
 ##   &lt;dbl&gt; &lt;dbl&gt;
-## 1     1  2   
-## 2     2  3.67</code></pre>
+## 1     1     3
+## 2     2     3</code></pre>
 <p>利用 <code>enquo()</code><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, 构建 dplyr 类似的函数，`my_summarise(df, group_var)</p>
 <pre class="r"><code>my_summarise3 &lt;- function(df, group_var) {
   group_var &lt;- enquo(group_var)
@@ -185,8 +185,8 @@ my_summarise3(df, g1)</code></pre>
 <pre><code>## # A tibble: 2 x 2
 ##      g1     a
 ##   &lt;dbl&gt; &lt;dbl&gt;
-## 1     1  2   
-## 2     2  3.67</code></pre>
+## 1     1     3
+## 2     2     3</code></pre>
 </div>
 <div class="section level4">
 <h4>多个输入变量</h4>
@@ -229,11 +229,11 @@ my_mutate(df, a)</code></pre>
 <pre><code>## # A tibble: 5 x 6
 ##      g1    g2     a     b mean_a sum_a
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt;
-## 1     1     1     3     2      3    15
-## 2     1     2     1     1      3    15
-## 3     2     1     5     5      3    15
-## 4     2     2     4     3      3    15
-## 5     2     1     2     4      3    15</code></pre>
+## 1     1     1     5     5      3    15
+## 2     1     2     1     2      3    15
+## 3     2     1     3     1      3    15
+## 4     2     2     4     4      3    15
+## 5     2     1     2     3      3    15</code></pre>
 </div>
 <div class="section level4">
 <h4>任意多参数</h4>
@@ -260,9 +260,9 @@ multiple_arg_summarise(df, g1, g2)</code></pre>
 ## # Groups:   g1 [?]
 ##      g1    g2     a
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     1     1   3  
+## 1     1     1   5  
 ## 2     1     2   1  
-## 3     2     1   3.5
+## 3     2     1   2.5
 ## 4     2     2   4</code></pre>
 </div>
 </div>

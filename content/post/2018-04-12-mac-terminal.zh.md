@@ -4,14 +4,15 @@ author: Yang
 date: '2018-04-12'
 slug: mac-terminal
 categories:
-  - Mac OS
+  - Mac 
+description: iterm2是一个Mac终端的替代品，功能非常强大，比如主题设置、分屏、复制、搜索等，使用起来非常方便。配置和安装iterm2和zsh。
 ---
 
-iterm2是一个Mac终端的替代品，功能非常强大，比如主题设置、分屏、复制、搜索等，使用起来非常方便。配置和安装iterm2和zsh。<!--more-->
+iterm2是一个Mac终端的替代品，功能非常强大，比如主题设置、分屏、复制、搜索等，使用起来非常方便。配置和安装iterm2和zsh。
 
 ## 安装iterm2
 
-从[iterm2 download page](https://www.iterm2.com/downloads.html)下载安装，或者利用[homebrew](https://brew.sh/)安装`brew cask install iterm2`.<!--more-->
+从[iterm2 download page](https://www.iterm2.com/downloads.html)下载安装，或者利用[homebrew](https://brew.sh/)安装`brew cask install iterm2`.
 
 ##  配置iterm2
 

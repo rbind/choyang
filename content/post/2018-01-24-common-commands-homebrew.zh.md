@@ -7,10 +7,10 @@ categories:
   - Mac OS
 tags:
   - Homebrew
-summary: "Homebrew常用命令，记下来以备查看"
+description: "Homebrew常用命令，记下来以备查看"
 ---
 
-Homebrew常用命令，记下来以备查看.<!--more-->
+Homebrew常用命令，记下来以备查看.
  
 - `brew search text|/text/`, 搜索软件，支持正则表达式
 - `brew install formula`, 安装软件

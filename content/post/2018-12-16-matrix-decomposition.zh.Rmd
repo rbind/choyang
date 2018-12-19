@@ -8,14 +8,13 @@ categories:
 tags:
   - liner algebra
   - machine learning
+
 ---
 #### 特征分解
 
-对于方阵`$A$`和非零向量$x$, 如果$Ax = \lambda x$,表征矩阵$A$乘以向量$x$后不改变向量的值，$x$成为特征向量，$\lambda$成为特征值。
+对于方阵$A$和非零向量$x$, 如果$Ax = \lambda x$,表征矩阵$A$乘以向量$x$后不改变向量的值，$x$成为特征向量，$\lambda$成为特征值。也就是说$(A - \lambda I)x = 0$, 矩阵$A - \lambda I$必须是奇异矩阵, $det(A - \lambda I) = 0$。
 
-也就是说$(A - \lambda I)x = 0$, 矩阵$A - \lambda I$必须是奇异矩阵, $det(A - \lambda I) = 0$。
-
-$A$有$n$个线性无线的特征向量（特征向量构成的矩阵$X$可逆），可以被分解为:
+$A$有$n$个线性无关的特征向量（特征向量构成的矩阵$X$可逆），可以被分解为:
 
 $$
 A = X \Lambda X^{-1}

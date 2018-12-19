@@ -4,9 +4,10 @@ date: '2018-04-10'
 tags:
   - "sublime text 3"
 slug: sublime-text-3-setting-up
+description: ST3插件大大增强了其功能，`Package Control`可以方便的搜索、安装、卸载插件，`` ctrl + ` ``调出控制台，复制下面代码按回车安装。
 ---
 
-ST3插件大大增强了其功能，`Package Control`可以方便的搜索、安装、卸载插件，`` ctrl + ` ``调出控制台，复制下面代码按回车安装。<!--more-->
+ST3插件大大增强了其功能，`Package Control`可以方便的搜索、安装、卸载插件，`` ctrl + ` ``调出控制台，复制下面代码按回车安装。
 
 ```python
 import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' +

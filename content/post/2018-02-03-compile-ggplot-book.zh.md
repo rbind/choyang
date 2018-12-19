@@ -7,12 +7,12 @@ categories:
   - R
 tags:
   - ggplot
-summary: "编译ggplot成PDF版本"
+description: Hadley把他编写的[ggplot2-Elegant Graphics for Data Analysis](https://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403)书的源文件晒到了[Github](https://github.com/hadley/ggplot2-book)上。按照`README`编译过程中发现了一些问题，所以将编译过程记录下来作为备忘。
 ---
 
 Hadley把他编写的[ggplot2: Elegant Graphics for Data Analysis](https://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403)书的源文件晒到了
 [Github](https://github.com/hadley/ggplot2-book)上。按照`README`编译过程中发现了
-一些问题，所以将编译过程记录下来作为备忘。<!--more-->
+一些问题，所以将编译过程记录下来作为备忘。
 
 ##### 克隆库
 

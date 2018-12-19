@@ -10,7 +10,7 @@ tags:
   - git
 ---
 
-[github pages](https://pages.github.com),[bitbucket](https://bitbucket.org/product),[gitlab](https://gitlab.com)是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。<!--more-->
+[github pages](https://pages.github.com),[bitbucket](https://bitbucket.org/product),[gitlab](https://gitlab.com)是免费的可以用来搭建博客和托管项目网页的工具，这里我们选择最常用的github pages来托管网站。
 
 github pages分为两类
 

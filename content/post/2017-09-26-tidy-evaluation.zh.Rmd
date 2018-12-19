@@ -7,10 +7,10 @@ categories: []
 tags:
   - R
   - tidyverse
-draft: true
+description: "[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作data.frame最常用的工具，提供了一系列函数来实现常见的数据框的处理，如mutate(),select()，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)."
 ---
 
-"[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作**data.frame**最常用的工具，提供了一系列函数来实现常见的数据框的处理，如`mutate()`,`select()`，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)."<!--more-->
+"[dplyr](https://github.com/tidyverse/dplyr)是数据处理，特别是操作**data.frame**最常用的工具，提供了一系列函数来实现常见的数据框的处理，如`mutate()`,`select()`，为了方便我们在交互环境下处理数据，编写更简单的代码，这些函数利用了非标准求值方法实现(NSE, non-standard evaluation)."
 
 ```{r echo=FALSE}
 library(rlang)

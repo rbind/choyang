@@ -7,7 +7,7 @@ tags:
   - R
 ---
 
-前几天CRAN 发布了R 3.4.0版本，今天抽空安装了下，然而重启 Rstudio 运行的时候，加载某些包（如 `dplyr`，`devtools`）出现错误`caught segfault  address 0x18, cause 'memory not mapped'`。<!--more-->
+前几天CRAN 发布了R 3.4.0版本，今天抽空安装了下，然而重启 Rstudio 运行的时候，加载某些包（如 `dplyr`，`devtools`）出现错误`caught segfault  address 0x18, cause 'memory not mapped'`。
 
 重新安装包也不起作用，想到自己升级到R 3.4.0的时候采用的覆盖安装，所以考虑可能是因为版本问题引发的这个错误。随后尝试按照[R-admin](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Uninstalling-under-macOS)的步骤完全卸载旧版本 R
 
