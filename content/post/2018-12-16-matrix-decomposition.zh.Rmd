@@ -1,0 +1,133 @@
+---
+title: 矩阵分解
+author: Yang
+date: '2018-12-16'
+slug: matrix-decomposition
+categories:
+  - statistics
+tags:
+  - liner algebra
+  - machine learning
+---
+#### 特征分解
+
+对于方阵`$A$`和非零向量$x$, 如果$Ax = \lambda x$,表征矩阵$A$乘以向量$x$后不改变向量的值，$x$成为特征向量，$\lambda$成为特征值。
+
+也就是说$(A - \lambda I)x = 0$, 矩阵$A - \lambda I$必须是奇异矩阵, $det(A - \lambda I) = 0$。
+
+$A$有$n$个线性无线的特征向量（特征向量构成的矩阵$X$可逆），可以被分解为:
+
+$$
+A = X \Lambda X^{-1}
+$$
+
+$X$为特征向量构成的矩阵，$\Lambda$为特征值构成的对角矩阵
+
+- 如果特征值各不相同，显然特征向量线性无关
+- 实对称矩阵的特征值均为实数
+
+如果$A$为对称矩阵时，特征向量矩阵为正交矩阵
+
+$$
+A = Q \Lambda Q^{-1} = Q \Lambda Q^T
+$$
+
+#### 奇异值分解
+
+矩阵不是方阵或者特征值个数不足够的时候，无法进行特征值分解，并且仅仅在方阵是对称矩阵的时候可以被分解成正交矩阵的形式。奇异值分解（SVD, singular value decomposition)类似于特征分解，目的是把任意矩阵分解成正交矩阵与对角矩阵乘积形式, $U$和$V$为正交矩阵，$\Sigma$称为由奇异值构成的对角矩阵。
+
+$$
+A = U \Sigma V^T
+$$
+
+$\Sigma$对角线上的值称为矩阵的奇异值，$U$和$V$列向量分别称为左右奇异向量。
+
+$$
+AA^T = U \Sigma V^T * V \Sigma^TU^T = U \Sigma^2U^T
+$$
+
+所以$\sigma_i^2$是$AA^T$的特征值，$U$是相应的特征向量。同理所以$\sigma_i^2$是$A^TA$的特征值，$V$是相应的特征向量。对称矩阵的特征值分解是奇异值分解的一种特殊情况。
+
+
+
+#### 奇异值分解的说明**
+
+##### 矩阵的四组空间
+
+零空间是指$Ax=0$的解构成的向量空间，是$R^n$子空间。零空间基的个数为$n-rank(A)$
+
+列空间是指$Ax=\boldsymbol{b}$（$\boldsymbol{b}$是非零向量）的解构成的向量空间，是$R^m$的子空间，基的个数为$rank(A)$, 其余的$n-rank(A)$个列向量都可以由前面$rank(A)$个列向量线性组合构成。
+
+同理$A$转置的零空间是$R^m$的子空间，基的个数为$m-rank(A)$；列空间是是$R^n$子空间的子空间，基的个数为$rank(A)$
+
+显然行空间与零空间正交，列空间与转置矩阵的零空间正交。当$\boldsymbol{b}$不在矩阵的列空间内时，$Ax=\boldsymbol{b}$无解，求最优解就是指$e = \boldsymbol{b} - Ax$的最小值（最小二乘法，向量模最小）。
+
+对$A$的行向量求一组正交基$v_n$, 列向量的一组正交基$u_n$, 根据秩为$r$矩阵的四组空间。
+
+- $u_1, \cdots u_r$, 列空间一组正交基
+- $u_{r+1}, \cdots u_m$, 转置矩阵零空间的一组正交基
+- $v_1, \cdots v_r$, 转置矩阵列空间（行空间）一组正交基
+- $v_{r+1},  , \cdots v_n$, 矩阵零空间的一组正交基
+
+
+显然
+
+$$
+A  v_r = \sigma_r u_r
+$$
+
+所以
+
+$$
+AV_r = U_r \Sigma_r \qquad A \left[
+    \begin{matrix}
+        v_1 \cdots v_r
+    \end{matrix}
+\right] =
+\left[
+    \begin{matrix}
+        u_1 \cdots u_r
+    \end{matrix}
+\right] 
+\left[
+    \begin{matrix}
+        \sigma_1 \\
+        & \ddots & \\
+        && \sigma_r & 
+    \end{matrix}
+\right]
+$$
+
+附上零空间
+
+
+$$
+AV=U \Sigma \qquad
+A \left[
+    \begin{matrix}
+        v_1 \cdots v_r \cdots v_n
+    \end{matrix}
+\right] =
+\left[
+    \begin{matrix}
+        u_1 \cdots u_r \cdots u_m
+    \end{matrix}
+\right] 
+\left[
+    \begin{matrix}
+        \sigma_1 \\
+        & \ddots & \\
+        && \sigma_r &  \\
+        && \qquad
+    \end{matrix}
+\right]
+$$
+
+其中$\Sigma$为$m \times n $, $V$为$n \times n $, $U$为$m \times m $
+
+SVD矩阵分解形式
+
+$$
+A = U \Sigma V^{-1} = U \Sigma V^T = u_1\sigma_1v_1^T + \cdots + u_r\sigma_rv_r^T
+$$
+

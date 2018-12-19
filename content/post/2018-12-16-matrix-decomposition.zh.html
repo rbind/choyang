@@ -1,0 +1,112 @@
+---
+title: 矩阵分解
+author: Yang
+date: '2018-12-16'
+slug: matrix-decomposition
+categories:
+  - statistics
+tags:
+  - liner algebra
+  - machine learning
+---
+
+
+
+<div class="section level4">
+<h4>特征分解</h4>
+<p>对于方阵<code>$A$</code>和非零向量<span class="math inline">\(x\)</span>, 如果<span class="math inline">\(Ax = \lambda x\)</span>,表征矩阵<span class="math inline">\(A\)</span>乘以向量<span class="math inline">\(x\)</span>后不改变向量的值，<span class="math inline">\(x\)</span>成为特征向量，<span class="math inline">\(\lambda\)</span>成为特征值。</p>
+<p>也就是说<span class="math inline">\((A - \lambda I)x = 0\)</span>, 矩阵<span class="math inline">\(A - \lambda I\)</span>必须是奇异矩阵, <span class="math inline">\(det(A - \lambda I) = 0\)</span>。</p>
+<p><span class="math inline">\(A\)</span>有<span class="math inline">\(n\)</span>个线性无线的特征向量（特征向量构成的矩阵<span class="math inline">\(X\)</span>可逆），可以被分解为:</p>
+<p><span class="math display">\[
+A = X \Lambda X^{-1}
+\]</span></p>
+<p><span class="math inline">\(X\)</span>为特征向量构成的矩阵，<span class="math inline">\(\Lambda\)</span>为特征值构成的对角矩阵</p>
+<ul>
+<li>如果特征值各不相同，显然特征向量线性无关</li>
+<li>实对称矩阵的特征值均为实数</li>
+</ul>
+<p>如果<span class="math inline">\(A\)</span>为对称矩阵时，特征向量矩阵为正交矩阵</p>
+<p><span class="math display">\[
+A = Q \Lambda Q^{-1} = Q \Lambda Q^T
+\]</span></p>
+</div>
+<div class="section level4">
+<h4>奇异值分解</h4>
+<p>矩阵不是方阵或者特征值个数不足够的时候，无法进行特征值分解，并且仅仅在方阵是对称矩阵的时候可以被分解成正交矩阵的形式。奇异值分解（SVD, singular value decomposition)类似于特征分解，目的是把任意矩阵分解成正交矩阵与对角矩阵乘积形式, <span class="math inline">\(U\)</span>和<span class="math inline">\(V\)</span>为正交矩阵，<span class="math inline">\(\Sigma\)</span>称为由奇异值构成的对角矩阵。</p>
+<p><span class="math display">\[
+A = U \Sigma V^T
+\]</span></p>
+<p><span class="math inline">\(\Sigma\)</span>对角线上的值称为矩阵的奇异值，<span class="math inline">\(U\)</span>和<span class="math inline">\(V\)</span>列向量分别称为左右奇异向量。</p>
+<p><span class="math display">\[
+AA^T = U \Sigma V^T * V \Sigma^TU^T = U \Sigma^2U^T
+\]</span></p>
+<p>所以<span class="math inline">\(\sigma_i^2\)</span>是<span class="math inline">\(AA^T\)</span>的特征值，<span class="math inline">\(U\)</span>是相应的特征向量。同理所以<span class="math inline">\(\sigma_i^2\)</span>是<span class="math inline">\(A^TA\)</span>的特征值，<span class="math inline">\(V\)</span>是相应的特征向量。对称矩阵的特征值分解是奇异值分解的一种特殊情况。</p>
+</div>
+<div class="section level4">
+<h4>奇异值分解的说明**</h4>
+<div class="section level5">
+<h5>矩阵的四组空间</h5>
+<p>零空间是指<span class="math inline">\(Ax=0\)</span>的解构成的向量空间，是<span class="math inline">\(R^n\)</span>子空间。零空间基的个数为<span class="math inline">\(n-rank(A)\)</span></p>
+<p>列空间是指<span class="math inline">\(Ax=\boldsymbol{b}\)</span>（<span class="math inline">\(\boldsymbol{b}\)</span>是非零向量）的解构成的向量空间，是<span class="math inline">\(R^m\)</span>的子空间，基的个数为<span class="math inline">\(rank(A)\)</span>, 其余的<span class="math inline">\(n-rank(A)\)</span>个列向量都可以由前面<span class="math inline">\(rank(A)\)</span>个列向量线性组合构成。</p>
+<p>同理<span class="math inline">\(A\)</span>转置的零空间是<span class="math inline">\(R^m\)</span>的子空间，基的个数为<span class="math inline">\(m-rank(A)\)</span>；列空间是是<span class="math inline">\(R^n\)</span>子空间的子空间，基的个数为<span class="math inline">\(rank(A)\)</span></p>
+<p>显然行空间与零空间正交，列空间与转置矩阵的零空间正交。当<span class="math inline">\(\boldsymbol{b}\)</span>不在矩阵的列空间内时，<span class="math inline">\(Ax=\boldsymbol{b}\)</span>无解，求最优解就是指<span class="math inline">\(e = \boldsymbol{b} - Ax\)</span>的最小值（最小二乘法，向量模最小）。</p>
+<p>对<span class="math inline">\(A\)</span>的行向量求一组正交基<span class="math inline">\(v_n\)</span>, 列向量的一组正交基<span class="math inline">\(u_n\)</span>, 根据秩为<span class="math inline">\(r\)</span>矩阵的四组空间。</p>
+<ul>
+<li><span class="math inline">\(u_1, \cdots u_r\)</span>, 列空间一组正交基</li>
+<li><span class="math inline">\(u_{r+1}, \cdots u_m\)</span>, 转置矩阵零空间的一组正交基</li>
+<li><span class="math inline">\(v_1, \cdots v_r\)</span>, 转置矩阵列空间（行空间）一组正交基</li>
+<li><span class="math inline">\(v_{r+1}, , \cdots v_n\)</span>, 矩阵零空间的一组正交基</li>
+</ul>
+<p>显然</p>
+<p><span class="math display">\[
+A  v_r = \sigma_r u_r
+\]</span></p>
+<p>所以</p>
+<p><span class="math display">\[
+AV_r = U_r \Sigma_r \qquad A \left[
+    \begin{matrix}
+        v_1 \cdots v_r
+    \end{matrix}
+\right] =
+\left[
+    \begin{matrix}
+        u_1 \cdots u_r
+    \end{matrix}
+\right] 
+\left[
+    \begin{matrix}
+        \sigma_1 \\
+        &amp; \ddots &amp; \\
+        &amp;&amp; \sigma_r &amp; 
+    \end{matrix}
+\right]
+\]</span></p>
+<p>附上零空间</p>
+<p><span class="math display">\[
+AV=U \Sigma \qquad
+A \left[
+    \begin{matrix}
+        v_1 \cdots v_r \cdots v_n
+    \end{matrix}
+\right] =
+\left[
+    \begin{matrix}
+        u_1 \cdots u_r \cdots u_m
+    \end{matrix}
+\right] 
+\left[
+    \begin{matrix}
+        \sigma_1 \\
+        &amp; \ddots &amp; \\
+        &amp;&amp; \sigma_r &amp;  \\
+        &amp;&amp; \qquad
+    \end{matrix}
+\right]
+\]</span></p>
+<p>其中<span class="math inline">\(\Sigma\)</span>为$m n $, <span class="math inline">\(V\)</span>为$n n $, <span class="math inline">\(U\)</span>为$m m $</p>
+<p>SVD矩阵分解形式</p>
+<p><span class="math display">\[
+A = U \Sigma V^{-1} = U \Sigma V^T = u_1\sigma_1v_1^T + \cdots + u_r\sigma_rv_r^T
+\]</span></p>
+</div>
+</div>
