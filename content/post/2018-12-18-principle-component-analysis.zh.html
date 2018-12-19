@@ -15,19 +15,20 @@ output:
 
 
 
-<p>通常高通量数据中含有很多变量，主成分分析是一种数据降维方法，利用正交变换把原始的可能相关的变量转换为一组正交新变量，成为主成分。提取数据中重要的特征，去除不重要的特征（噪声）。<strong>方差越大，表示的特征信息越多，的选择方差最大的方向，去除方差较小的方向，所以PCA选择求协方差矩阵</strong>。<!--more--></p>
+<p>通常高通量数据中含有很多变量，主成分分析是一种数据降维方法，利用正交变换把原始的可能相关的变量转换为一组正交新变量, 提取数据中重要的特征，去除不重要的特征（噪声）。<strong>方差越大，表示的特征信息越多，的选择方差最大的方向，去除方差较小的方向。</strong>。<!--more--></p>
 <p>比如微生物组的16S rRNA测序数据，通常每个样品会含有多个OTU（假设有500个）。为了根据OTU丰度对不同分组的样本进行分类，每个OTU的丰度差异都可以在一定程度上反应样品之间的差异，但是不同的OTU之间可能存在着一定的相关性，可能会造成信息的冗余。PCA就是在保持原有变量所包含信息的前提下，减少变量个数进行分析。</p>
-<div id="pca" class="section level4">
-<h4>PCA的计算原理</h4>
+<div id="pca---" class="section level4">
+<h4>PCA原理 - 奇异值分解</h4>
 <p>假设有一组包含<span class="math inline">\(m\)</span>个变量的数据，含有<span class="math inline">\(n\)</span>个样本，构成了一个<span class="math inline">\(m \times n\)</span>的矩阵<span class="math inline">\(A_0\)</span>。用图形表示，<span class="math inline">\(A_0\)</span>是指在<span class="math inline">\(R^m\)</span>空间内的<span class="math inline">\(n\)</span>个点，当<span class="math inline">\(A\)</span>的每一行都减去该行的均值后（数据中心化），<span class="math inline">\(n\)</span>个点通常聚集在一条线或者平面周围（或其他<span class="math inline">\(R^m\)</span>的低维子空间)。</p>
-<p><strong>中心化的原因：是数据经过圆点，消除均值对分类的影响；求协方差转化为矩阵乘法。</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>以含两个变量的<span class="math inline">\(n\)</span>个点为例说明PCA的步骤，<span class="math inline">\(A\)</span> 维度为<span class="math inline">\(2 \times n\)</span>。<span class="math inline">\(A\)</span>的每一行减去该行的均值，使<span class="math inline">\(A\)</span>中心化，每一行的均值为0。如图所示，这<span class="math inline">\(n\)</span>个点分布在一条直线周围</p>
+<p>以含两个变量的<span class="math inline">\(n\)</span>个点为例说明PCA的步骤，<span class="math inline">\(A\)</span> 维度为<span class="math inline">\(2 \times n\)</span>。<span class="math inline">\(A\)</span>的每一行减去该行的均值，使<span class="math inline">\(A\)</span>中心化，每一行的均值为0。如图所示，这<span class="math inline">\(n\)</span>个点分布在一条直线周围。由图中也可以直观的看到，主成分方向还表示原始数据在该方向上投影方差最大（分散），与之垂直的投影距离最小。</p>
 <p><img src="/post/2018-12-18-principle-component-analysis.zh_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p><span class="math inline">\(AA^T\)</span>构成一个<span class="math inline">\(2 \times 2\)</span>的矩阵，其中<span class="math inline">\((AA^T)_{11}\)</span>和<span class="math inline">\((AA^T)_{22}\)</span>是行向量的方差，而<span class="math inline">\((AA^T)_{12}\)</span>和<span class="math inline">\((AA^T)_{21}\)</span>即是两行的协方差。因此，协方差矩阵可表示为</p>
 <p><span class="math display">\[
 S = \frac {AA^T} {n-1}
 \]</span></p>
-<p>求协方差矩阵的特征值<span class="math inline">\(\sigma_1\)</span>和<span class="math inline">\(\sigma_1\)</span>。根据矩阵奇异值分解公司，中心化后的<span class="math inline">\(A\)</span>可表示为</p>
+<p><strong>中心化的原因：保证第一个主分量是方差最大的方向，如果不中心化，那么第一主成分的方向受均值的影响而有一定的倾向性，如下图</strong>。</p>
+<p><img src="/post/2018-12-18-principle-component-analysis.zh_files/data_centered.jpg" /></p>
+<p>求协方差矩阵的特征值<span class="math inline">\(\sigma_1\)</span>和<span class="math inline">\(\sigma_1\)</span>。根据矩阵奇异值分解公式，中心化后的<span class="math inline">\(A\)</span>可表示为</p>
 <p><span class="math display">\[
 A = \sqrt{\sigma_1}u_1v_1^T + \sqrt{\sigma_2}u_2v_2^T
 \]</span></p>
@@ -53,6 +54,22 @@ A = \sqrt{57}u_1v_1^T + \sqrt{3}u_2v_2^T
 <p><span class="math inline">\(u_1\)</span>对应于散点图变化最大的方向（直线），<span class="math inline">\(u_2\)</span>垂直于<span class="math inline">\(u_1\)</span>，表征垂直于直线方向上的小幅摆动。</p>
 <p>所以，对于多维变量，把原始数据转换到向量<span class="math inline">\(u\)</span>构成的空间内，特征值越大表征在该向量的方向上数据变异越大。通常选择变异量较大的前几个变量用于表征数据。</p>
 </div>
+<div id="pca" class="section level3">
+<h3>PCA数学推导</h3>
+<p>以最大投影方差法推导，原始数据的中心点为：</p>
+<p><span class="math display">\[
+\bar{x} = \frac{\sum_{n=1}^{N}}{N}
+\]</span>
+原始数据向投影向量<span class="math inline">\(u\)</span>投影之后的方差为：</p>
+<p><span class="math display">\[
+\frac{1}{N} \sum_{n-1}^{N}(u^Tx_n - u^T\bar{x})^2 = u^TSu
+\]</span>
+根据梯度优化原则（拉格朗日乘子）:</p>
+<p>$$
+u^TSu + (1-u^Tu) = 0 \</p>
+<p>Su = u
+$$
+因此，对于多维数据，协方差矩阵<span class="math inline">\(S\)</span>的特征值即为方差最大方向，从公式中也可看出PCA分析需要预先对数据中心化。</p>
 <div class="section level4">
 <h4>相关系数矩阵</h4>
 <p>协方差矩阵是没有消除量纲的表示变量之间关系。当变量的单位对结果有影响的时候。通常选择消除量纲的相关矩阵进行PCA分析。</p>
@@ -127,11 +144,7 @@ ggbiplot(mtcars_pca,ellipse=TRUE,  labels=rownames(mtcars), groups=mtcars_countr
 <li><a href="https://www.datacamp.com/community/tutorials/pca-analysis-r">Principal Component Analysis in R</a></li>
 <li><a href="https://stats.stackexchange.com/questions/53/pca-on-correlation-or-covariance">PCA on correlation or covariance?</a></li>
 <li><a href="https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca">Why do we need to normalize data before principal component analysis (PCA)?</a></li>
+<li><a href="https://stats.stackexchange.com/questions/22329/how-does-centering-the-data-get-rid-of-the-intercept-in-regression-and-pca">How does centering the data get rid of the intercept in regression and PCA?</a></li>
 </ul>
 </div>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Miranda, A. A., Le Borgne, Y. A., &amp; Bontempi, G. (2008). New routes from minimal approximation error to principal components. Neural Processing Letters, 27(3), 197-207.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
 </div>

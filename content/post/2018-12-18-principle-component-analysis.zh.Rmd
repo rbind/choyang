@@ -14,20 +14,17 @@ output:
 ---
 
 
-通常高通量数据中含有很多变量，主成分分析是一种数据降维方法，利用正交变换把原始的可能相关的变量转换为一组正交新变量，成为主成分。提取数据中重要的特征，去除不重要的特征（噪声）。**方差越大，表示的特征信息越多，的选择方差最大的方向，去除方差较小的方向，所以PCA选择求协方差矩阵**。<!--more-->
+通常高通量数据中含有很多变量，主成分分析是一种数据降维方法，利用正交变换把原始的可能相关的变量转换为一组正交新变量, 提取数据中重要的特征，去除不重要的特征（噪声）。**方差越大，表示的特征信息越多，的选择方差最大的方向，去除方差较小的方向。**。<!--more-->
 
 
 比如微生物组的16S rRNA测序数据，通常每个样品会含有多个OTU（假设有500个）。为了根据OTU丰度对不同分组的样本进行分类，每个OTU的丰度差异都可以在一定程度上反应样品之间的差异，但是不同的OTU之间可能存在着一定的相关性，可能会造成信息的冗余。PCA就是在保持原有变量所包含信息的前提下，减少变量个数进行分析。
 
-#### PCA的计算原理
+#### PCA原理 - 奇异值分解
 
 假设有一组包含$m$个变量的数据，含有$n$个样本，构成了一个$m \times n$的矩阵$A_0$。用图形表示，$A_0$是指在$R^m$空间内的$n$个点，当$A$的每一行都减去该行的均值后（数据中心化），$n$个点通常聚集在一条线或者平面周围（或其他$R^m$的低维子空间)。
 
-**中心化的原因：是数据经过圆点，消除均值对分类的影响；求协方差转化为矩阵乘法。**[^1]
 
-
-
-以含两个变量的$n$个点为例说明PCA的步骤，$A$ 维度为$2 \times n$。$A$的每一行减去该行的均值，使$A$中心化，每一行的均值为0。如图所示，这$n$个点分布在一条直线周围
+以含两个变量的$n$个点为例说明PCA的步骤，$A$ 维度为$2 \times n$。$A$的每一行减去该行的均值，使$A$中心化，每一行的均值为0。如图所示，这$n$个点分布在一条直线周围。由图中也可以直观的看到，主成分方向还表示原始数据在该方向上投影方差最大（分散），与之垂直的投影距离最小。
 
 ```{r, echo=FALSE}
 library(ggplot2)
@@ -36,7 +33,7 @@ df1$y <- 3 * df1$x + rnorm(100, sd = 40)
 df2 <- -df1
 df <- dplyr::bind_rows(df1, df2)
 ggplot(df, aes(x, y)) + geom_point() +
-  geom_smooth(method = "lm", se=FALSE) 
+  geom_smooth(method = "lm", se = FALSE) 
 ```
 
 $AA^T$构成一个$2 \times 2$的矩阵，其中$(AA^T)_{11}$和$(AA^T)_{22}$是行向量的方差，而$(AA^T)_{12}$和$(AA^T)_{21}$即是两行的协方差。因此，协方差矩阵可表示为
@@ -45,8 +42,13 @@ $$
 S = \frac {AA^T} {n-1}
 $$
 
+**中心化的原因：保证第一个主分量是方差最大的方向，如果不中心化，那么第一主成分的方向受均值的影响而有一定的倾向性，如下图**。
 
-求协方差矩阵的特征值$\sigma_1$和$\sigma_1$。根据矩阵奇异值分解公司，中心化后的$A$可表示为
+![](/post/2018-12-18-principle-component-analysis.zh_files/data_centered.jpg)
+
+
+
+求协方差矩阵的特征值$\sigma_1$和$\sigma_1$。根据矩阵奇异值分解公式，中心化后的$A$可表示为
 
 $$
 A = \sqrt{\sigma_1}u_1v_1^T + \sqrt{\sigma_2}u_2v_2^T
@@ -79,7 +81,29 @@ $u_1$对应于散点图变化最大的方向（直线），$u_2$垂直于$u_1$�
 
 所以，对于多维变量，把原始数据转换到向量$u$构成的空间内，特征值越大表征在该向量的方向上数据变异越大。通常选择变异量较大的前几个变量用于表征数据。
 
+### PCA数学推导
+
+以最大投影方差法推导，原始数据的中心点为：
+
+$$
+\bar{x} = \frac{\sum_{n=1}^{N}}{N}
+$$
+原始数据向投影向量$u$投影之后的方差为：
+
+$$
+\frac{1}{N} \sum_{n-1}^{N}(u^Tx_n - u^T\bar{x})^2 = u^TSu
+$$
+根据梯度优化原则（拉格朗日乘子）:
+
+$$
+u^TSu + \lambda(1-u^Tu) = 0 \\
+
+Su = \lambda u
+$$
+因此，对于多维数据，协方差矩阵$S$的特征值即为方差最大方向，从公式中也可看出PCA分析需要预先对数据中心化。
+
 #### 相关系数矩阵
+
 
 协方差矩阵是没有消除量纲的表示变量之间关系。当变量的单位对结果有影响的时候。通常选择消除量纲的相关矩阵进行PCA分析。
 
@@ -169,3 +193,5 @@ ggbiplot(mtcars_pca,ellipse=TRUE,choices=c(3,4),   labels=rownames(mtcars), grou
 - [Principal Component Analysis in R](https://www.datacamp.com/community/tutorials/pca-analysis-r)
 - [PCA on correlation or covariance?](https://stats.stackexchange.com/questions/53/pca-on-correlation-or-covariance)
 - [Why do we need to normalize data before principal component analysis (PCA)?](https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca)
+- [How does centering the data get rid of the intercept in regression and PCA?
+](https://stats.stackexchange.com/questions/22329/how-does-centering-the-data-get-rid-of-the-intercept-in-regression-and-pca)
