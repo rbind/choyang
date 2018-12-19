@@ -65,11 +65,13 @@ A = \sqrt{57}u_1v_1^T + \sqrt{3}u_2v_2^T
 \frac{1}{N} \sum_{n-1}^{N}(u^Tx_n - u^T\bar{x})^2 = u^TSu
 \]</span>
 根据梯度优化原则（拉格朗日乘子）:</p>
-<p>$$
-u^TSu + (1-u^Tu) = 0 \</p>
-<p>Su = u
-$$
-因此，对于多维数据，协方差矩阵<span class="math inline">\(S\)</span>的特征值即为方差最大方向，从公式中也可看出PCA分析需要预先对数据中心化。</p>
+<p><span class="math display">\[
+u^TSu + \lambda(1-u^Tu) = 0 
+\]</span>
+<span class="math display">\[
+Su = \lambda u
+\]</span></p>
+<p>因此，对于多维数据，协方差矩阵<span class="math inline">\(S\)</span>的特征值即为方差最大方向，从公式中也可看出PCA分析需要预先对数据中心化。</p>
 <div class="section level4">
 <h4>相关系数矩阵</h4>
 <p>协方差矩阵是没有消除量纲的表示变量之间关系。当变量的单位对结果有影响的时候。通常选择消除量纲的相关矩阵进行PCA分析。</p>
