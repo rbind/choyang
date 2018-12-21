@@ -1,0 +1,93 @@
+---
+title: 线性判别分析LDA
+author: Yang
+date: '2018-12-20'
+slug: liner-discriminant-analysis
+categories:
+  - statistics
+tags:
+  - machine learning
+description: 线性判别分析（liner discriminant analysis, LDA）一种常用的数据降维方法，目的是在保持分类的前体下把数据投影至低维空间以降低计算复杂度。
+---
+
+
+
+<p>线性判别分析（liner discriminant analysis, LDA）一种常用的数据降维方法，目的是在保持分类的前体下把数据投影至低维空间以降低计算复杂度。</p>
+<div id="lda-vs-pca" class="section level2">
+<h2>LDA VS PCA</h2>
+<p>LDA和PCA都是利用线性变换对数据进行降维的机器学习技术。之前也对<a href="{{% relref "2018-12-18-principle-component-analysis.zh.html" %}}">主成分分析（PCA）原理</a>进行了总结。PCA是一种无监督的降维技术，无视数据的分类信息挖掘数据中的模式，投影后方差最大的方向即为主成分。LDA是一种有监督的降维技术，对数据进行模式分类。如图所示，LDA要求类间的方差最大，而类内的方差最小，以保证投影后同一分类数据集中，不同分类间数据距离尽可能大。</p>
+<p><img src="/post/2018-12-20-liner-discriminant-analysis.zh_files/lda_pca.png" /></p>
+</div>
+<div id="lda" class="section level2">
+<h2>LDA原理推导</h2>
+<p>如前所述，LDA原始就是类间方差最大，类内方差最小。类间方差最大。因此LDA的计算可以分为三步：计算类间方差、计算类内方差、求解最优投影空间使得类间方差最大和类内方差最小。具体计算流程如下图所示（以3个分类，每个分类中5个样本为例）。</p>
+<p><img src="/post/2018-12-20-LDA/lda_step.png" /></p>
+<p>原始数据矩阵为<span class="math inline">\(X = \{x_1, x_2, \cdots, x_N\}\)</span>, <span class="math inline">\(x_i\)</span>表征第<span class="math inline">\(i\)</span>th样本的观测值，总样本数为<span class="math inline">\(N\)</span>, 共有<span class="math inline">\(M\)</span>个特征(变量)，所以样本<span class="math inline">\(x_i \in R^M\)</span>空间中。</p>
+<div class="section level3">
+<h3><strong>类间方差</strong></h3>
+<p>类间方差（between-class variance, <span class="math inline">\(S_B\)</span>)， <span class="math inline">\(S_{B_i}\)</span>表征原始数据中第<span class="math inline">\(i\)</span>th类的均值(<span class="math inline">\(\mu_i\)</span>)和总体均值<span class="math inline">\(\mu\)</span>的距离，对应的投影后的均值分别为<span class="math inline">\(m_i\)</span>和<span class="math inline">\(m\)</span>, 那么<span class="math inline">\(m_i = W^T\mu_i\)</span>,<span class="math inline">\(m = W^T\mu\)</span>, <span class="math inline">\(W\)</span>表示投影矩阵。类间方差可由下式计算：</p>
+<p><span class="math display">\[
+(m_i - m)^2 = (W^T\mu_i - W^T\mu)^2 = W^T(\mu_i - \mu)(\mu_i - \mu)^TW
+\]</span></p>
+<p>其中原始数据的均值计算如下(图B和C)：</p>
+<p><span class="math display">\[
+\mu_j = \frac{1}{n_j}\sum_{x_i\in\omega_j}x_i
+\]</span>
+<span class="math display">\[
+\mu = \frac{1}{N}\sum_{i=1}^N{x_i} = \sum_{i=1}^c
+\frac{n_i}{N}\mu_i
+\]</span></p>
+<p><span class="math inline">\(c\)</span>表示分类个数，图例中<span class="math inline">\(c=3\)</span>。所以类间方差为(图D)</p>
+<p><span class="math display">\[ 
+S_{B_i} = (\mu_i - \mu)(\mu_i - \mu)^T   \\
+\Longrightarrow (m_i - m)^2 = W^TS_{B_i}W
+\]</span></p>
+</div>
+<div class="section level3">
+<h3>类内方差</h3>
+<p>类内方差，表示某一分类投影后所有样本观测值的方差，投影后样本的观测值为<span class="math inline">\(W^Tx_i\)</span>。类内均值之间距离为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum_{x_i \in \omega_j, j=1, \cdots, c} (W^T x_i - m_j)^2 \\
+&amp; = \sum_{x_i \in \omega_j, j=1, \cdots, c} (W^T x_{ij} - W^T\mu_j)^2 \\
+&amp; = \sum_{x_i \in \omega_j, j=1, \cdots, c} W^T (x_{ij} - \mu_j)^2W \\
+&amp; = W^TS_{W_j}W
+\end{aligned}
+\]</span>
+其中<span class="math inline">\(S_{W_j} = \sum_{i=1}^{n_j}(x_{ij} - \mu_j)(x_{ij} - \mu_j)^T\)</span>, <span class="math inline">\(x_{ij}\)</span>表示第属于第<span class="math inline">\(j\)</span>分类的第<span class="math inline">\(i\)</span>个样本, (图E)</p>
+</div>
+<div class="section level3">
+<h3>最优低维空间</h3>
+<p>LDA可以转化为最优解问题:</p>
+<p><span class="math display">\[
+arg \ \underset{W}{max} \ \frac{W^TS_BW}{W^TS_WB}
+\]</span></p>
+<p>根据梯度最优方法转化为矩阵特征分解问题，<span class="math inline">\(\lambda\)</span>表示<span class="math inline">\(W\)</span>的特征值。</p>
+<p><span class="math display">\[
+S_WW = \lambda S_BW
+\]</span></p>
+<p>如果<span class="math inline">\(S_W\)</span>可逆<span class="math inline">\(S_W^{-1}S_BW=\lambda W\)</span>, 转化为求<span class="math inline">\(S_W^{-1}S_B\)</span>的特征值和特征向量问题，特征向量表示新的空间中的一个方向，而特征值表征了特征向量的缩放长度。所以特征向量是LDA空间的一个坐标轴，而特征值表示了该坐标轴的鲁棒性(即区别数据分类的能力)。通常取数值较大的前<span class="math inline">\(k\)</span>个特征值对应的特征向量(<span class="math inline">\(V_k\)</span>)作为低维空间，而忽略其余对分类结果影响较小的分量(图F)。</p>
+<p>LDA后原始数据(<span class="math inline">\(R^{N \times M}\)</span>)映射至由<span class="math inline">\(k\)</span>个特征向量构成的<span class="math inline">\(k\)</span>维空间中($R^{M k})，如下图所示。</p>
+<p><span class="math display">\[
+Y = XV_k
+\]</span></p>
+<p><img src="/post/2018-12-20-liner-discriminant-analysis.zh_files/lda_res.png" /></p>
+<p>取较大的前两个特征值的特征向量(<span class="math inline">\(v_1\)</span>, <span class="math inline">\(v_2\)</span>)把原始数据映射至二维空间，如下图所示:</p>
+<ul>
+<li>不同分类样本映射至<span class="math inline">\(v_1\)</span>比<span class="math inline">\(v_2\)</span>分类效果更好, 投影至<span class="math inline">\(v_1\)</span>的第1类和第2类均值的距离(<span class="math inline">\((m1-m2)\)</span>)远大于<span class="math inline">\(v_2\)</span>投影值。</li>
+<li>类内方差较小</li>
+</ul>
+<p><img src="/post/2018-12-20-liner-discriminant-analysis.zh_files/lda_2d.png" /></p>
+</div>
+<div id="rlda" class="section level3">
+<h3>R进行LDA分析</h3>
+<p>以R自带的<code>iris</code>数据为例，3种iris花的数据，150个样本，4个变量。</p>
+<pre class="r"><code>library(MASS)
+ord &lt;- lda(Species~., iris)
+
+# 可视化
+library(ggord)
+ggord(ord, iris$Species, coord_fix = FALSE)</code></pre>
+<p><img src="/post/2018-12-20-liner-discriminant-analysis.zh_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+</div>
