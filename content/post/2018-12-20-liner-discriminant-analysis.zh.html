@@ -21,7 +21,7 @@ description: 线性判别分析（liner discriminant analysis, LDA）一种常�
 <div id="lda" class="section level2">
 <h2>LDA原理推导</h2>
 <p>如前所述，LDA原始就是类间方差最大，类内方差最小。类间方差最大。因此LDA的计算可以分为三步：计算类间方差、计算类内方差、求解最优投影空间使得类间方差最大和类内方差最小。具体计算流程如下图所示（以3个分类，每个分类中5个样本为例）。</p>
-<p><img src="/post/2018-12-20-LDA/lda_step.png" /></p>
+<p><img src="/post/2018-12-20-liner-discriminant-analysis.zh_files/lda_step.png" /></p>
 <p>原始数据矩阵为<span class="math inline">\(X = \{x_1, x_2, \cdots, x_N\}\)</span>, <span class="math inline">\(x_i\)</span>表征第<span class="math inline">\(i\)</span>th样本的观测值，总样本数为<span class="math inline">\(N\)</span>, 共有<span class="math inline">\(M\)</span>个特征(变量)，所以样本<span class="math inline">\(x_i \in R^M\)</span>空间中。</p>
 <div class="section level3">
 <h3><strong>类间方差</strong></h3>
