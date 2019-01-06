@@ -1,0 +1,89 @@
+---
+title: ROC曲线与AUC值
+author: ''
+date: '2019-01-06'
+slug: roc-auc
+categories:
+  - machine learning
+tags:
+  - machine learning
+draft: true
+---
+
+
+
+<div id="---confusion-matrix" class="section level3">
+<h3>混淆矩阵 - confusion matrix</h3>
+<p>机器学习分类问题中，混淆矩阵(非监督学习中称匹配矩阵match matrix)用于表征算法的性能。如下表所示</p>
+<table align="center" style="text-align:center;">
+<tbody>
+<tr>
+<td style="border:none;" colspan="2">
+</td>
+<td colspan="2" style="background:#eeeebb;">
+True condition
+</td>
+</tr>
+<tr>
+<td style="border:none;">
+</td>
+<td style="background:#dddddd;">
+Total population
+</td>
+<td style="background:#ffffcc;">
+Condition positive
+</td>
+<td style="background:#ddddaa;">
+Condition negative
+</td>
+</tr>
+<tr>
+<td style="background:#bbeeee;" rowspan="2">
+Predicted<br>condition
+</td>
+<td style="background:#ccffff;">
+Predicted condition<br>positive
+</td>
+<td style="background:#ccffcc;">
+True positive (TP)<br>Power
+</td>
+<td style="background:#eedddd;">
+False positive (FP)<br>Type I error
+</td>
+</tr>
+<tr>
+<td style="background:#aadddd;">
+Predicted condition<br>negative
+</td>
+<td style="background:#ffdddd;">
+False negative (FN)<br>Type II error
+</td>
+<td style="background:#bbeebb;">
+True negative (TN)
+</td>
+</tr>
+</tbody>
+</table>
+<p>由此可得出：</p>
+<ul>
+<li>真阳性率(True positive rate): <span class="math inline">\(TPR = \frac{TP}{Condition\,positive} =\frac{TP}{TP + FN}\)</span></li>
+<li>假阳性率(False positive rate): <span class="math inline">\(FPR = \frac{FP}{Condition\,negative} = \frac{FP}{FP + TN}\)</span></li>
+<li>真阴性率(True negative rate): <span class="math inline">\(TNR = \frac{TN}{Condition\,negative} = \frac{TN}{FP + TN}\)</span></li>
+<li>假阴性率(False negative rate): <span class="math inline">\(FNR= \frac{FN}{Condition\,positive}=\frac{FN}{TP + FN}\)</span></li>
+</ul>
+</div>
+<div id="roc" class="section level3">
+<h3>ROC曲线</h3>
+<p>二分类通常是通过选定阈值对结果进行分类。比如概率选取阈值为0.5，大于0.5的为正样本，小于则为负样本。如果阈值增大，那么假阳性率降低，同时真阳性也会降低；反之阈值减小，虽然真阳性率为增加，但是假阳性率也会增加。阈值的选取在一定程度上反应了分类器的分类能力。</p>
+<p>ROC曲线用于衡量二分类模型的性能，横坐标表示假阳性率(FPR)，纵坐标表示真阳性率(TPR)。显然ROC的横纵坐标都在<span class="math inline">\([0,1]\)</span>之间。</p>
+<div class="figure">
+<img src="/post/2019-01-06-roc-auc/roc.png" alt="ROC Curve" />
+<p class="caption">ROC Curve</p>
+</div>
+<p>理想目标是TPR为1，FPR为0，也就是ROC曲线中的<span class="math inline">\((0,1)\)</span>点。因此，ROC曲线越偏离45度对角线靠近左上角，分类性能越好。</p>
+</div>
+<div id="auc" class="section level3">
+<h3>AUC</h3>
+<p>为了更直观的反应分类性能，定义ROC曲线下的面积AUC评估分类效果。AUC直观的反应了ROC曲线表达分类的能力。显然最理想情况AUC为1，AUC为0.5时表征只能50%的可能区分正类和负类，对应于随机分类，也就是说该模型没有任何区分正负类的能力。AUC为0时，表示正类预测为负类，负类预测为正类，分类完全错误。</p>
+<p>对于多分类问题(<span class="math inline">\(n\)</span>大于2)，通过画<span class="math inline">\(n\)</span>个AUC-ROC曲线(每一个AUC-ROC曲线表示一个分类与其他所有分类的比较)。</p>
+</div>
