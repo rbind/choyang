@@ -1,0 +1,51 @@
+---
+title: ggplot 修改离散坐标的顺序
+author: ''
+date: '2019-09-07'
+slug: ggplot-reorder-discrete-axis
+categories:
+  - R
+tags:
+  - ggplot
+---
+
+
+
+<p>ggplot作图默认对分类数据采用字母顺序进行排序（如下图中横坐标所示）序，我们可以对其进行重新排序，以使图形更加美观或更能清楚的表达数据模式。有两种方法可以实现这种结果：</p>
+<pre class="r"><code>set.seed(100)
+library(ggplot2)
+library(dplyr)
+
+tb &lt;- tibble::tibble(
+  x = letters[1:10],
+  y = sample(10, 10)
+)
+
+ggplot(tb, aes(x, y)) + 
+  geom_col()</code></pre>
+<p><img src="/post/2019-09-07-ggplot.zh_files/figure-html/origin-1.png" width="672" /></p>
+<p>一是利用<code>scale_x_discrete()</code>的<code>limits</code>参数</p>
+<pre class="r"><code>tb_ordered &lt;- dplyr::arrange(tb, y)
+ggplot(tb, aes(x, y)) +
+  geom_col() +
+  scale_x_discrete(limits = tb_ordered$x)</code></pre>
+<p><img src="/post/2019-09-07-ggplot.zh_files/figure-html/limits-1.png" width="672" /></p>
+<p>二是利用<strong>forcats</strong>包中的<code>fct_reorder()</code></p>
+<pre class="r"><code># fct_rev() 反向排序
+ggplot(tb, aes(forcats::fct_reorder(x, y) %&gt;% forcats::fct_rev(), y)) + 
+  geom_col()</code></pre>
+<p><img src="/post/2019-09-07-ggplot.zh_files/figure-html/fct-reorder-1.png" width="672" /></p>
+<p>此外，如果线图中有多种颜色的线条，分组排序也有用。如下图所示，我们希望legend的颜色跟线条颜色排列一致。</p>
+<pre class="r"><code>chks &lt;- subset(ChickWeight, as.integer(Chick) &lt; 10)
+ggplot(chks, aes(Time, weight, colour = Chick)) +
+  geom_point() +
+  geom_line() +
+  labs(colour = &quot;Chick&quot;)</code></pre>
+<p><img src="/post/2019-09-07-ggplot.zh_files/figure-html/reorder2-orgin-1.png" width="672" /></p>
+<p><code>fct_reorder2(x, y)</code>可按<code>x</code>取最大值时<code>y</code>的值对分组进行排序</p>
+<pre class="r"><code># 按time取最大值时weight的取值对Chick进行排序，保证线条颜色与legend一致
+ggplot(chks, aes(Time, weight, colour = forcats::fct_reorder2(Chick, Time, weight))) +
+  geom_point() +
+  geom_line() +
+  labs(colour = &quot;Chick&quot;)</code></pre>
+<p><img src="/post/2019-09-07-ggplot.zh_files/figure-html/reoerder2-1.png" width="672" /></p>
