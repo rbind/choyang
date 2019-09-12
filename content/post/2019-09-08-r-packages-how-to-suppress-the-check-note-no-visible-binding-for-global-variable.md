@@ -4,9 +4,8 @@ title: 'R packages: How to solve the check NOTE "no visible binding for global
 author: ''
 date: '2019-09-08'
 slug: r-packages-how-to-solve-the-check-note-no-visible-binding-for-global-variable
-categories:
-  - R
-tags: [package]
+categories: [R]
+tags: [R, package-dev]
 ---
 
 While our package employ a function using Non Standard Evaluation (NSE), such as [data.table](https://github.com/Rdatatable/data.table) and many [tidyverse](https://github.com/tidyverse/tidyverse) packages, R CMD check will generate NOTEs in the form "no visible binding for global variable xxx". There are two ways to solve this problem
