@@ -21,6 +21,19 @@ defaultContentLanguage = "en"
 # root `/` will then redirect to `/en/`.
 defaultContentLanguageInSubdir = true
 
+[[Languages.en.menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[Languages.en.menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[Languages.en.menu.main]]
+    name = "Archive"
+    url = "/post/"
+    weight = 3
+
 # zh
 [[Languages.zh.menu.main]]
     name = "主页"
