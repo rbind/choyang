@@ -3,7 +3,10 @@
 output post
 //-----------------------------------
 -->
-{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+{{ $paginator := .Paginate (where .Pages "Type" "post") }}
+{{ if .IsHome }}
+  {{ $paginator = .Paginate (where .Site.RegularPages "Type" "post") }}
+{{ end }}
 
 {{ range $paginator.Pages }}
   <section class="article-list">

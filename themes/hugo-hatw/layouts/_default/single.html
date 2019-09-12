@@ -5,12 +5,12 @@
     <div class="col-md-9">
       <article>
         <!-- pages under the root content/ directory does not show article header -->
-        {{ if .Dir }}
+        {{ if .File.Dir }}
           <div class="article-header">
             <h1 class="text-uppercase text-center">{{ .Title }}</h1>
             {{ if (gt .Params.date 0) }}
               <h3 class="text-center">
-                <time>{{ .Date.Format "2006/01/02" }}</time>
+                <time class="text-muted">{{ .Date.Format "2006/01/02" }}</time>
               </h3>
             {{ end }}
           </div>
@@ -18,7 +18,7 @@
         {{ end }}
         
         <!-- set class not-section for pages in root content/ directory -->
-        <div class="content {{ if not .Dir }}not-section{{end}}">
+        <div class="content {{ if not .File.Dir }}not-section{{end}}">
           {{ .Content }}
         </div>
         {{ partial "prev-next-post.html" . }}

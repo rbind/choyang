@@ -8,10 +8,10 @@
       </a>
     </li>
     {{ end}}
-    {{ if .RSSLink }}
+    {{ with .OutputFormats.Get "RSS" }}.
     <!-- RSS -->
     <li class="nav-item">
-      <a class="nav-link" href="{{ .RSSLink }}">
+      <a class="nav-link" href="{{ .RelPermalink }}">
         <i class="fa fa-rss fa-lg fa-fw"></i>
       </a>
     </li>

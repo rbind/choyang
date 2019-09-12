@@ -8,7 +8,7 @@
           {{ . }}
         </div>
       {{ end }}
-       {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+      {{ $paginator := .Paginate (where .Pages "Type" "post") }}
       {{partial "pagination.html" .}}
     </div> <!-- col-md-9 -->
     {{ partial "aside.html" . }}

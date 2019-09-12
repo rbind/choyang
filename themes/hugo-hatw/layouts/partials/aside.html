@@ -7,23 +7,11 @@
         {{ end }}
       </div>
       
-      {{ if or (len $.Site.Taxonomies.categories) (len $.Site.Taxonomies.tags) }}
-        <h3>Categories</h3>
-        <ul class="list-unstyled">
-          {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
-            <li>
-              <a class="py-1" href="{{ "/categories/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>
-              ({{ len $taxonomy }})
-            </li>
-          {{end}}
-        </ul>
-  
+      {{ if (len $.Site.Taxonomies.tags) }}
         <h3>Tags</h3>
-        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-          <a class="py-1" href="{{ "/tags/" | relURL }}{{ $name | urlize }}"> 
-            {{ $name }}
-          </a>
-        {{end}}
+        {{ range .Site.Taxonomies.tags }}
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        {{ end }}
       {{ end }}
     </div>  <!-- aside -->
   </div> <!-- col-md-3 -->

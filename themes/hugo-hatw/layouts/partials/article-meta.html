@@ -1,6 +1,6 @@
-{{ if .Dir }}
+{{ if .File.Dir }}
   {{ if (gt .Params.date 0) }}
     <i class="fa fa-calendar-o"></i>
-    <time>{{ .Date.Format "2006/01/02" }}</time>
+    <time class="text-muted">{{ .Date.Format "2006/01/02" }}</time>
   {{ end }}
 {{ end }}
