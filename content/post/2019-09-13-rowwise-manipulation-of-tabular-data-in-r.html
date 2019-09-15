@@ -1,0 +1,138 @@
+---
+title: rowwise manipulation of data frame in R
+author: ''
+date: '2019-09-13'
+slug: rowwise-manipulation-of-data-frame-in-r
+categories: []
+tags: [R]
+---
+
+
+
+<p>The data frame is used for storing tabular data in R. It is the fundamental data structure in R, especially for tidyverse. Tidy data (data frame), in which each variable in a column and each observation in a row, is used wherever possible througout all the tidyverse packages. Working on column is a very natural and usual operation, and the key ideology in <a href="https://dplyr.tidyverse.org/">dplyr</a>, a core package of tidyverse. But how to perform rowwise manipulation ? In this post, I will show how to do rowwise operation on data frames using both base R and tidyverse.</p>
+<div id="sample-data" class="section level2">
+<h2>sample data</h2>
+<pre class="r"><code>library(tidyverse)
+library(rvest)
+
+url &lt;- &quot;https://www.pesmaster.com/arsenal/pes-2020/team/101/&quot;
+
+html &lt;- read_html(url)
+
+players &lt;- html_nodes(html, &quot;.squad-table&quot;) %&gt;% 
+  html_table() %&gt;% 
+  `[[`(1) %&gt;%
+  arrange(desc(Ovr)) %&gt;% 
+  slice(1:10) %&gt;% select(Name, Pas:Dri) %&gt;% 
+  column_to_rownames(&quot;Name&quot;) %&gt;% 
+  t() %&gt;% 
+  as.data.frame()
+names(players) &lt;- stringi::stri_trans_general(names(players), &quot;latin-ascii&quot;) %&gt;% # convert to latin-ascii
+  make.names() %&gt;% # valid names
+  str_replace_all(&quot;.*\\.+&quot;, &quot;&quot;) # family name</code></pre>
+<p>We want to find the the most skillful player of each ability (Pas, Sht, Phy, Def, Spd, and Dri) of ten Arsenal players <a href="https://www.pesmaster.com/arsenal/pes-2020/team/101/">in PES 2020</a>.</p>
+</div>
+<div id="base-r" class="section level2">
+<h2>base R</h2>
+<div id="apply" class="section level3">
+<h3><code>apply()</code></h3>
+<p>Once rowwise operation is mentioned, the first function comes mind is <code>apply()</code>.</p>
+<pre class="r"><code>index &lt;- apply(players, 1, which.max)
+max_ability &lt;- apply(players, 1, max)
+skillful_player &lt;- data.frame(
+  name = names(players)[index],
+  value = max_ability,
+  ability = row.names(players)
+)</code></pre>
+<p>We can use ggplot to visulaize the rusults</p>
+<pre class="r"><code>player_label &lt;- data.frame(
+  label = skillful_player$name,
+  x = skillful_player$ability,
+  y = 100
+)
+ggplot(skillful_player, aes(x = ability, y = value)) +
+  geom_col(aes(fill = ability)) +
+  geom_text(aes(x = x, y = y, label = label), data = player_label)</code></pre>
+<p><img src="/post/2019-09-13-rowwise-manipulation-of-tabular-data-in-r_files/figure-html/apply-gg-1.png" width="672" /></p>
+<p>The result shows that the best dribbling player is the new player PEPE, and Ozil
+is still the best passer, although he have not participated in anyt official
+match for a long time.</p>
+</div>
+<div id="for-loop" class="section level3">
+<h3><code>for</code> loop</h3>
+<p>Of course someone has to write loops</p>
+<pre class="r"><code>index_loop &lt;- vector(mode = &quot;double&quot;, nrow(players))
+for (i in seq_along(index_loop)) {
+  index_loop[i] &lt;- which.max(players[i, ])
+}
+max_ability_loop &lt;- vector(mode = &quot;double&quot;, nrow(players))
+for (i in seq_along(max_ability_loop)) {
+  max_ability_loop[i] &lt;- max(players[i, ])
+}</code></pre>
+<p>Apprantely, using for loop is more intuitive, but requires more typing.</p>
+</div>
+<div id="split-then-apply-and-combine" class="section level3">
+<h3>split, then apply and combine</h3>
+<p>The Next method is split the data frame by row then apply and combine it.</p>
+<pre class="r"><code>players_split &lt;- split(players, seq_len(nrow(players)))
+max_ability &lt;- sapply(players_split, max)
+index &lt;- sapply(players_split, which.max)
+skillful_player_split &lt;- data.frame(
+  value = max_ability,
+  name = names(players)[index],
+  ability = row.names(players)
+)
+
+ggplot(skillful_player_split, aes(x = ability, y = value)) +
+  geom_col(aes(fill = ability)) +
+  geom_text(aes(x = x, y = y, label = label), data = player_label)</code></pre>
+<p><img src="/post/2019-09-13-rowwise-manipulation-of-tabular-data-in-r_files/figure-html/split-apply-1.png" width="672" /></p>
+</div>
+</div>
+<div id="tidyverse" class="section level2">
+<h2>tidyverse</h2>
+<div id="pmap-in-purrr" class="section level3">
+<h3><code>pmap()</code> in purrr</h3>
+<p><code>purrr::pmap()</code> iterate over multiple arguments simultaneously</p>
+<pre class="r"><code>which_max &lt;- function(...) {
+  which.max(c(...))
+}
+skillful_player_pmap &lt;- players %&gt;% 
+  mutate(index = pmap_int(., which_max),
+    value = pmap_int(., max),
+    names = names(players)[index],
+    ability = row.names(players)
+  ) 
+
+
+ggplot(skillful_player_pmap, aes(x = ability, y = value)) +
+  geom_col(aes(fill = ability)) +
+  geom_text(aes(x = x, y = y, label = label), data = player_label)</code></pre>
+<p><img src="/post/2019-09-13-rowwise-manipulation-of-tabular-data-in-r_files/figure-html/pmap-1.png" width="672" /></p>
+</div>
+<div id="rowwise-in-dplyr" class="section level3">
+<h3><code>rowwise()</code> in dplyr</h3>
+<p><strong>dplyr</strong> provides a function <code>rowwise()</code> to preform row-wise operations. However,
+<a href="https://github.com/tidyverse/dplyr/issues/3890#issuecomment-428320156">as mentioned in this issue</a>,
+we can not use tidyselect operation <code>:</code>, which means that all variables
+must be explicitly provided for rowwise manipulation. <code>rowwise()</code> is not suitable
+while there are many varaibles.</p>
+<pre class="r"><code>skillful_player_rowwise &lt;- players %&gt;% 
+  rowwise() %&gt;% 
+  # mutate(value = max(Aubameyang:Kolasinac)) does not work well
+  mutate(value = max(Aubameyang, Lacazette, Leno, Sokratis, 
+    Luiz, Ozil, Torreira, Xhaka, Pepe, Kolasinac)
+  )</code></pre>
+<p>Furthermore, we can also transpose the data frame first, and then use apply or <strong>dplyr</strong>
+or <code>purrr::map()</code> to perform rowwise operation. Intuitively, this method is more
+complicated than the method mentioned above, so here we not detail the code.</p>
+<p>In summary, <code>purrr::pmap()</code> is using tidyverse and mmore easy to used as part of a pipe.
+The apply and for loop is more intuitive and efficiency (as shown in <a href="https://speakerdeck.com/jennybc/row-oriented-workflows-in-r-with-the-tidyverse?slide=40">here</a>, but requires more typing. <code>dplyr::rowwise()</code> is not suitable while there are many varaibles.</p>
+</div>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://github.com/jennybc/row-oriented-workflows#readme">Row-oriented workflows in R with the tidyverse</a></li>
+</ul>
+</div>
