@@ -1,0 +1,58 @@
+---
+title: 浅析ggplot `aes(group=var)`的用法
+author: ''
+date: '2019-09-20'
+slug: ggplot-aes-group-var
+categories: []
+tags:
+  - ggplot
+  - R
+---
+
+
+
+<p>我们都知道ggplot功能非常强大，可以自动完成很多任务，比如根据<code>fill</code>或<code>color</code>自动添加legend，并自动对数据进行分组，然后对每个分组进行处理。但是某些情况下，自动分组会产生奇怪的图形，这时候就需要显式设置<code>group</code>以实现目的.</p>
+<div class="section level2">
+<h2>默认分组</h2>
+<p>默认分组分为两种</p>
+<ul>
+<li>根据所有离散变量的组合对数据进行分组，如<code>x</code>为离散变量时，根据<code>x</code>的值对<code>data</code>进行分组，等价于<code>dplyr::group(data, x)</code>.</li>
+<li>根据图形属性（映射到分类数据）分组，如<code>fill</code>。以箱型图为例(<code>boxplot</code>)，它用于图形表征离散数据的几个统计特征，默认情况下会根据<code>x</code>轴的分类数据进行分组，如下所示</li>
+</ul>
+<pre class="r"><code>library(ggplot2)
+# sample data
+diamonds2 &lt;- dplyr::filter(diamonds, 
+  cut %in% c(&quot;Fair&quot;, &quot;Ideal&quot;),
+  clarity %in% c(&quot;I1&quot;, &quot;IF&quot;)
+)
+
+p1 &lt;- ggplot(diamonds2, aes(x = cut, price)) + 
+  geom_boxplot()
+p2 &lt;- ggplot(diamonds2, aes(x = cut, price, fill = clarity)) +
+  geom_boxplot()
+cowplot::plot_grid(p1, p2, nrow = 1)</code></pre>
+<p><img src="/post/2019-09-20-ggplot-aes-group-var.zh_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="group" class="section level2">
+<h2>默认分组结果不对，显式指定<code>group</code></h2>
+<p>需要显式指定<code>aes(group)</code>常见于以下两种情况</p>
+<p>一是覆盖默认分组。如果<code>geom</code>中<code>x</code>或<code>y</code>为离散变量，默认会基于它们进行分组，如果我们想基于其他变量进行分组时，需要显示指定<code>group</code>覆盖默认分组。</p>
+<p>如下图所示，我们首先基于<code>Occasion</code>进行分组画各个情况下男孩的身高情况（箱图）。随后我们想对每个男孩不同时期身高变化情况，这时候需要基于<code>Subject</code>进行分组画出线图，那么画线图时必须指定<code>group</code></p>
+<pre class="r"><code>p1 &lt;- ggplot(nlme::Oxboys, aes(Occasion, height)) +
+  geom_boxplot()
+p2 &lt;- p1 + geom_line(aes(group = Subject), colour = &quot;blue&quot;)
+cowplot::plot_grid(p1, p2, nrow = 1)</code></pre>
+<p><img src="/post/2019-09-20-ggplot-aes-group-var.zh_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>二是不需要分组。如果图中存在分类变量，但是我们不想进行分组，那么可指定<code>group</code>为任意常数，表示不进行分组，对整体数据进行处理。</p>
+<p>如下图所示目的是展示不同切面（<code>cut</code>）钻石的的比例，但是默认情况下基于<code>cut</code>变量进行分组，所以在计算比例时是基于本组数据，显然都为1。我们需要显示指定<code>group</code>为常数，表示基于整体数据计算比例。</p>
+<pre class="r"><code>p1 &lt;- ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop..))
+p2 &lt;- ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop.., group = 1))
+cowplot::plot_grid(p1, p2, nrow = 1)</code></pre>
+<p><img src="/post/2019-09-20-ggplot-aes-group-var.zh_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="reference" class="section level2">
+<h2>reference</h2>
+<p><a href="https://www.gl-li.com/2017/08/13/ggplot2-group-overrides-default-grouping/">ggplot2: aes(group = …) overrides default grouping</a></p>
+</div>
