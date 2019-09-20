@@ -1,0 +1,49 @@
+---
+title: ggplot修改连续坐标的范围
+author: ''
+date: '2019-09-20'
+slug: ggplot-range-of-continuous-axis
+categories: []
+tags:
+  - ggplot
+  - R
+---
+
+
+
+<p><code>xlim</code>和<code>ylim</code>用于修改ggplot连续坐标的范围，等价于<code>scale_x_continuous(limits = )</code>和<code>scale_y_continuous(limits=)</code>.</p>
+<p>下图展示了默认<code>y</code>的范围及使用<code>ylim</code>和<code>scale_y_continuous(limits=)</code>修改其范围</p>
+<pre class="r"><code>library(ggplot2)
+p1 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot()
+p2 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  ylim(0, max(mtcars$mpg))
+p3 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  scale_y_continuous(limits = c(0, max(mtcars$mpg)))
+cowplot::plot_grid(p1, p2, p3, ncol = 2)</code></pre>
+<p><img src="/post/2019-09-20-ggplot-continuous-axis-range.zh_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>我们还可以使用坐标变换(如<code>coord_cartesian</code>)修改范围，与上述方法不同的是，如果有些数据在设置的范围之外， scale方法是删除范围之外的值再进行作图，坐标变换依然是对所有数据作图（仅仅是对指定范围内的图形进行缩放）。</p>
+<pre class="r"><code>p1 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  scale_y_continuous(limits = c(15, 20))
+p2 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  coord_cartesian(ylim = c(15, 20))
+cowplot::plot_grid(p1, p2, nrow = 1)</code></pre>
+<pre><code>## Warning: Removed 19 rows containing non-finite values (stat_boxplot).</code></pre>
+<p><img src="/post/2019-09-20-ggplot-continuous-axis-range.zh_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>此外，<code>expand_limits()</code>可用于单向扩大修改坐标范围</p>
+<pre class="r"><code>p1 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  expand_limits(y = 0)
+# 不能用于缩小范围
+p2 &lt;- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  expand_limits(y = 15)
+
+cowplot::plot_grid(p1, p2, norw = 1)</code></pre>
+<pre><code>## Warning in as_grob.default(plot): Cannot convert object of class numeric
+## into a grob.</code></pre>
+<p><img src="/post/2019-09-20-ggplot-continuous-axis-range.zh_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>

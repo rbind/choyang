@@ -1,0 +1,53 @@
+---
+title: ggplot修改连续坐标的范围
+author: ''
+date: '2019-09-20'
+slug: ggplot-range-of-continuous-axis
+categories: []
+tags:
+  - ggplot
+  - R
+---
+
+`xlim`和`ylim`用于修改ggplot连续坐标的范围，等价于`scale_x_continuous(limits = )`和`scale_y_continuous(limits=)`.
+
+下图展示了默认`y`的范围及使用`ylim`和`scale_y_continuous(limits=)`修改其范围
+
+```{r}
+library(ggplot2)
+p1 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot()
+p2 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  ylim(0, max(mtcars$mpg))
+p3 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  scale_y_continuous(limits = c(0, max(mtcars$mpg)))
+cowplot::plot_grid(p1, p2, p3, ncol = 2)
+```
+
+我们还可以使用坐标变换(如`coord_cartesian`)修改范围，与上述方法不同的是，如果有些数据在设置的范围之外， scale方法是删除范围之外的值再进行作图，坐标变换依然是对所有数据作图（仅仅是对指定范围内的图形进行缩放）。
+
+```{r}
+p1 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  scale_y_continuous(limits = c(15, 20))
+p2 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  coord_cartesian(ylim = c(15, 20))
+cowplot::plot_grid(p1, p2, nrow = 1)
+```
+
+此外，`expand_limits()`可用于单向扩大修改坐标范围
+
+```{r}
+p1 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  expand_limits(y = 0)
+# 不能用于缩小范围
+p2 <- ggplot(mtcars, aes(factor(vs), mpg)) +
+  geom_boxplot() + 
+  expand_limits(y = 15)
+
+cowplot::plot_grid(p1, p2, norw = 1)
+```
