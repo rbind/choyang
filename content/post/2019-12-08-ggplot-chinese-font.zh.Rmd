@@ -1,0 +1,65 @@
+---
+title: ggplot 中文字体
+author: ''
+date: '2019-12-08'
+slug: ggplot-chinese-font
+categories: []
+tags:
+  - ggplot
+---
+
+两种方法可实现在ggplot图形中采用中文字体，[extrafont](https://github.com/wch/extrafont)或[showtext](https://github.com/yixuan/showtext)包。
+
+#### extrafont
+
+extrafont目前仅支持TrueType字体。安装**extrafont**, 并将字体导入extrafont 数据库，仅安装的时候运行一次即可：
+
+```{r eval=FALSE}
+install.packages(extrafont)
+library(extrafont)
+font_import()
+
+# 显示字体信息
+fonts()
+```
+
+然后每次运行R的时候只需要加载包和字体即可
+
+```{r load-extrafont, message=FALSE}
+library(extrafont)
+loadfonts()
+```
+
+然后ggplot中指定字体即可
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(mpg, disp)) + geom_point() +
+  labs(x = "每加仑行使公里数", y = "排量") +
+  theme(axis.title = element_text(family = "SimHei"))
+```
+
+图片要保存为pdf的话，再生成pdf文件后需要嵌入字体
+
+```{r eval=FALSE}
+# 插入字体到pdf文件
+embed_fonts("<font_plot.pdf>")
+```
+
+#### showtext
+
+**showtext**支持多种字体格式，但是目前在Rstudio viewer面板不能正确显示。
+
+```{r showtext}
+library(showtext)
+# 添加字体
+# font_files()显示可添加的字体
+font_add("KaiTi", "/Library/Fonts/Microsoft/Kaiti.ttf")
+# 自带中文字体wqy-microhei
+showtext_auto()
+ggplot(mtcars, aes(mpg, disp)) + geom_point() +
+  labs(x = "每加仑行使公里数", y = "排量") +
+  theme(axis.title = element_text(family = "KaiTi"))
+```
+
+这只是在Mac OS系统测试，windows可能会有些不同，具体可阅读这两个包的帮助文档。

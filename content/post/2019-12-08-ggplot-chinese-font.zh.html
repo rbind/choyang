@@ -1,0 +1,57 @@
+---
+title: ggplot 中文字体
+author: ''
+date: '2019-12-08'
+slug: ggplot-chinese-font
+categories: []
+tags:
+  - ggplot
+---
+
+
+
+<p>两种方法可实现在ggplot图形中采用中文字体，<a href="https://github.com/wch/extrafont">extrafont</a>或<a href="https://github.com/yixuan/showtext">showtext</a>包。</p>
+<div id="extrafont" class="section level4">
+<h4>extrafont</h4>
+<p>extrafont目前仅支持TrueType字体。安装<strong>extrafont</strong>, 并将字体导入extrafont 数据库，仅安装的时候运行一次即可：</p>
+<pre class="r"><code>install.packages(extrafont)
+library(extrafont)
+font_import()
+
+# 显示字体信息
+fonts()</code></pre>
+<p>然后每次运行R的时候只需要加载包和字体即可</p>
+<pre class="r"><code>library(extrafont)
+loadfonts()</code></pre>
+<p>然后ggplot中指定字体即可</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(mtcars, aes(mpg, disp)) + geom_point() +
+  labs(x = &quot;每加仑行使公里数&quot;, y = &quot;排量&quot;) +
+  theme(axis.title = element_text(family = &quot;SimHei&quot;))</code></pre>
+<p><img src="/post/2019-12-08-ggplot-chinese-font.zh_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>图片要保存为pdf的话，再生成pdf文件后需要嵌入字体</p>
+<pre class="r"><code># 插入字体到pdf文件
+embed_fonts(&quot;&lt;font_plot.pdf&gt;&quot;)</code></pre>
+</div>
+<div id="showtext" class="section level4">
+<h4>showtext</h4>
+<p><strong>showtext</strong>支持多种字体格式，但是目前在Rstudio viewer面板不能正确显示。</p>
+<pre class="r"><code>library(showtext)</code></pre>
+<pre><code>## Loading required package: sysfonts</code></pre>
+<pre><code>## Loading required package: showtextdb</code></pre>
+<pre><code>## 
+## Attaching package: &#39;showtextdb&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:extrafont&#39;:
+## 
+##     font_install</code></pre>
+<pre class="r"><code># 添加字体
+# font_files()显示可添加的字体
+font_add(&quot;KaiTi&quot;, &quot;/Library/Fonts/Microsoft/Kaiti.ttf&quot;)
+# 自带中文字体wqy-microhei
+showtext_auto()
+ggplot(mtcars, aes(mpg, disp)) + geom_point() +
+  labs(x = &quot;每加仑行使公里数&quot;, y = &quot;排量&quot;) +
+  theme(axis.title = element_text(family = &quot;KaiTi&quot;))</code></pre>
+<p><img src="/post/2019-12-08-ggplot-chinese-font.zh_files/figure-html/showtext-1.png" width="672" /></p>
+<p>这只是在Mac OS系统测试，windows可能会有些不同，具体可阅读这两个包的帮助文档。</p>
+</div>
