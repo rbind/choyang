@@ -49,7 +49,7 @@ defaultContentLanguageInSubdir = true
     weight = 3
 [params]
   bio = """
-    Bioinformatics, R enthusiast. Thoughts on reasarch, personal \\
+    Bioinformatics, R enthusiast. Thoughts on reasarch, personal \
     experience and other distractions.
   """
   copyright = """&copy; 2018 Choyang Powered by [Hugo](http://gohugo.io/) and
