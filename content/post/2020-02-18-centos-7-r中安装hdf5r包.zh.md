@@ -25,7 +25,9 @@ sudo make install
 sudo make check-install
 ```
 
-这时候安装hdf5r的时候提示请安装 hdf5r-devel，然后在
+这时候安装hdf5r的时候提示请安装 hdf5r-devel。
+
+然后在
 [这](https://github.com/hhoeflin/hdf5r/issues/94#issuecomment-453352921)和
 [这](https://github.com/hhoeflin/hdf5r/issues/115#issuecomment-582485446)发现 
 hdf5r 的安装依赖 `h5cc`,因为是自己安装的 hdf5，所以需要手动指定 `h5cc` 路径
@@ -58,3 +60,20 @@ echo LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/hdf5/lib >> ~/.Renviron
 ```
 
 然后成功加载 `library(hdf5r)`
+
+上面的解决办法是在 R 中进行，分为两步，一是指定 h5cc路径，二是加载
+libhdf5_hl.so.100库。那么我们可以通过把 h5cc 加到路径中或者是链接到
+`/usr/local/bin`下，然后把 hdf5 库添加到 `LD_LIBRARY_PATH`.
+
+```sh
+# 软连接到/usr/local/bin 
+for f in /usr/local/hdf5/bin/* ; do ln -s $f /usr/local/bin ; done \
+
+# LD配置
+echo /ur/local/hdf5/lib > /etc/ld.so.conf.d/hdf5.conf
+```
+
+然后安装即可
+```r
+install.packages("hdf5")
+```
