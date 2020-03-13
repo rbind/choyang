@@ -1,0 +1,108 @@
+---
+title: Rowwise operation in dplyr 1.0.0
+author: ''
+date: '2020-03-13'
+slug: rowwise-operation-in-dplyr-1-0-0
+categories: [R]
+tags:
+  - tidyverse
+  - dplyr
+---
+
+I have written a post on [rowwise operation of data frame in 
+R](https://www.choyang.me/post/rowwise-manipulation-of-data-frame-in-r/) a 
+while ago. `purrr::pmap()` is recommended for rowwise operation in that post, since 
+other methods have their own disadvantages. However, there will be a better rowwise operation support in **dplyr 1.0.0** ([will be released soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/)), 
+and it is very intuitive, simple, easy to use. 
+
+## Basic
+
+```{r rowwise, message=FALSE}
+library(dplyr)
+df <- tibble(x = 1:3, y = 2:4, z = 3:5)
+df %>% rowwise() %>% mutate(m = mean(c(x, y, z)))
+```
+
+We can use tidy selection syntax to succinctly select any variables with
+`c_across()`.
+
+```{r across}
+df %>% rowwise() %>% mutate(m = mean(c_across(everything())))
+
+# equal to
+df %>% rowwise() %>% mutate(m = mean(c_across(is.numeric)))
+df %>% rowwise() %>% mutate(m = mean(c_across(x:z)))
+```
+
+`rowwise()` is behave somewhat similarly to the grouping variables passed to `group_by()`, we can preserve variables by `rowwise(<var_to_perserve>)`.
+
+```{r rowwise-preserve}
+# .before = x means new var `v` should locate before var `x`
+df2 <- mutate(df, v = letters[1:3], .before = x) 
+df2 %>% rowwise(v) %>% mutate(m = mean(x:z))
+```
+
+## row-wise summary funcitons in base R
+
+For more efficient, we can use row-wise summary functions in base R 
+`across()` is required for multiple 
+
+```{r row-wise}
+# use rowMeans 
+df %>% mutate(m = rowMeans(across(everything())))
+
+# equal to
+mutate(df, m = rowMeans(df))
+```
+
+## Advanced usage
+
+Run a function many times with different arguments
+
+```{r simulation}
+# example from dplyr vignette, rowwise
+df <- tribble(
+  ~ n, ~ min, ~ max,
+    1,     0,     1,
+    2,    10,   100,
+    3,   100,  1000,
+)
+
+# list is required in here, since `mutate` has to return something in length 1
+df %>% 
+  rowwise() %>% 
+  mutate(data = list(runif(n, min, max)))
+
+# we can also use `purrr::pmap()`
+df %>% mutate(data = purrr::pmap(., .f = runif))
+```
+
+More complicated problems, vary the function being called
+
+```{r var-function}
+# example from dplyr vignette, rowwise
+df <- tribble(
+   ~rng,     ~params,
+   "runif",  list(n = 10), 
+   "rnorm",  list(n = 20),
+   "rpois",  list(n = 10, lambda = 5),
+)
+
+df %>% 
+  rowwise() %>% 
+  mutate(data = list(do.call(rng, params)))
+
+# use purrr::map2, more complicated
+df %>% mutate(data = purrr::map2(rng, params, ~ do.call(.x, .y)))
+```
+
+Fore more details see the vignette in dplyr.
+
+## Reference 
+
+- https://dplyr.tidyverse.org/dev/articles/rowwise.html
+
+
+
+
+
